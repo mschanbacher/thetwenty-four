@@ -55,6 +55,62 @@ html {
 }
 
 /* ============================================================
+   PREFLIGHT OVERRIDES
+   Tailwind's `@tailwind base;` injects Preflight, a reset that
+   zeroes margins on block elements and unstyles headings. Preflight
+   runs AFTER the @import of tokens.css (because @import must come
+   first in a CSS file), so Preflight silently overrides tokens.css's
+   base-element defaults.
+   We want some of Preflight's work (box-sizing: border-box, image
+   block defaults, border reset) and NOT other parts (zeroed p
+   margins, unstyled headings). This block restores the specific
+   tokens.css rules Preflight breaks, without undoing the rest.
+   If we ever drop Tailwind's base layer entirely, this block
+   becomes redundant — but tokens.css will then do this work itself.
+   ============================================================ */
+
+/* Paragraph rhythm — Preflight zeroes margin; restore the one full
+   line-height gap tokens.css intended between paragraphs. */
+p {
+  margin: 0 0 var(--space-4);
+  max-width: var(--measure);
+}
+
+/* Headings — Preflight sets font-size/weight to `inherit`, which
+   makes unclassed <h1>-<h4> render at body size. Restore the
+   typographic scale tokens.css declares so plain HTML (future
+   MDX content, stub pages with bare headings) typesets correctly
+   without needing a utility class on every element. */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+  margin: 0;
+}
+h1 {
+  font-size: var(--text-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tracking-h1);
+  font-variation-settings: 'opsz' 48;
+}
+h2 {
+  font-size: var(--text-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-h2);
+  font-variation-settings: 'opsz' 36;
+}
+h3 {
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  font-variation-settings: 'opsz' 24;
+}
+h4 {
+  font-size: var(--text-h4);
+  line-height: var(--lh-h4);
+  font-variation-settings: 'opsz' 20;
+}
+
+/* ============================================================
    SITE CHROME — header, footer, nav.
    Small bespoke pieces that don't earn their own utility in
    tokens.css but are used on every page.
