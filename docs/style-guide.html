@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Twenty-Four — Style Guide</title>
+<meta name="description" content="Design system reference for thetwenty-four.com. Version 0.1.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============================================================
+   TOKENS — inlined here for the standalone artifact.
+   In the Next.js project these live in tokens.css.
+   ============================================================ */
+
+:root {
+  /* Palette */
+  --color-paper:        #F7F2EA;
+  --color-paper-deep:   #EFE8DC;
+  --color-ink:          #1A1510;
+  --color-ink-muted:    #5C5245;
+  --color-ink-faint:    #8A7F6E;
+  --color-oxblood:      #721818;
+  --color-oxblood-deep: #501111;
+  --color-rule:         #D4CBBD;
+  --color-rule-strong:  #B8AD99;
+
+  /* Typefaces */
+  --font-serif: 'Source Serif 4', ui-serif, Georgia, serif;
+  --font-sans:  'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:  'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  /* Type scale */
+  --text-display:   3.05rem;
+  --text-h1:        2.42rem;
+  --text-h2:        1.95rem;
+  --text-h3:        1.58rem;
+  --text-h4:        1.26rem;
+  --text-lead:      1.16rem;
+  --text-body:      1.00rem;
+  --text-body-sm:   0.89rem;
+  --text-pullquote: 1.26rem;
+  --text-caption:   0.74rem;
+  --text-label:     0.63rem;
+  --text-micro:     0.58rem;
+
+  --lh-display: 1.05; --lh-h1: 1.1; --lh-h2: 1.2; --lh-h3: 1.3; --lh-h4: 1.4;
+  --lh-lead: 1.5; --lh-body: 1.6; --lh-body-sm: 1.55; --lh-pullquote: 1.45;
+  --lh-caption: 1.45; --lh-label: 1.3;
+
+  --tracking-display: -0.015em;
+  --tracking-h1:      -0.01em;
+  --tracking-h2:      -0.005em;
+  --tracking-label:   0.14em;
+
+  --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600;
+
+  /* Spacing */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem;  --space-8: 2rem;   --space-12: 3rem;  --space-16: 4rem;
+  --space-24: 6rem;   --space-32: 8rem;
+
+  /* Layout */
+  --measure: 65ch;
+  --measure-wide: 78ch;
+  --measure-narrow: 48ch;
+  --container: 1240px;
+  --gutter: 64px;
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (max-width: 1023px) { :root { --gutter: 48px; } }
+@media (max-width: 639px)  {
+  :root {
+    --gutter: 24px;
+    --text-display: 2.32rem;
+    --text-h1: 1.79rem;
+    --text-h2: 1.47rem;
+    --text-h3: 1.26rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms; --duration-base: 0ms; --duration-slow: 0ms;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  /* 118.75% = 19px at default 16px base, scales with user preference.
+     Do not replace with a px value — that would override user zoom. */
+  font-size: 118.75%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  font-feature-settings: 'onum', 'kern';
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+p { margin: 0 0 var(--space-4); max-width: var(--measure); }
+
+a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-oxblood);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-thickness var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+}
+a:hover { color: var(--color-oxblood); text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--color-oxblood); outline-offset: 3px; border-radius: 2px; }
+
+::selection { background: var(--color-oxblood); color: var(--color-paper); }
+
+hr { border: 0; height: 1px; background: var(--color-rule); margin: var(--space-12) 0; }
+
+
+/* ============================================================
+   UTILITIES — the named design moves from the spec
+   ============================================================ */
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-oxblood);
+}
+
+.display {
+  font-size: var(--text-display);
+  line-height: var(--lh-display);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-display);
+  font-variation-settings: 'opsz' 60;
+}
+
+.lead {
+  font-size: var(--text-lead);
+  line-height: var(--lh-lead);
+  font-style: italic;
+  max-width: var(--measure-wide);
+  font-variation-settings: 'opsz' 20;
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: var(--lh-caption);
+  color: var(--color-ink-muted);
+  max-width: var(--measure-narrow);
+}
+
+.meta {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+  letter-spacing: 0.02em;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted);
+  letter-spacing: 0;
+}
+
+.pullquote {
+  font-size: var(--text-pullquote);
+  line-height: var(--lh-pullquote);
+  font-style: italic;
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-paper-deep);
+  border-left: 2px solid var(--color-oxblood);
+  margin: var(--space-8) 0;
+  max-width: var(--measure);
+}
+
+.section-numeral {
+  font-size: var(--text-h1);
+  line-height: 1;
+  font-style: italic;
+  color: var(--color-oxblood);
+  font-variation-settings: 'opsz' 48;
+}
+
+.button {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.04em;
+  padding: 0.7rem 1.2rem;
+  background: var(--color-oxblood);
+  color: var(--color-paper);
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.button:hover { background: var(--color-oxblood-deep); color: var(--color-paper); text-decoration: none; }
+.button:focus-visible { outline: 2px solid var(--color-oxblood); outline-offset: 3px; }
+
+.button-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.04em;
+  color: var(--color-oxblood);
+  text-decoration: underline;
+  text-decoration-color: var(--color-oxblood);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.tabular { font-variant-numeric: tabular-nums lining-nums; }
+
+
+/* ============================================================
+   STYLE-GUIDE SCAFFOLD
+   Layout only exists on this page.
+   ============================================================ */
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.guide-header {
+  padding: var(--space-24) 0 var(--space-16);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.guide-section {
+  padding: var(--space-24) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.guide-section:last-child { border-bottom: 0; }
+
+.guide-section-head {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--space-6);
+  align-items: baseline;
+  margin-bottom: var(--space-12);
+}
+
+.guide-section-num {
+  font-size: var(--text-h2);
+  font-style: italic;
+  color: var(--color-oxblood);
+  line-height: 1;
+  font-variation-settings: 'opsz' 36;
+}
+
+.guide-section-body {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--space-6);
+}
+
+.guide-section-body > .content { max-width: var(--measure-wide); }
+
+@media (max-width: 767px) {
+  .guide-section-head, .guide-section-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .guide-section-num { font-size: var(--text-h3); }
+}
+
+/* Specimen blocks — the boxes that demonstrate a single thing */
+.specimen {
+  border: 1px solid var(--color-rule);
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-paper);
+  margin-bottom: var(--space-4);
+}
+
+.specimen-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.specimen-row:last-child { border-bottom: 0; }
+.specimen-row .token { font-family: var(--font-mono); font-size: var(--text-caption); color: var(--color-ink-muted); line-height: 1.3; }
+.specimen-row .token .px { display: block; color: var(--color-ink-faint); font-size: var(--text-micro); margin-top: 2px; }
+.specimen-row .value { color: var(--color-ink); }
+
+/* Swatch grid */
+.swatch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--color-rule); border: 1px solid var(--color-rule); }
+.swatch { background: var(--color-paper); padding: var(--space-6) var(--space-4); }
+.swatch-chip { height: 72px; margin-bottom: var(--space-3); border: 1px solid var(--color-rule); }
+.swatch-name { font-family: var(--font-sans); font-size: var(--text-caption); font-weight: var(--weight-medium); color: var(--color-ink); margin: 0 0 2px; letter-spacing: 0.02em; }
+.swatch-hex  { font-family: var(--font-mono); font-size: var(--text-micro); color: var(--color-ink-muted); letter-spacing: 0; }
+.swatch-role { font-family: var(--font-sans); font-size: var(--text-micro); color: var(--color-ink-muted); letter-spacing: 0.05em; text-transform: uppercase; margin-top: var(--space-2); }
+.swatch-contrast { font-family: var(--font-mono); font-size: var(--text-micro); color: var(--color-ink-muted); margin-top: 2px; }
+
+/* Spacing demo */
+.space-row { display: grid; grid-template-columns: 80px 1fr; gap: var(--space-4); align-items: center; padding: var(--space-2) 0; }
+.space-bar { background: var(--color-oxblood); height: 8px; }
+
+/* Motion demo */
+.motion-row { display: grid; grid-template-columns: 120px 1fr; gap: var(--space-4); align-items: center; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-rule); }
+.motion-row:last-child { border-bottom: 0; }
+.motion-swatch { height: 36px; background: var(--color-rule); position: relative; overflow: hidden; }
+.motion-swatch::after {
+  content: ''; position: absolute; inset: 0 100% 0 0; background: var(--color-oxblood);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: var(--ease-out);
+}
+.motion-fast::after  { animation: fill var(--duration-fast) infinite alternate var(--ease-out); }
+.motion-base::after  { animation: fill var(--duration-base) infinite alternate var(--ease-out); }
+.motion-slow::after  { animation: fill var(--duration-slow) infinite alternate var(--ease-out); }
+@keyframes fill { from { inset: 0 100% 0 0; } to { inset: 0 0 0 0; } }
+
+/* Table demo */
+table.demo {
+  width: 100%;
+  max-width: var(--measure);
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums lining-nums;
+  margin: var(--space-4) 0;
+}
+table.demo th, table.demo td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-rule);
+  font-size: var(--text-body-sm);
+}
+table.demo th {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  border-bottom: 1px solid var(--color-rule-strong);
+}
+table.demo td.num { text-align: right; }
+
+/* Footer */
+.colophon { padding: var(--space-16) 0 var(--space-24); color: var(--color-ink-muted); }
+.colophon p { max-width: var(--measure); font-size: var(--text-body-sm); line-height: var(--lh-body-sm); }
+
+/* Nav scaffold mock */
+.nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.nav-mark { font-family: var(--font-serif); font-size: var(--text-h4); font-weight: var(--weight-semibold); letter-spacing: -0.005em; }
+.nav-items { display: flex; gap: var(--space-6); }
+.nav-items a {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+.nav-items a:hover { color: var(--color-oxblood); }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAV MOCK -->
+  <div class="nav">
+    <div class="nav-mark">The Twenty-Four</div>
+    <div class="nav-items">
+      <a href="#">The Proposal</a>
+      <a href="#">The Spec</a>
+      <a href="#">About</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="guide-header">
+    <div class="eyebrow" style="margin-bottom: var(--space-3);">Style Guide · v0.1</div>
+    <h1 class="display" style="margin: 0 0 var(--space-6);">Design system reference.</h1>
+    <p class="lead">The locked decisions from the design system session &mdash; palette, type, spacing, motion, and the named patterns the rest of the site is built from. Every future build session references this page.</p>
+
+    <div style="display: flex; gap: var(--space-6); margin-top: var(--space-8); flex-wrap: wrap;">
+      <div class="meta"><span style="color: var(--color-ink-faint);">Fonts:</span> Source Serif 4 · IBM Plex Sans</div>
+      <div class="meta"><span style="color: var(--color-ink-faint);">Ratio:</span> 1.25 on 19px base</div>
+      <div class="meta"><span style="color: var(--color-ink-faint);">Accent:</span> <span class="mono" style="color: var(--color-oxblood);">#721818</span></div>
+    </div>
+  </header>
+
+  <!-- I — PALETTE -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">I</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Palette</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">Nine tokens, three families.</h2>
+        <p style="color: var(--color-ink-muted); max-width: var(--measure);">Paper and ink form the ground; oxblood is the one raised voice; the rule grays exist only to separate. All contrast ratios measured against <span class="mono" style="color: var(--color-ink);">paper</span>.</p>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div></div>
+      <div>
+
+        <div style="margin-bottom: var(--space-2);"><div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium);">Grounds</div></div>
+        <div class="swatch-grid" style="margin-bottom: var(--space-8);">
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #F7F2EA;"></div>
+            <div class="swatch-name">paper</div>
+            <div class="swatch-hex">#F7F2EA</div>
+            <div class="swatch-role">Primary ground</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #EFE8DC;"></div>
+            <div class="swatch-name">paper-deep</div>
+            <div class="swatch-hex">#EFE8DC</div>
+            <div class="swatch-role">Pull-quotes, tables</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--space-2);"><div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium);">Inks</div></div>
+        <div class="swatch-grid" style="margin-bottom: var(--space-8);">
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #1A1510;"></div>
+            <div class="swatch-name">ink</div>
+            <div class="swatch-hex">#1A1510</div>
+            <div class="swatch-role">Body, headlines</div>
+            <div class="swatch-contrast">16.26:1 · AAA</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #5C5245;"></div>
+            <div class="swatch-name">ink-muted</div>
+            <div class="swatch-hex">#5C5245</div>
+            <div class="swatch-role">Captions, meta</div>
+            <div class="swatch-contrast">6.86:1 · AA</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #8A7F6E;"></div>
+            <div class="swatch-name">ink-faint</div>
+            <div class="swatch-hex">#8A7F6E</div>
+            <div class="swatch-role">Fine print only</div>
+            <div class="swatch-contrast">3.53:1 · AA-large</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--space-2);"><div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium);">Accent</div></div>
+        <div class="swatch-grid" style="margin-bottom: var(--space-8);">
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #721818;"></div>
+            <div class="swatch-name">oxblood</div>
+            <div class="swatch-hex">#721818</div>
+            <div class="swatch-role">The one accent</div>
+            <div class="swatch-contrast">10.21:1 · AAA</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #501111;"></div>
+            <div class="swatch-name">oxblood-deep</div>
+            <div class="swatch-hex">#501111</div>
+            <div class="swatch-role">Hover, pressed</div>
+            <div class="swatch-contrast">13.18:1 · AAA</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--space-2);"><div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium);">Rules</div></div>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #D4CBBD;"></div>
+            <div class="swatch-name">rule</div>
+            <div class="swatch-hex">#D4CBBD</div>
+            <div class="swatch-role">Hairlines</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: #B8AD99;"></div>
+            <div class="swatch-name">rule-strong</div>
+            <div class="swatch-hex">#B8AD99</div>
+            <div class="swatch-role">Major dividers</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- II — TYPE SCALE -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">II</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Typography</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">A 1.25 scale on a 19px base.</h2>
+        <p style="color: var(--color-ink-muted); max-width: var(--measure);">Source Serif 4 throughout, set at its matching optical size at each step. IBM Plex Sans for UI, metadata, and small-caps eyebrows.</p>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div></div>
+      <div>
+
+        <div class="specimen">
+          <div class="specimen-row">
+            <div class="token">display<span class="px">58 / 1.05</span></div>
+            <div class="display">The Twenty-Four</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">h1<span class="px">46 / 1.1</span></div>
+            <div style="font-size: var(--text-h1); line-height: var(--lh-h1); letter-spacing: var(--tracking-h1); font-weight: var(--weight-semibold); font-variation-settings: 'opsz' 48;">A proposal to restructure</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">h2<span class="px">37 / 1.2</span></div>
+            <div style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-weight: var(--weight-semibold); font-variation-settings: 'opsz' 36;">How the Conference works</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">h3<span class="px">30 / 1.3</span></div>
+            <div style="font-size: var(--text-h3); line-height: var(--lh-h3); font-weight: var(--weight-semibold); font-variation-settings: 'opsz' 24;">Promotion and relegation</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">h4<span class="px">24 / 1.4</span></div>
+            <div style="font-size: var(--text-h4); line-height: var(--lh-h4); font-weight: var(--weight-semibold); font-variation-settings: 'opsz' 20;">A subsection heading</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">lead<span class="px">22 / 1.5 italic</span></div>
+            <div class="lead">The opening paragraph of an essay, set in italic to mark the shift from display headline into running text.</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">body<span class="px">19 / 1.6</span></div>
+            <div>The regular season becomes an audition for an audition &mdash; and every September game a referendum on belonging. This is the size most of the site reads at.</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">body-sm<span class="px">17 / 1.55</span></div>
+            <div style="font-size: var(--text-body-sm); line-height: var(--lh-body-sm); font-variation-settings: 'opsz' 14;">Secondary prose &mdash; figure text, longer captions, table cells in the spec.</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">pullquote<span class="px">24 / 1.45 italic</span></div>
+            <div style="font-size: var(--text-pullquote); line-height: var(--lh-pullquote); font-style: italic; font-variation-settings: 'opsz' 20;">Restraint is status. When in doubt, subtract.</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">caption<span class="px">14 / 1.45 sans</span></div>
+            <div class="caption">Fig. 1 &mdash; A caption, set in the sans for clear separation from prose.</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">label<span class="px">12 sans · tracked</span></div>
+            <div class="eyebrow">Section heading eyebrow</div>
+          </div>
+          <div class="specimen-row">
+            <div class="token">micro<span class="px">11 sans · tracked</span></div>
+            <div style="font-family: var(--font-sans); font-size: var(--text-micro); font-weight: var(--weight-medium); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-ink-muted);">Metadata · timestamp · colophon</div>
+          </div>
+        </div>
+
+        <p class="caption" style="margin-top: var(--space-4);">Mobile scale drops display &amp; headings: display 44 · h1 34 · h2 28 · h3 24. Body and below stay constant.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- III — SPACING -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">III</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Spacing</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">Ten rem-based steps.</h2>
+        <p style="color: var(--color-ink-muted); max-width: var(--measure);">The large end of the scale (space-8 through space-32) does most of the work &mdash; section breaks, paragraph separation, header padding.</p>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div></div>
+      <div>
+        <div class="specimen">
+          <div class="space-row"><div class="mono">space-1 · 0.25rem</div><div><div class="space-bar" style="width: 0.25rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-2 · 0.5rem</div><div><div class="space-bar" style="width: 0.5rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-3 · 0.75rem</div><div><div class="space-bar" style="width: 0.75rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-4 · 1rem</div><div><div class="space-bar" style="width: 1rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-6 · 1.5rem</div><div><div class="space-bar" style="width: 1.5rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-8 · 2rem</div><div><div class="space-bar" style="width: 2rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-12 · 3rem</div><div><div class="space-bar" style="width: 3rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-16 · 4rem</div><div><div class="space-bar" style="width: 4rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-24 · 6rem</div><div><div class="space-bar" style="width: 6rem;"></div></div></div>
+          <div class="space-row"><div class="mono">space-32 · 8rem</div><div><div class="space-bar" style="width: 8rem;"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IV — LAYOUT -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">IV</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Layout</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">Measure governs the reading column.</h2>
+        <p style="color: var(--color-ink-muted); max-width: var(--measure);">Line length is locked by character count, not pixels, so it stays correct regardless of font loading or user zoom. Three widths for three roles.</p>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div></div>
+      <div>
+
+        <div class="specimen" style="margin-bottom: var(--space-6);">
+          <div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium); margin-bottom: var(--space-3);">measure · 65ch · body prose</div>
+          <p style="max-width: var(--measure); margin: 0;">The College Football Playoff, as presently structured, treats the regular season as an audition for an audition. A 24-team Champions Conference would replace the audition with the thing itself &mdash; and make every September game a referendum on belonging. This paragraph is set at the default body measure of 65 characters.</p>
+        </div>
+
+        <div class="specimen" style="margin-bottom: var(--space-6);">
+          <div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium); margin-bottom: var(--space-3);">measure-wide · 78ch · lead paragraphs</div>
+          <p class="lead" style="margin: 0;">A lead paragraph sits just below a display headline, set in italic and at 22px, and is allowed a slightly wider measure because the larger type gives fewer characters per line anyway.</p>
+        </div>
+
+        <div class="specimen">
+          <div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium); margin-bottom: var(--space-3);">measure-narrow · 48ch · captions & figure text</div>
+          <p class="caption" style="margin: 0;">Fig. 4 &mdash; A narrow measure makes captions feel deliberate rather than overflowing. Used for figure descriptions, sidenotes, and any text meant to sit in the margin.</p>
+        </div>
+
+        <div style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-rule);">
+          <table class="demo">
+            <thead>
+              <tr><th>Token</th><th class="num">Value</th><th>Role</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="mono" style="color: var(--color-ink);">container</td><td class="num mono">1240px</td><td>Page max-width</td></tr>
+              <tr><td class="mono" style="color: var(--color-ink);">gutter-mobile</td><td class="num mono">24px</td><td>Outer margin, phones</td></tr>
+              <tr><td class="mono" style="color: var(--color-ink);">gutter-tablet</td><td class="num mono">48px</td><td>Outer margin, tablets</td></tr>
+              <tr><td class="mono" style="color: var(--color-ink);">gutter-desktop</td><td class="num mono">64px</td><td>Outer margin, desktop</td></tr>
+              <tr><td class="mono" style="color: var(--color-ink);">column-gap</td><td class="num mono">32px</td><td>Grid inter-column gap</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- V — MOTION -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">V</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Motion</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">Perceptible, never performative.</h2>
+        <p style="color: var(--color-ink-muted); max-width: var(--measure);">Three durations, two eases, and full respect for <span class="mono" style="color: var(--color-ink);">prefers-reduced-motion</span>. Nothing here announces itself.</p>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div></div>
+      <div>
+        <div class="specimen">
+          <div class="motion-row">
+            <div class="mono">duration-fast<br><span style="color: var(--color-ink-faint);">120ms</span></div>
+            <div class="motion-swatch motion-fast"></div>
+          </div>
+          <div class="motion-row">
+            <div class="mono">duration-base<br><span style="color: var(--color-ink-faint);">200ms</span></div>
+            <div class="motion-swatch motion-base"></div>
+          </div>
+          <div class="motion-row">
+            <div class="mono">duration-slow<br><span style="color: var(--color-ink-faint);">400ms</span></div>
+            <div class="motion-swatch motion-slow"></div>
+          </div>
+        </div>
+        <p class="caption" style="margin-top: var(--space-4);">Easing: <span class="mono">cubic-bezier(0.16, 1, 0.3, 1)</span> for most transitions. <span class="mono">cubic-bezier(0.65, 0, 0.35, 1)</span> for page-scale changes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VI — LINKS & BUTTONS -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">VI</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Interactive</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">Links, buttons, focus states.</h2>
+        <p style="color: var(--color-ink-muted); max-width: var(--measure);">Hover any element below to see the real transition.</p>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div></div>
+      <div>
+
+        <div class="specimen" style="margin-bottom: var(--space-6);">
+          <div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium); margin-bottom: var(--space-4);">Inline link in body prose</div>
+          <p style="margin: 0;">The regular season becomes an <a href="#">audition for an audition</a>, and every September game a referendum on belonging. See also the <a href="#">full spec</a> or the <a href="#">proposal essay</a>.</p>
+        </div>
+
+        <div class="specimen" style="margin-bottom: var(--space-6);">
+          <div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium); margin-bottom: var(--space-4);">Primary button &middot; secondary text button</div>
+          <div style="display: flex; gap: var(--space-4); align-items: center;">
+            <a href="#" class="button">Read the proposal</a>
+            <a href="#" class="button-text">Read the spec &rarr;</a>
+          </div>
+        </div>
+
+        <div class="specimen">
+          <div class="eyebrow" style="color: var(--color-ink-muted); font-weight: var(--weight-medium); margin-bottom: var(--space-4);">Focus state &middot; keyboard navigation</div>
+          <p style="margin: 0 0 var(--space-4);">Tab into these to see the focus ring: <a href="#">first link</a> &middot; <a href="#">second link</a> &middot; <a href="#" class="button">button</a></p>
+          <p class="caption" style="margin: 0;">Focus rings are 2px solid oxblood with 3px offset &mdash; visible but quiet. Keyboard navigation is fully supported.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VII — COMPONENTS IN CONTEXT -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">VII</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Components in context</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">What it looks like as editorial.</h2>
+        <p style="color: var(--color-ink-muted); max-width: var(--measure);">The named patterns &mdash; section numerals, eyebrow labels, pull-quotes, tables &mdash; composed as they would appear on a real page.</p>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div class="section-numeral">§ II</div>
+      <div class="content">
+
+        <div class="eyebrow" style="margin-bottom: var(--space-3);">The thesis</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-6);">Every September game, a referendum.</h2>
+
+        <p class="lead" style="margin-bottom: var(--space-6);">The College Football Playoff, as presently structured, treats the regular season as an audition for an audition. There is a better arrangement.</p>
+
+        <p>A 24-team Champions Conference, organized on merit and refreshed annually by <a href="#">promotion and relegation</a>, would replace the audition with the thing itself. The top division plays for the national title. The second division plays to join them. Every game in every week carries stakes that reach past the scoreboard.</p>
+
+        <div class="pullquote">
+          Restraint is status. When in doubt, subtract.
+        </div>
+
+        <p>The objections are predictable. Tradition, schedule, television contracts &mdash; all real, all answerable. The harder question is whether the sport, which has always organized itself in the image of the money that pays for it, can organize itself around something else.</p>
+
+        <table class="demo">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th class="num">W&ndash;L</th>
+              <th class="num">Pct.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="tabular">1</td><td>Ohio State</td><td class="num tabular">13&ndash;0</td><td class="num tabular">1.000</td></tr>
+            <tr><td class="tabular">2</td><td>Oregon</td><td class="num tabular">12&ndash;1</td><td class="num tabular">0.923</td></tr>
+            <tr><td class="tabular">3</td><td>Texas</td><td class="num tabular">11&ndash;2</td><td class="num tabular">0.846</td></tr>
+            <tr><td class="tabular">4</td><td>Notre Dame</td><td class="num tabular">11&ndash;2</td><td class="num tabular">0.846</td></tr>
+          </tbody>
+        </table>
+
+        <p class="caption">Tab. 1 &mdash; A standings table demonstrating tabular lining figures. Column alignment stays true regardless of digit width.</p>
+
+        <div style="display: flex; gap: var(--space-4); align-items: center; margin-top: var(--space-8);">
+          <a href="#" class="button">Read the proposal</a>
+          <a href="#" class="button-text">Read the spec &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIII — USAGE NOTES -->
+  <section class="guide-section">
+    <div class="guide-section-head">
+      <div class="guide-section-num">VIII</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--space-2);">Usage notes</div>
+        <h2 style="font-size: var(--text-h2); line-height: var(--lh-h2); letter-spacing: var(--tracking-h2); font-variation-settings: 'opsz' 36; margin: 0 0 var(--space-3);">Rules the system assumes.</h2>
+      </div>
+    </div>
+
+    <div class="guide-section-body">
+      <div></div>
+      <div>
+        <ul style="max-width: var(--measure); padding-left: 1.2em; color: var(--color-ink); line-height: var(--lh-body);">
+          <li style="margin-bottom: var(--space-3);"><strong>One display per page.</strong> The <span class="mono" style="color: var(--color-oxblood);">display</span> size (58px) is used exactly once &mdash; the page's main title. After that, H1 takes over.</li>
+          <li style="margin-bottom: var(--space-3);"><strong>Oxblood is rare.</strong> Three to five appearances per page, maximum. If the color shows up more than that, something else needs to give.</li>
+          <li style="margin-bottom: var(--space-3);"><strong>Old-style figures in prose, tabular in data.</strong> Body text uses old-style (varying-height) numerals automatically. Anything in a table or standings block gets <span class="mono" style="color: var(--color-ink);">.tabular</span> for aligned lining figures.</li>
+          <li style="margin-bottom: var(--space-3);"><strong>Never exceed 65ch for prose.</strong> Use <span class="mono" style="color: var(--color-ink);">.prose</span> or <span class="mono" style="color: var(--color-ink);">max-width: var(--measure)</span>. Wider paragraphs fatigue the eye within a few hundred words.</li>
+          <li style="margin-bottom: var(--space-3);"><strong>Eyebrow labels pair with H2 sections.</strong> Not H1. Not H3. An eyebrow above a display or H1 is visual clutter; above an H3 it implies a structural level that isn't there.</li>
+          <li style="margin-bottom: var(--space-3);"><strong>Section numerals are used on /proposal and /spec.</strong> Not on /, not on /about. They signal a document with internal structure, not a page.</li>
+          <li style="margin-bottom: var(--space-3);"><strong>Mobile drops the top of the type scale.</strong> Display, H1, H2, and H3 shrink below 640px. Body and smaller sizes stay constant &mdash; we don't reduce reading size on small screens.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOPHON -->
+  <footer class="colophon">
+    <div class="eyebrow" style="margin-bottom: var(--space-3);">Colophon</div>
+    <p>This style guide documents the locked decisions from the design system session. Every value here is encoded in <span class="mono" style="color: var(--color-ink);">tokens.css</span> and mirrored in <span class="mono" style="color: var(--color-ink);">tailwind.config.ts</span>. Changes to a token propagate everywhere at build time.</p>
+    <p style="margin-top: var(--space-4);">Set in Source Serif 4 and IBM Plex Sans. Mono specimens in IBM Plex Mono. Version 0.1 &middot; design system session.</p>
+    <p style="margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-rule); color: var(--color-ink-faint);">Post-launch note &mdash; the sans is scheduled for revisit after a few weeks of live use. If Plex reads as a default in context rather than a choice, flip <span class="mono" style="color: var(--color-ink-muted);">--font-sans</span> to S&ouml;hne (Klim). One-variable change, no other design work required. See spec &sect; 11.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

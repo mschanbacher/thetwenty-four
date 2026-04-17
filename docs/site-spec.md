@@ -1,0 +1,263 @@
+# The Twenty-Four — Site Specification
+
+**Version:** 0.2
+**Status:** North star for build sessions. Revise freely.
+**Project:** thetwenty-four.com
+**Changelog:** 0.2 — design system session locked (palette, fonts, type scale, spacing, motion, link treatment). See style-guide.html.
+
+---
+
+## 1. Purpose
+
+The Twenty-Four is a publication for one proposal: a restructuring of college football into a 24-team Champions Conference with promotion and relegation. The site is the authoritative home of that argument — the place journalists, fans, and thought leaders are sent, and the artifact that makes the proposal impossible to dismiss as a hot take.
+
+The site is not a blog. It is a whitepaper microsite for a single project, designed to be taken seriously by people who are paid to think about college football.
+
+### Audience
+
+- **Primary:** Sports media (writers, podcasters, editors) who might cover or engage with the proposal.
+- **Secondary:** Engaged CFB fans who argue about structure — the r/CFB power-posters, the Twitter commentariat, the Athletic commenters.
+- **Tertiary:** Everyone the author sends a link to — including potential architectural clients encountering the author's creative-intellectual register for the first time.
+
+### What success looks like (v1.0)
+
+- The site exists at thetwenty-four.com and is beautiful enough that a skeptical journalist screenshots it.
+- A single r/CFB post generates real discussion.
+- The proposal gets referenced by at least one working CFB writer or podcast.
+- A working newsletter captures interested readers.
+- The author is comfortable sending the link to anyone without caveat.
+
+### Explicit non-goals for v1.0
+
+- Virality. This is a slow-burn credibility play.
+- Feature parity with the eventual simulator — that's Stage 2.
+- Comments, user accounts, or community features.
+- Paid tiers or monetization.
+
+---
+
+## 2. Author & Voice
+
+- **Byline:** Author's real name, listed prominently on the About page and in the newsletter. A short bio (2-3 sentences) covering professional background (designer), connection to the subject (lifelong CFB fan), and intent behind the project.
+- **Voice:** First person when personal, third person when institutional. Confident but not strident. The prose equivalent of the design register — assumes a smart reader, doesn't oversell, never winks. Never uses sports-media voice (no "folks," no "here's the thing," no "hot takes"). Closer to a New Yorker essay than an ESPN column.
+- **Contact:** `commissioner@thetwenty-four.com`, presented plainly on the site. The email is in-world but not labored — it should feel like a small confident choice, not a bit.
+
+---
+
+## 3. Information Architecture
+
+Hybrid model: a strong landing page that routes to three deep pages.
+
+### Pages
+
+1. **Landing (`/`)** — The pitch. Above-the-fold elevator pitch, key visual (bracket or calendar), brief argument with pull-quotes, "read the full proposal" CTAs, newsletter signup, author byline. This is the single most-linked URL the site will ever have. Every word earns its place.
+
+2. **The Proposal (`/proposal`)** — The full long-form essay. The argument as a reading experience: 3,000-5,000 words, carefully typeset, with inline visuals (bracket, calendar, flow diagrams). This is the "read this" surface for journalists and deep readers. Not the spec — a narrative version.
+
+3. **The Spec (`/spec`)** — The full technical specification, readable in-browser, navigable by section, with a table of contents. The existing MD spec lightly edited for readability. This is the "show your work" surface. Also available as a downloadable PDF.
+
+4. **About (`/about`)** — Who wrote this, why, the project's intent, contact info, colophon (fonts, tools, acknowledgments). Shorter than expected — a single-scroll page.
+
+### Deferred routes (Stage 2+)
+
+- `/simulator` — the interactive 2024 retrospective. Reserved in the IA from day one but not built in v1.0.
+- `/essays` or `/journal` — if Ghost is subdomain-based, this may live at `read.thetwenty-four.com` instead. Discussed in §8.
+
+### Navigation
+
+Top nav on every page, minimal: **The Proposal · The Spec · About**. Newsletter signup lives at the bottom of every page, not in the nav. The `/` link is the wordmark in the top-left.
+
+No breadcrumbs, no sidebars, no footer nav beyond copyright + email + newsletter signup.
+
+---
+
+## 4. Visual Direction
+
+### Aesthetic register
+
+Editorial/institutional publication. Reference lineage: Stripe Press, Works in Progress, Asterisk, MW Works, Cabinet magazine, university press monograph websites. The site should feel like a design-first publication that happens to be about football — not a sports site that happens to be well-designed.
+
+The register's core move is *restraint as status signal.* Generous margins, quiet typography, minimal motion, near-monochromatic palette. The confidence is the pitch.
+
+### Palette
+
+Warm, restrained, near-monochromatic with one strong accent.
+
+- **Ground (background):** Warm off-white, paper-like. Specifically not pure white. Target: `#F7F2EA` or similar (a soft ivory/cream). Backgrounds should feel like good paper, not screen.
+- **Text:** Near-black, warm. Not pure `#000`. Target: `#1A1510` or similar (a warm graphite).
+- **Accent:** Deep oxblood. Target: `#6B1F1F` or similar (a burgundy that reads as academic, not as "red"). Used sparingly — logo mark, key pull-quotes, section numerals, link hover states, CTA buttons. Appears maybe 3-5 times on any given page.
+- **Rules & dividers:** A hairline warm gray, ~`#D4CBBD`. Quiet, paper-edge feel.
+
+These are starting targets — we'll refine exact values during build.
+
+### Typography
+
+Two-font system.
+
+- **Primary (serif, body + headlines):** A contemporary serif with character and weight. Preferred: **GT Sectra** (paid, ideal), **Tiempos** (paid, excellent alt), or **Source Serif 4** (free, genuinely good). Worst case: **EB Garamond** or **Cormorant Garamond** (free, elegant but more traditional). Must have proper small caps, old-style and tabular numerals, real italics.
+- **Secondary (sans, UI + metadata):** A restrained, slightly-characterful neo-grotesque. Preferred: **GT America** (paid) or **Söhne** (paid). Free alternatives: **Inter Tight** (acceptable), or better, **Manrope** or **Fraunces**'s sister sans. Explicitly avoid default Inter — too generic for this register per the design skill's guidance.
+- **Numerals:** Tabular lining figures for anything structural — standings tables, brackets, calendar dates, scores. Old-style figures for inline prose text. This distinction matters.
+
+Final font choices made in the build session, contingent on budget and availability.
+
+### Typographic hierarchy
+
+- **Display (H1):** Serif, heavy weight, tight leading, generous letter-spacing. Used once per page.
+- **Section headings (H2):** Serif, semibold, smaller than display, with a small-caps eyebrow label (sans, uppercase, oxblood) above when appropriate.
+- **Body:** Serif, regular weight, 18-20px desktop / 17-18px mobile. Line-height ~1.55. Measure (line length) capped at ~65-70 characters via max-width on the body column.
+- **Metadata / UI labels:** Sans, small, uppercase, letter-spaced. Oxblood or graphite.
+- **Pull-quotes:** Serif, larger than body, italic, indented, oxblood mark or rule as visual anchor.
+
+### Layout & grid
+
+- Generous outer margins on desktop. Body text column ~640-720px max-width, centered or offset, with space either side that the design treats as intentional.
+- 12-column underlying grid, but used asymmetrically. Some elements break the grid deliberately — pull-quotes offset, visuals full-bleed or set into the margin.
+- Section numerals (Roman or Arabic, oxblood, large) anchor major sections — a visual move borrowed from literary magazines.
+- Mobile: everything collapses to a single column, but margins and measure stay generous. The aesthetic does not degrade on mobile.
+
+### Motion & interaction
+
+Minimal and purposeful. No hero animations, no parallax, no scroll-jacking.
+
+Acceptable: subtle fade-in on scroll for sections (staggered, maybe 200ms each), smooth scroll behavior, gentle hover states on links (oxblood underline appearing/thickening), subtle page transitions if using Next.js routing.
+
+Unacceptable: animated illustrations that loop, mouse-followers, motion that announces itself, anything gimmicky.
+
+### Imagery philosophy
+
+Near-zero stock photography. When imagery appears, it is:
+
+1. **Custom editorial infographics** — the bracket, the calendar, the promotion/relegation flow, the snake draft visualization. Built as SVG or carefully-designed static images. These should be virtuoso — the one place the design lets itself be rich. Think NYT data visualization embedded in a quiet essay.
+2. **Carefully chosen editorial photography** (optional, sparse) — empty stadiums at dusk, architectural details of historic venues, crowds shot from behind. Nothing celebratory, nothing action-shot, nothing that reads as stock sports imagery. The absence of expected sports imagery is itself a statement. May defer entirely to v1.1.
+
+### Logo / mark
+
+A proper mark for "24" is a priority, but scope it as its own work session after v1.0 launches. For v1.0 launch: a clean wordmark ("The Twenty-Four" set in the primary serif, custom-tuned) acts as placeholder. The dedicated logo design session follows once the site is live and the project has shape.
+
+---
+
+## 5. Landing Page Content Outline
+
+Working outline — refined during the landing page build session.
+
+1. **Hero** — Wordmark, single-line tagline (e.g., *"A proposal to restructure college football"*), author byline ("by [Name]"). Minimal.
+2. **The thesis, in ~150 words** — The proposal's core argument, stated plainly. No throat-clearing.
+3. **Key visual** — Probably the CFP bracket or the two-track calendar, full-bleed or set prominently.
+4. **3-4 sections of argument**, each ~200-300 words, each with a pull-quote or small infographic:
+   - The problem (football revenue is warping conference structure)
+   - The proposal (24-team Champions Conference, promotion/relegation)
+   - Why it works (merit-based, inclusive, preserves rivalries)
+   - What happens next (outreach, discussion, refinement)
+5. **CTAs** — "Read the full proposal" (→ /proposal), "Read the spec" (→ /spec).
+6. **Newsletter signup** — single email field, no frills, tagline like *"Occasional dispatches on the proposal and its reception."*
+7. **Author byline + footer** — Name, one-line bio, commissioner@ email, copyright.
+
+---
+
+## 6. The Proposal (Long-Form Essay)
+
+A narrative version of the argument, ~3,000-5,000 words, written by the author (or drafted together in a future session). This is the *reading* version — the one a journalist reads end-to-end on a Sunday morning.
+
+Structure tentatively:
+
+1. The problem
+2. The proposal overview
+3. How the Champions Conference works
+4. How promotion and relegation work
+5. The CFP, re-imagined
+6. What's preserved (rivalries, conference identity for non-football sports)
+7. What's lost (and why that's acceptable)
+8. Open questions (Notre Dame, initial selection, implementation)
+9. An invitation — to engage, to argue, to refine.
+
+Typography gets room to breathe here. Embedded visuals where they earn their place — bracket, calendar, a flow diagram or two. Not every section needs a visual.
+
+---
+
+## 7. The Spec
+
+The existing MD spec, lightly edited for readability on the web, presented as a single long page with a sticky table of contents on desktop. Downloadable as a beautifully-set PDF (generated with care — this is not a browser-print PDF, it's a designed document).
+
+The spec page treats the content as a reference document, not a reading experience. Code-like clarity, proper section numbering, working anchor links, tabular figures in tables.
+
+---
+
+## 8. Newsletter (Ghost)
+
+- **Platform:** Ghost Pro.
+- **Location:** Subdomain — `read.thetwenty-four.com` (or `journal.`, `dispatches.`, TBD). Ghost handles publishing, subscriptions, delivery.
+- **Relationship to main site:** Signup forms on the main site embed Ghost's form or POST directly to Ghost's API. Main site links to the newsletter; newsletter links back to the main site. They share design language (same fonts, same palette, same header treatment) but are separate technical projects.
+- **Cadence:** Not committed. "Occasional" framing lets the author write when there's something to say rather than performing a schedule.
+- **First posts (loose plan):**
+  1. Launch announcement + pointer to site.
+  2. "What the 2024 season would have looked like" (simulator precursor, even if text-only for now).
+  3. Response to the first wave of feedback/objections.
+
+---
+
+## 9. Technical Stack
+
+- **Framework:** Next.js (App Router).
+- **Hosting:** Vercel. Same flow as the NCAA app.
+- **Styling:** Tailwind CSS, with custom CSS variables for the palette and type scale. No UI kit (no shadcn, no Chakra) — the design is too specific.
+- **Content:** MDX for the essay and spec content, so it stays version-controllable and we can mix prose with custom components (visuals, pull-quotes, tables).
+- **Analytics:** Plausible or Vercel Analytics. Privacy-respecting, simple, no cookie banner required.
+- **Fonts:** Loaded via Next.js font optimization. Self-hosted where license allows.
+- **PDF generation:** TBD — could be a pre-built PDF committed to the repo, or generated on-demand. Likely pre-built for v1.0.
+- **Newsletter form:** Embedded Ghost signup form (or custom form POSTing to Ghost API).
+- **Repository:** Private GitHub repo, same pattern as existing projects.
+
+### Performance targets
+
+Fast — this is an editorial site, it should feel like paper. Lighthouse 95+ across the board. No unnecessary JavaScript. The site should load and be readable before any motion or hydration completes.
+
+### Accessibility
+
+Not optional. Semantic HTML, proper heading hierarchy, keyboard navigation, alt text on all imagery, sufficient color contrast (oxblood on cream has been verified at body-text sizes but we'll check all pairings).
+
+---
+
+## 10. Build Plan
+
+Each item below is a candidate standalone session with its own focused spec.
+
+1. **Design system session** — Lock in exact colors, final font choices, type scale, CSS variable setup. Produces: a tokens file, a style guide page, all decisions recorded.
+2. **Landing page session** — Build `/` end to end. Produces: a deployable landing page, even if other routes are stubbed.
+3. **Key visual session(s)** — Design and build the bracket graphic, the calendar graphic, the promotion/relegation flow. These may be two sessions depending on complexity.
+4. **Proposal page session** — Build `/proposal`, write or polish the long-form essay, integrate visuals.
+5. **Spec page session** — Build `/spec`, convert existing MD to MDX, build TOC, generate PDF.
+6. **About page + polish session** — Build `/about`, fix cross-site bugs, finalize SEO/Open Graph, launch prep.
+7. **Newsletter setup** — Separate from the main site; configure Ghost, design the newsletter template to match, embed signup on main site.
+8. **Logo session** — Design the "24" mark. Retroactively apply across site. Post-launch is fine.
+
+### Scope discipline
+
+If a session is taking too long, we cut scope, not quality. The site should never launch feeling rushed. It is better to launch with 3 pages that are exquisite than 5 that are merely good.
+
+---
+
+## 11. Open Questions
+
+Things we haven't decided and should revisit:
+
+- ~~Exact oxblood, ivory, and graphite hex values (design system session).~~ **Resolved in v0.2.** See tokens.css and style-guide.html. Oxblood `#721818` / `#501111`, paper `#F7F2EA`, ink `#1A1510`.
+- ~~Font licensing budget (design system session). If budget is tight, the free-stack is still excellent.~~ **Resolved in v0.2.** Shipping on the free stack: Source Serif 4 + IBM Plex Sans.
+- **Sans revisit, post-launch.** IBM Plex Sans is the right v1.0 choice but is drifting toward "thoughtful-designer default" status (noted during the design system session). Revisit after a few weeks of live use. If the site reads as generic in context, flip `--font-sans` to **Söhne** (Klim, ~$200 for two weights). This is a one-variable change that requires no other design work. Candidates also noted: Untitled Sans, ABC Diatype, ABC Monument Grotesk. Explicitly *not* Geist (converging on new-default status) or Fraunces-as-sans (shifts register too far).
+- Whether the "Proposal" long-form essay exists as a written piece yet, or needs to be drafted in a dedicated session. (Suspected: it needs drafting. Currently the spec exists but the essay does not.)
+- PDF aesthetic — does it match the site, or does it have its own (more print-native) treatment? Leans toward the latter.
+- Whether to eventually migrate everything including Ghost to a single custom stack (Stage 3+, deferred).
+
+---
+
+## 12. Design Principles (for reference during build)
+
+1. **Restraint is status.** When in doubt, subtract.
+2. **Typography carries the design.** Every type decision is load-bearing.
+3. **Confidence, not energy.** We are not trying to be exciting. We are trying to be taken seriously.
+4. **The visuals can be rich; the surround must be quiet.** Editorial infographics get to be virtuoso precisely because everything around them is calm.
+5. **The site is an artifact, not a content stream.** Durable, considered, not chasing freshness.
+6. **Mobile is not a downgrade.** The aesthetic must survive the small screen with no concessions to character.
+
+---
+
+*End of spec v0.1. Revise directly in this file as decisions are made.*
