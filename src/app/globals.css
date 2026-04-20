@@ -274,25 +274,49 @@ h4 {
   max-width: var(--measure);
 }
 
-/* Key visual placeholder — bordered editorial frame so the
-   empty space reads as "figure here," not "broken layout." */
+/* Key visual frame — bordered editorial surround for the Champions
+   Field graphic. The SVG inside sets the aspect ratio intrinsically
+   (16:9 at desktop/tablet via the wide variant, ~4:5 at mobile via
+   the narrow variant), so the frame itself just needs the border,
+   paper-deep fill, and a small breathing pad. */
 .landing-figure {
   padding-top: var(--space-8);
   padding-bottom: var(--space-16);
 }
 
 .landing-figure-frame {
-  aspect-ratio: 16 / 9;
   background: var(--color-paper-deep);
   border: var(--border-hairline);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-ink-faint);
-  font-family: var(--font-sans);
-  font-size: var(--text-label);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  /* Collapse whitespace around the inline SVG. */
+  line-height: 0;
+}
+
+/* Champions Field — dual-SVG responsive toggle.
+   Both variants ship in markup. One is hidden via `display: none`;
+   no client JS, no hydration cost for the swap. The duplicated SVG
+   markup is small (~24 rows × 2) and acceptable against the benefit
+   of a script-free responsive image. */
+.champions-field-wide,
+.champions-field-narrow {
+  /* Let the contained SVG size the block. */
+  line-height: 0;
+}
+
+.champions-field-wide svg,
+.champions-field-narrow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Default: wide shown, narrow hidden. */
+.champions-field-narrow { display: none; }
+
+/* Mobile: swap. Breakpoint matches the site-wide <640px tier from
+   tokens.css (the same boundary where the type scale collapses). */
+@media (max-width: 639px) {
+  .champions-field-wide { display: none; }
+  .champions-field-narrow { display: block; }
 }
 
 /* CTA row — two buttons, comfortable gap. */

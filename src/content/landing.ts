@@ -38,7 +38,7 @@ What follows is the case for that arrangement. Not a hot take. A structure.`,
 export const keyVisual = {
   figureLabel: 'Fig. 1',
   caption:
-    'The Champions Conference bracket, as it would have resolved for the 2024 season. The finished graphic will appear here; the illustration is scheduled for the next build session.',
+    'The 2025 Champions Field. Twenty-four teams organized into three snake-draft divisions. The top twelve qualify for the College Football Playoff.',
 };
 
 export const argumentSections: ArgumentSection[] = [

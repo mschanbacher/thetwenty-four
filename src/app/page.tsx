@@ -1,6 +1,6 @@
 import { Hero } from '@/components/landing/Hero';
 import { Thesis } from '@/components/landing/Thesis';
-import { KeyVisualPlaceholder } from '@/components/landing/KeyVisualPlaceholder';
+import { KeyVisual } from '@/components/landing/KeyVisual';
 import { ArgumentSection } from '@/components/landing/ArgumentSection';
 import { CallToAction } from '@/components/landing/CallToAction';
 import { Newsletter } from '@/components/landing/Newsletter';
@@ -13,7 +13,7 @@ import { argumentSections } from '@/content/landing';
  * Section order comes directly from spec § 5:
  *   1. Hero — wordmark, tagline, byline.
  *   2. Thesis — ~150 words, plain statement of the argument.
- *   3. Key visual — bracket or calendar (placeholder this session).
+ *   3. Key visual — the 2025 Champions Field (spec § 5, item 3).
  *   4. Argument sections — four blocks of 200–300 words each,
  *      some with pullquotes.
  *   5. CTAs — read the proposal, read the spec.
@@ -25,7 +25,7 @@ export default function LandingPage() {
     <>
       <Hero />
       <Thesis />
-      <KeyVisualPlaceholder />
+      <KeyVisual />
       {argumentSections.map((section) => (
         <ArgumentSection key={section.id} section={section} />
       ))}
