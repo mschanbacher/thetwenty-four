@@ -1,12 +1,12 @@
 # The Twenty-Four — Site Specification
 
-**Version:** 0.3
+**Version:** 0.4
 **Status:** North star for build sessions. Revise freely.
 **Project:** thetwenty-four.com
 **Changelog:**
+- 0.4 — Champions Field key visual scoped. Landing-page key visual reframed: the first visual is the **Champions Field** (the 24-team league membership for a given year), not a bracket. The bracket, if it appears on the site at all, belongs downstream on `/proposal` as the 12-team CFP that emerges from the Field. Data settled (2025 inaugural field, top 24 of final CFP committee rankings, snake-draft divisions labeled I · II · III). Component spec written; build deferred to next session. See `docs/champions-field-spec.md`.
 - 0.3 — Landing page session complete. `/` ships end-to-end with placeholder copy; `/proposal`, `/spec`, `/about` stubbed. Site is live at thetwenty-four.com (Vercel + Cloudflare DNS). Self-hosted fontsource stack chosen over next/font/google. Key visuals (bracket, calendar, promotion/relegation flow) deferred to next session.
 - 0.2 — Design system session locked (palette, fonts, type scale, spacing, motion, link treatment). See style-guide.html.
-
 ---
 
 ## 1. Purpose
@@ -129,7 +129,7 @@ Unacceptable: animated illustrations that loop, mouse-followers, motion that ann
 
 Near-zero stock photography. When imagery appears, it is:
 
-1. **Custom editorial infographics** — the bracket, the calendar, the promotion/relegation flow, the snake draft visualization. Built as SVG or carefully-designed static images. These should be virtuoso — the one place the design lets itself be rich. Think NYT data visualization embedded in a quiet essay.
+1. **Custom editorial infographics** — the Champions Field (the 24-team league membership for a given year), the calendar (two-track regular season + postseason), the promotion/relegation flow, and where it earns its place, the 12-team CFP bracket. Built as SVG or carefully-designed static images. These should be virtuoso — the one place the design lets itself be rich. Think NYT data visualization embedded in a quiet essay.
 2. **Carefully chosen editorial photography** (optional, sparse) — empty stadiums at dusk, architectural details of historic venues, crowds shot from behind. Nothing celebratory, nothing action-shot, nothing that reads as stock sports imagery. The absence of expected sports imagery is itself a statement. May defer entirely to v1.1.
 
 ### Logo / mark
@@ -146,7 +146,7 @@ Working outline — refined during the landing page build session.
 
 1. **Hero** — Wordmark, single-line tagline (e.g., *"A proposal to restructure college football"*), author byline ("by [Name]"). Minimal.
 2. **The thesis, in ~150 words** — The proposal's core argument, stated plainly. No throat-clearing.
-3. **Key visual** — Probably the CFP bracket or the two-track calendar, full-bleed or set prominently.
+3. **Key visual — The Champions Field.** The 24 teams of a given season's Champions Conference, organized into three snake-draft divisions, with the top-12 CFP cut-line visible. The inaugural (2025) field is the landing-page visual. See `docs/champions-field-spec.md` for the build spec. The CFP bracket that emerges from the Field is a downstream visual — it belongs on `/proposal`, not `/`.
 4. **3-4 sections of argument**, each ~200-300 words, each with a pull-quote or small infographic:
    - The problem (football revenue is warping conference structure)
    - The proposal (24-team Champions Conference, promotion/relegation)
@@ -234,7 +234,11 @@ Each item below is a candidate standalone session with its own focused spec.
 
 1. ~~**Design system session** — Lock in exact colors, final font choices, type scale, CSS variable setup. Produces: a tokens file, a style guide page, all decisions recorded.~~ **Complete (v0.2).** See `design-tokens/tokens.css` and `docs/style-guide.html`.
 2. ~~**Landing page session** — Build `/` end to end. Produces: a deployable landing page, even if other routes are stubbed.~~ **Complete (v0.3).** `/` ships with placeholder copy; stubs in place for the other three routes; live at thetwenty-four.com.
-3. **Key visual session(s)** — Design and build the bracket graphic, the calendar graphic, the promotion/relegation flow. These may be two sessions depending on complexity. A 16:9 placeholder frame is in place on `/` marking where the first graphic will land.
+3. **Key visual session(s)** — Design and build the editorial infographics. These are the richest single pieces of work on the site. Order:
+   - **(3a) Champions Field** — the 24-team league membership, for the landing page. *Scoped in v0.4; build pending.* See `docs/champions-field-spec.md`.
+   - **(3b) Two-track calendar** — regular season + postseason, showing Champions Conference and non-CC tracks side by side. For `/proposal` and possibly `/` as a secondary visual.
+   - **(3c) Promotion/relegation flow diagram** — the annual churn mechanism. For `/proposal`.
+   - **(3d) 12-team CFP bracket** — the postseason that emerges from the Field. For `/proposal`, inline with the essay. *Only build if essay earns it; may end up as a table or list instead.*
 4. **Proposal page session** — Build `/proposal`, write or polish the long-form essay, integrate visuals. Note: the essay doesn't exist yet as a written piece; this session will include drafting.
 5. **Spec page session** — Build `/spec`, convert existing MD to MDX, build TOC, generate PDF.
 6. **About page + polish session** — Build `/about`, fix cross-site bugs, finalize SEO/Open Graph (including an OG image when the wordmark/logo is ready), launch prep.
@@ -268,6 +272,8 @@ Things we haven't decided and should revisit:
 - **Tailwind architectural question** — see Architecture notes in § 9. Decision to make: keep `@tailwind base` with the current override block, or drop it entirely (and likely Tailwind with it). Not urgent.
 - PDF aesthetic — does it match the site, or does it have its own (more print-native) treatment? Leans toward the latter.
 - Whether to eventually migrate everything including Ghost to a single custom stack (Stage 3+, deferred).
+- **Landing-copy pass, post-Champions-Field.** The current placeholder copy in `src/content/landing.ts` was written before the Champions Field visual was scoped. When the real copy is written, add the **player-retention argument** — under the proposed structure, the multi-season path to a CFP berth (stay at a Conference team and climb standings, or earn promotion and then contend) reshapes the incentive structure away from annual portal churn. This is one of the proposal's stronger second-order claims and deserves a section or a pullquote. Not in the current thesis or argument placeholders.
+- **Bracket as landing-page visual: closed.** The v0.3 spec gestured at "the bracket or the calendar" as the landing-page key visual. Work in v0.4 determined that a bracket is the wrong object for the landing page — a bracket shows a postseason, but the site is about the *league*, and the league's visible form is the Field. The CFP bracket (if built at all) lives on `/proposal` as a downstream illustration.
 
 ---
 
@@ -282,4 +288,4 @@ Things we haven't decided and should revisit:
 
 ---
 
-*End of spec v0.3. Revise directly in this file as decisions are made.*
+*End of spec v0.4. Revise directly in this file as decisions are made.*
