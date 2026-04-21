@@ -16,7 +16,7 @@ import { Button } from '@/components/primitives/Button';
 export function Newsletter() {
   return (
     <Container as="section" className="landing-newsletter" aria-labelledby="newsletter-heading">
-      <Eyebrow>{newsletter.eyebrow}</Eyebrow>
+      <Eyebrow muted>{newsletter.eyebrow}</Eyebrow>
       <h2
         id="newsletter-heading"
         className="landing-section-heading"

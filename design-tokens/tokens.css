@@ -370,6 +370,17 @@ hr {
   outline: 2px solid var(--color-oxblood);
   outline-offset: 3px;
 }
+.button:disabled,
+.button[aria-disabled='true'] {
+  background: var(--color-rule-strong);
+  color: var(--color-ink-muted);
+  cursor: not-allowed;
+}
+.button:disabled:hover,
+.button[aria-disabled='true']:hover {
+  background: var(--color-rule-strong);
+  color: var(--color-ink-muted);
+}
 
 /* Button — secondary, text-style */
 .button-text {
