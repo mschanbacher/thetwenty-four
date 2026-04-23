@@ -1,9 +1,10 @@
 # The Twenty-Four — Site Specification
 
-**Version:** 0.6
+**Version:** 0.7
 **Status:** North star for build sessions. Revise freely.
 **Project:** thetwenty-four.com
 **Changelog:**
+- 0.7 — Proposal essay drafted. All nine chapters of the long-form essay at `/proposal` drafted and locked through iterative chapter-by-chapter review. Essay source lives at `docs/proposal-essay.md`; working document tracking citation, consistency, landing-copy, and site-integration tasks lives at `docs/proposal-working-spec.md`; the collaborative drafting pattern is captured at `docs/writing-collaboration-spec.md` for reuse on future long-form projects. Session produced several decisions that propagate back to this spec: voice reference shifted from *New Yorker* to *Works in Progress* (see § 2); essay length settled at ~10,700 words, materially above the original 3,000–5,000 target (see § 6); the 2012 conference-map reset established as prescriptive rather than consequential (the proposal asks for the reset; the essay defends the position); Notre Dame resolved to Option A (full ACC membership required) with the negotiation difficulty flagged honestly in Chapter VIII; UConn handled symmetrically; *Boundary Games* coined as the proper-noun name for the games between Champions Conference 21/22 and Promotion Playoff 3rd/4th finishers that resolve the remaining promotion/relegation cases; *Promotion Playoff* established as a capitalized proper noun throughout the project. Chapter TOC vs spec TOC resolved to cousins-not-shared (§ 11). Recommended order of operations for the remaining work added as § 13. Landing-copy rewrite is now blocked on the consistency sweep of the essay and will need to catch up on tone (WiP register) and terminology (*better arrangement* not *cleaner arrangement*, canonical rivalry names, etc.). CC spec needs a *Relegation Match* → *Boundary Game* sweep. Next up: citation pass on `/proposal`, followed by consistency pass.
 - 0.6 — Landing page copy pass complete. Placeholder prose in `src/content/landing.ts` replaced with the author's real voice, section by section: thesis (~150 words), four argument sections (each 200–300 words), figcaption swapped to the long variant from `champions-field-spec.md` § 7 (Notre Dame / BYU / Tulane / James Madison now named as the concrete illustration of the current CFP's exclusion logic), newsletter and byline copy tightened to match voice. Fourth section renamed from `whats-next` to `what-else` — it's now an argumentative section on second-order effects (player retention, conference-championship meaning, the end of realignment as a revenue-chasing mechanism), not housekeeping. Oxblood audit run against the settled copy: the page is past the original budget in raw instance count (~40 total) but visually balanced; two targeted design-system adjustments shipped — `.button:disabled` styling added to `tokens.css` so the stubbed Newsletter button no longer reads equal-weight to the live CTA, and the Newsletter eyebrow set to the `muted` variant. `docs/champions_conference_spec.md` added to the repo (previously lived only in the author's local materials). Next up: 3b (two-track calendar) or session 4 (proposal drafting) — both now unblocked.
 - 0.5 — Champions Field shipped. Landing page renders the inaugural 2025 Champions Field via `src/components/visuals/ChampionsField.tsx` + `src/components/landing/KeyVisual.tsx`; `KeyVisualPlaceholder.tsx` removed. Mobile layout uses a dual-SVG approach (wide 1600×900 and narrow 1000×1250 variants in parallel markup, toggled by a `@media (max-width: 639px)` rule in `globals.css`) — zero client JS, zero hydration. Figcaption in `src/content/landing.ts` updated to the terse version from `champions-field-spec.md` § 7. 63/63 programmatic geometry checks verified against rendered SVG output, including per-team (x, y) placement against the snake-draft pattern. Narrow-variant name/record gap concern raised mid-build and resolved with the real font: tightest gap is 32 SVG units on "Notre Dame" — readable, not a collision. Next up: 3b (two-track calendar).
 - 0.4 — Champions Field key visual scoped. Landing-page key visual reframed: the first visual is the **Champions Field** (the 24-team league membership for a given year), not a bracket. The bracket, if it appears on the site at all, belongs downstream on `/proposal` as the 12-team CFP that emerges from the Field. Data settled (2025 inaugural field, top 24 of final CFP committee rankings, snake-draft divisions labeled I · II · III). Component spec written; build deferred to next session. See `docs/champions-field-spec.md`.
@@ -43,7 +44,7 @@ The site is not a blog. It is a whitepaper microsite for a single project, desig
 ## 2. Author & Voice
 
 - **Byline:** Author's real name, listed prominently on the About page and in the newsletter. A short bio (2-3 sentences) covering professional background (designer), connection to the subject (lifelong CFB fan), and intent behind the project.
-- **Voice:** First person when personal, third person when institutional. Confident but not strident. The prose equivalent of the design register — assumes a smart reader, doesn't oversell, never winks. Never uses sports-media voice (no "folks," no "here's the thing," no "hot takes"). Closer to a New Yorker essay than an ESPN column.
+- **Voice:** First person when personal, third person when institutional. Confident but not strident. Authoritative but quirky; plainspoken but careful; willing to name the joints of an argument rather than conceal them. The prose equivalent of the design register — assumes a smart reader, doesn't oversell, never winks. Never uses sports-media voice (no "folks," no "here's the thing," no "hot takes"). Closer to a Works in Progress essay than an ESPN column. (Earlier spec versions named the New Yorker as the reference; the shift to Works in Progress was made during the proposal-essay drafting session and is more honest to what the project actually is — a proposal for a structure that does not yet exist, written with the authority of a designer who has built the model in detail, rather than a literary essay with a subject that already exists.) Specific standing constraints the proposal-essay session established and that should carry across the site's prose: American English throughout (*catalog*, not *catalogue*); the direct word over the reached-for one (*better* not *cleaner*; *destination* not *where it is going*); no flourish-after-claim (when a paragraph lands its argument, stop); no meta-commentary about what the prose is doing (*"this is the beat where..."*, *"chapter N described..."*, *"worth making carefully"* are all removable); capitalize invented proper nouns (*Champions Conference*, *Promotion Playoff*, *Boundary Games*); respect borrowed vocabulary on its own terms (*match* when describing the Premier League, *game* when describing college football).
 - **Contact:** `commissioner@thetwenty-four.com`, presented plainly on the site. The email is in-world but not labored — it should feel like a small confident choice, not a bit.
 
 ---
@@ -142,9 +143,11 @@ A proper mark for "24" is a priority, but scope it as its own work session after
 
 ## 5. Landing Page Content Outline
 
-Working outline — reflects the copy shipped in v0.6.
+Working outline — reflects the copy shipped in v0.6, pending a v0.7 catch-up pass.
 
 *As of v0.6: built, live, and in the author's voice. The copy file at `src/content/landing.ts` is the source of truth for every string on the page; components in `src/components/landing/` are purely structural and should not carry copy.*
+
+*v0.7 note: a targeted landing-copy rewrite is pending after the essay's consistency pass. Tone will catch up to the Works in Progress register the essay landed on (§ 2), and terminology will align (*better arrangement* in place of *cleaner arrangement*; canonical rivalry names; possible replacement of *"an audition for an audition"*). The structural outline below is unchanged; only specific word choices will move.*
 
 1. **Hero** — Wordmark, single-line tagline (*"A proposal to restructure college football."*), author byline ("by Michael Schanbacher"). Minimal.
 2. **The thesis, in ~150 words** — The proposal's core argument, stated plainly. Leads with the root cause (football revenue is breaking every other sport) before introducing the structural response. No throat-clearing.
@@ -162,36 +165,34 @@ Working outline — reflects the copy shipped in v0.6.
 
 ## 6. The Proposal (Long-Form Essay)
 
-A narrative version of the argument, ~3,000-5,000 words, presented as a **chaptered** reading experience rather than a single scroll. The chaptered structure was decided in v0.6: at this length, a single-scroll essay asks too much of the reader, and the proposal has natural subdivisions (mechanism, consequences, open questions) that reward being navigable.
+The long-form narrative version of the argument. Drafted in v0.7; source lives at `docs/proposal-essay.md`; pending work (citation pass, consistency pass, final review, graphics pass, site integration) tracked in `docs/proposal-working-spec.md`. Currently ~10,700 words across nine chapters — materially longer than the v0.3/v0.6 target of 3,000–5,000 words. The length is intentional: the drafting session's working principle was *as long as each chapter needs to be*, and the cumulative length is a consequence of treating each beat at full depth rather than at pitch depth. A reader arrives at `/proposal` having already read the landing page's compressed argument; the essay earns its length by walking each claim through patient, full-treatment exposition.
 
-### Structural decisions (v0.6)
+### Structural decisions (v0.6, confirmed in v0.7)
 
-- **Chapters, not scroll.** Each chapter is its own reading unit — ~400-500 words, titled, numbered, anchored. The reader can land on a chapter from a TOC, a deep link, or sequential navigation.
-- **Sticky TOC on desktop.** Sidebar or left-rail pattern, showing the chapter list with the current chapter marked. Collapsed behind a button on mobile. Open question: whether this component is shared with the `/spec` TOC or is a separate implementation. Flagged in § 11; to be resolved during drafting.
+- **Chapters, not scroll.** Each chapter is its own reading unit, titled with a Roman numeral, anchored. The reader can land on a chapter from a TOC, a deep link, or sequential navigation. Chapter-length range as drafted: ~450 words (Chapter IX, the invitation) to ~1,700 words (Chapter VII, the honest accounting). Average around 1,200 words.
+- **Sticky TOC on desktop.** Sidebar or left-rail pattern, showing the chapter list with the current chapter marked. Collapsed behind a button on mobile. **Resolved in v0.7:** cousins-not-shared with the `/spec` TOC — same design language, different behavior (sequential prev/next on `/proposal`; reference jumping on `/spec`).
 - **Sequential navigation.** "Previous chapter" / "Next chapter" controls at the foot of each chapter so a reader who wants to read end-to-end can do so without returning to the TOC. The spec, by contrast, is a reference document — no sequential nav there.
-- **Visuals live inside chapters.** The two-track calendar (session 3b), the promotion/relegation flow diagram (3c), and possibly the CFP bracket (3d) are embedded where they earn their place, not collected in a gallery.
-- **Chapter length is permissive, not uniform.** Some chapters will run shorter (an open-questions chapter might be 200 words) and some longer. The 400-500 target is a center, not a ceiling.
+- **Visuals live inside chapters.** Graphics candidates identified during drafting: Chapter IV (Promotion Playoff + Boundary Games bracket diagram), Chapter I (conference revenue over time or by conference), Chapter VII (Vanderbilt revenue comparison, current vs proposal — depends on citation-pass data). Graphics pass is a dedicated future session after the citation and consistency passes complete.
+- **Chapter length is permissive, not uniform.** Confirmed by the drafted chapters — some are short (Chapter IX) and some are long (Chapter VII). Reading-time estimates at each chapter's top would be useful.
 
-### Tentative chapter list
+### Final chapter list (v0.7, as drafted)
 
-Starting scaffold, not a contract. The draft will reshape this — some chapters may merge, split, or reorder once the prose exists. Use this to start writing against.
-
-1. **The problem** — Revenue distortion in college athletics, the conference-realignment era, the Pac-12 case, the CFP expansion as inadequate response. Lands the diagnosis at full depth (the landing-page version is compressed).
-2. **The proposal, in outline** — The Champions Conference as a concept: 24 teams, merit-selected, decoupled from regional conferences. Short chapter; establishes the object before the mechanism chapters unpack it.
-3. **How the Champions Conference works** — Snake-draft divisions, schedule structure (10 CC games + 2 rivalry games), what a CC season looks like for a program. First visual candidate: the two-track calendar.
-4. **How promotion and relegation work** — The annual churn: bottom-four relegation, 10-team promotion playoff from the rest of FBS, auto-promotions and relegation matches. Second visual candidate: the promotion/relegation flow diagram.
-5. **The CFP, re-imagined** — Top 12 by record, no committee, bracket reads itself. Possibly: the bracket visual, if it earns its place; otherwise prose-only.
-6. **What's preserved** — Rivalries (inside and across conferences), conference identity for non-football sports, the regular-season calendar's cadence. The proposal as conservation, not demolition.
-7. **What's lost, and why that's acceptable** — The end of the committee's discretion, the end of conference-driven postseason access, the end of realignment as a revenue strategy. Honest accounting.
-8. **Open questions** — Notre Dame's status (flagged in the CC spec as unresolved), initial-year selection method, implementation timeline, player-contract considerations. The chapter admits what the proposal has not yet settled.
-9. **An invitation** — To engage, to argue, to refine. Short closing chapter; functions as the essay's goodbye and the page's implicit call-to-action to the `/spec` and to `commissioner@`.
+1. **The problem** — Football revenue's distortion of college athletics; the Pac-12 case; the CFP expansion as non-response. Lands the diagnosis at full depth.
+2. **The proposal, in outline** — The Champions Conference as a concept: 24 teams, merit-selected, ten-plus-two schedule, top-twelve postseason, four-team turnover. Names the 2012 reset as a premise the essay will defend later. Closes on *"complete enough to debate, iterate, and refine."*
+3. **How the Champions Conference works** — Snake-draft divisions, mirrored cross-division rotation, the ten-game intra-conference schedule, the two rivalry games. Opens with Oregon as the typical-program example.
+4. **How promotion and relegation work** — The closed-league problem; four-team annual turnover; the Promotion Playoff's structure; the Boundary Games as the mechanism's joint. Notre Dame rule stated declaratively. Premier League precedent named as evidence for the turnover rate.
+5. **The CFP, re-imagined** — Top twelve of the standings; committee eliminated; the enumeration of what-disappears as the chapter's rhetorical centerpiece. The UCF 2017 / Florida State 2023 / TCU-Baylor 2014 examples as the honest moment about the committee's lost flexibility.
+6. **What's preserved** — All rivalries (named with their canonical names: The Game, Iron Bowl, Egg Bowl, Red River Shootout, The World's Largest Outdoor Cocktail Party, Army-Navy, etc.); conferences for non-football sports; the regular-season calendar; conference championships for conferences that still crown them; regional character. The 2012 reset explicitly defended in this chapter.
+7. **What's lost, and why that's acceptable** — Seven specific losses enumerated: committee flexibility, conference championship games for top programs, program-conference identity coherence, realignment as mobility, CFP-bid regular-season stakes, revenue for wrong-side-of-line programs (Vanderbilt named), incumbency for relegated programs. Closes on *directed versus undirected losses* as the proposal's honest frame.
+8. **Open questions** — Notre Dame (negotiation difficulty, distinct from the rule itself), UConn (symmetric treatment, asymmetric stakes), inaugural-twenty-four selection method, implementation timeline, NIL and player-compensation regulatory environment, Promotion Playoff seeding formula.
+9. **An invitation** — Three asks (write, engage, share). Closes on *"I'd love to hear what you think."*
 
 ### Writing notes
 
-- **Relationship to the landing page.** The landing page argues in compression; the essay argues at length. The essay should assume a reader who has seen the landing page but has not yet been convinced. Repetition of core claims is expected and appropriate.
-- **Relationship to the spec.** The essay is narrative; the spec is structural. The essay can gesture at mechanisms ("a 10-team promotion playoff") and let the spec page carry the operational detail. Readers who want exact rules click through.
-- **Voice.** Same author voice as the landing copy (§ 2). First person when personal, third person when institutional. Chapters can run slightly warmer than the landing copy — the essay is a reading experience, and warmth is earned at length in a way it isn't in a 150-word thesis.
-- **Drafting cadence.** The essay doesn't exist yet as a written piece. Drafting is scoped as session 4 in § 10 and is probably the longest single writing session on the schedule. Outline first, then draft chapter by chapter with feedback between.
+- **Relationship to the landing page.** The landing page argues in compression; the essay argues at length. The essay assumes a reader who has seen the landing page but has not yet been convinced. Repetition of core claims is expected and appropriate. **Note for future work:** the landing copy was written at v0.6 before the essay existed; some of its word choices (e.g., *cleaner arrangement*) do not match the essay's (*better arrangement*). The landing copy will need a targeted rewrite after the essay's consistency pass; see `docs/proposal-working-spec.md` § 2.3.
+- **Relationship to the spec.** The essay is narrative; the spec is structural. The essay gestures at mechanisms and lets the spec page carry the operational detail. Readers who want exact rules click through. The essay and spec should not contradict; when the essay drafted a mechanism with slightly different language than the spec (e.g., *Boundary Games* instead of *Relegation Match*), the spec is what needs to update, not the essay.
+- **Voice.** See § 2. The essay is in the Works in Progress register the session landed on. Chapters can run warmer than the landing copy — the essay is a reading experience and warmth is earned at length. The *invitation* register in Chapter IX is the warmest part of the project.
+- **Drafting cadence.** Drafting happened in a single extended session, chapter by chapter, with explicit locks between chapters. The process pattern is captured at `docs/writing-collaboration-spec.md` for reuse.
 
 ---
 
@@ -254,20 +255,22 @@ Each item below is a candidate standalone session with its own focused spec.
 3. **Key visual session(s)** — Design and build the editorial infographics. These are the richest single pieces of work on the site. Order:
    - ~~**(3a) Champions Field** — the 24-team league membership, for the landing page.~~ **Complete (v0.5).** See `src/components/visuals/ChampionsField.tsx`.
    - **(3b) Two-track calendar** — regular season + postseason, showing Champions Conference and non-CC tracks side by side. For `/proposal` and possibly `/` as a secondary visual.
-   - **(3c) Promotion/relegation flow diagram** — the annual churn mechanism. For `/proposal`.
+   - **(3c) Promotion Playoff + Boundary Games bracket** — the annual churn mechanism, renamed in v0.7. For `/proposal`, likely in Chapter IV.
    - **(3d) 12-team CFP bracket** — the postseason that emerges from the Field. For `/proposal`, inline with the essay. *Only build if essay earns it; may end up as a table or list instead.*
-4. **Proposal page session** — Build `/proposal`, write or polish the long-form essay, integrate visuals. Note: the essay doesn't exist yet as a written piece; this session will include drafting. Per the v0.6 decision in § 6, the essay is **chaptered** — the session includes building chapter routing (likely `/proposal/[chapter]` or anchor-based), a sticky TOC, sequential navigation, and the per-chapter reading frame. `docs/champions_conference_spec.md` (added to the repo in v0.6) is the authoritative source for proposal mechanics the essay needs to stay faithful to.
-5. **Spec page session** — Build `/spec`, convert existing MD to MDX, build TOC, generate PDF. Input material: `docs/champions_conference_spec.md` (the 1,056-line authoritative spec added to the repo in v0.6). The `/spec` TOC is also a candidate for sharing a component with the `/proposal` chapter TOC — to be decided during one of these sessions, whichever runs first. See § 11.
+   - **(3e) Conference revenue visualization** — added as a candidate in v0.7 during proposal-essay drafting. For `/proposal` Chapter I or Chapter VII. Depends on data from the citation pass.
+4. ~~**Proposal page session** — Build `/proposal`, write or polish the long-form essay, integrate visuals.~~ **Partially complete (v0.7).** The essay is drafted at `docs/proposal-essay.md`. Remaining work is split across multiple smaller sessions, tracked in `docs/proposal-working-spec.md`: citation pass, consistency pass, landing-copy rewrite, CC spec updates, graphics pass, and finally site integration (routing, chapter pages, TOC, PDF).
+5. **Spec page session** — Build `/spec`, convert existing MD to MDX, build TOC, generate PDF. Input material: `docs/champions_conference_spec.md`. **v0.7 note:** the CC spec needs updates to match essay terminology (*Relegation Match* → *Boundary Game*, etc.) before the `/spec` build session; see `docs/proposal-working-spec.md` § 2.4. The `/spec` TOC and `/proposal` chapter TOC are cousins-not-shared — same design language, different behavior. Resolved in v0.7.
 6. **About page + polish session** — Build `/about`, fix cross-site bugs, finalize SEO/Open Graph (including an OG image when the wordmark/logo is ready), launch prep.
-7. **Newsletter setup** — Separate from the main site; configure Ghost, design the newsletter template to match, embed signup on main site. Replaces the stubbed form on `/`.
+7. **Newsletter setup** — Separate from the main site; configure Ghost, design the newsletter template to match, embed signup on main site. Replaces the stubbed form on `/`. Should complete before `/proposal` site integration, since the essay's Chapter IX invitation points to the newsletter as well as `commissioner@`.
 8. **Logo session** — Design the "24" mark. Retroactively apply across site. Post-launch is fine.
 
 ### Interleaved micro-sessions
 
 A few things don't warrant a full session but need doing, roughly in order of when they'd naturally fit:
 
-- ~~**Landing copy rewrite** — replace placeholder prose in `src/content/landing.ts` with the author's real voice. Probably happens before or alongside session 3.~~ **Complete (v0.6).** See `src/content/landing.ts`.
+- ~~**Landing copy rewrite** — replace placeholder prose in `src/content/landing.ts` with the author's real voice. Probably happens before or alongside session 3.~~ **Complete (v0.6), but needs a v0.7 catch-up pass.** The landing copy was written at v0.6 before the essay existed and before the voice shifted fully to Works in Progress register. A targeted pass will bring it into alignment with the essay. Specifically: *"cleaner arrangement"* → *"better arrangement"* in the thesis; *"an audition for an audition"* is the most New-Yorker-register phrase remaining and may want replacement; rivalry examples could use the canonical names. See `docs/proposal-working-spec.md` § 2.3.
 - ~~**Oxblood audit** — re-audit the landing page's oxblood ratio once the real copy lands, per the flag in § 11 (v0.5).~~ **Complete (v0.6).** Two targeted adjustments shipped: `.button:disabled` styling in `tokens.css` so the stubbed Newsletter button reads as inactive, and `muted` variant applied to the Newsletter eyebrow.
+- **CC spec updates** — apply v0.7 decisions to `docs/champions_conference_spec.md`: *Relegation Match* → *Boundary Game* sweep, *Matches* → *Games* where not Premier League, Notre Dame section updated to reflect essay's resolved position, possible glossary addition. See `docs/proposal-working-spec.md` § 2.4.
 - **Analytics wire-up** — three lines: install `@vercel/analytics`, import `<Analytics />`, drop it in `layout.tsx` where the TODO comment sits. Do once live traffic is worth measuring.
 - **Architecture polish** — revisit `@tailwind base` vs tokens.css per the Architecture notes in § 9. Not urgent; clean when tackled.
 
@@ -292,7 +295,9 @@ Things we haven't decided and should revisit:
 - Whether to eventually migrate everything including Ghost to a single custom stack (Stage 3+, deferred).
 - ~~**Landing-copy pass, now unblocked.** The current placeholder copy in `src/content/landing.ts` was written before the Champions Field visual was scoped. The Field shipped in v0.5, so this pass is now the next natural writing-focused session. When the real copy is written, add the **player-retention argument** — under the proposed structure, the multi-season path to a CFP berth (stay at a Conference team and climb standings, or earn promotion and then contend) reshapes the incentive structure away from annual portal churn. This is one of the proposal's stronger second-order claims and deserves a section or a pullquote. Not in the current thesis or argument placeholders.~~ **Complete in v0.6.** The player-retention argument landed in the "What else" section (formerly "What's next"), alongside the conference-championship and realignment-ends-as-a-strategy arguments. Pullquote: *"Staying becomes a strategy, not a sacrifice."*
 - **Bracket as landing-page visual: closed.** The v0.3 spec gestured at "the bracket or the calendar" as the landing-page key visual. Work in v0.4 determined that a bracket is the wrong object for the landing page — a bracket shows a postseason, but the site is about the *league*, and the league's visible form is the Field. The CFP bracket (if built at all) lives on `/proposal` as a downstream illustration.
-- **Chapter TOC vs spec TOC — shared component or separate?** `/proposal` is chaptered as of v0.6, and `/spec` was already specified as having a sticky desktop TOC (§ 7). Both need the same general pattern — left-rail list, current-section marker, collapse on mobile. Open question is whether they share a single `<TableOfContents>` component or whether they're deliberately different (because the proposal is a reading experience and the spec is a reference document, and the two may want slightly different behavior — e.g., the proposal might want sequential prev/next nav that the spec shouldn't have). Resolve in whichever of sessions 4 or 5 runs first.
+- **Chapter TOC vs spec TOC — shared component or separate?** ~~`/proposal` is chaptered as of v0.6, and `/spec` was already specified as having a sticky desktop TOC (§ 7). Both need the same general pattern — left-rail list, current-section marker, collapse on mobile. Open question is whether they share a single `<TableOfContents>` component or whether they're deliberately different (because the proposal is a reading experience and the spec is a reference document, and the two may want slightly different behavior — e.g., the proposal might want sequential prev/next nav that the spec shouldn't have). Resolve in whichever of sessions 4 or 5 runs first.~~ **Resolved in v0.7: cousins-not-shared.** Same design language (left-rail list, current-section marker, mobile collapse pattern, typographic register); different behavior. `/proposal` TOC has sequential prev/next navigation and an indication of where the reader is in the nine-chapter arc; `/spec` TOC is a reference pattern without sequential nav. Both components are built independently; when both ship, cross-check that shared styling tokens stay synchronized.
+- **v0.7: Essay length vs site-spec target.** The essay as drafted is ~10,700 words, materially above the 3,000–5,000 target from earlier spec versions. The site spec has been updated to reflect this (§ 6) rather than forcing compression. Worth noting that the length has real implications for `/proposal`'s design: reading-time estimates at each chapter top become more valuable, TOC navigation becomes more important, mobile pagination needs to accommodate longer chapters. No action required beyond carrying the implications through site integration.
+- **v0.7: Landing-copy tone drift.** The landing copy written in v0.6 is in a slightly different register than the essay settled into. Not a contradiction, but a seam. A targeted landing-copy pass will bring tone and terminology into alignment. See `docs/proposal-working-spec.md` § 2.3.
 
 ---
 
@@ -307,4 +312,32 @@ Things we haven't decided and should revisit:
 
 ---
 
-*End of spec v0.6. Revise directly in this file as decisions are made.*
+## 13. Recommended order of operations (v0.7 onward)
+
+With the essay drafted, the remaining path to launch has several workstreams with real ordering dependencies. Recommended sequence:
+
+1. **Site spec v0.7 update.** This document. Unblocks the rest by locking the north star. *Complete on commit of this version.*
+2. **Citation pass** on `/proposal`, chapter by chapter. The largest single work item. Chapter I and Chapter VII are the citation-heavy chapters; Chapter VII specifically depends on Vanderbilt revenue data that requires reporter or FOIA paths. Don't let Chapter VII block the other chapters' citation work — lock the others and hold Chapter VII open pending data. See `docs/proposal-working-spec.md` § 2.1.
+3. **Consistency pass** on `/proposal`. Runs cleanly after citations because citation-pass edits often touch prose. Fast relative to citations. See `docs/proposal-working-spec.md` § 2.2.
+4. **Landing-copy rewrite** and **CC spec updates**. Can run in parallel with each other; together they form one short "adjacent documents" session. Both depend on the essay's voice being settled, which happens at the end of the consistency pass.
+5. **Author's final full review** of `/proposal`. Let the essay rest a week or two between the consistency pass and this review. Catches what the sweeps missed.
+6. **Graphics pass** on `/proposal`. Last in the essay track because graphics depend on settled prose and citation-pass data. Some graphics may not earn their place; only build ones that do.
+7. **Newsletter (Ghost) setup**. Should complete before site integration, since `/proposal` Chapter IX points to both `commissioner@` and the newsletter.
+8. **Site integration.** Routing, chapter pages, TOC, PDF generation. The last substantial work item before launch.
+9. **Launch.**
+10. **Logo work, post-launch.** Do not let logo creation become a launch gate.
+
+### Timing risks and flex points
+
+- The citation pass timeline is unpredictable because it depends on external data availability. FOIA requests in particular can take weeks. Plan for this; don't pick an aspirational launch date that assumes instant data returns.
+- If the graphics pass stretches, launching without all candidate graphics is acceptable. The essay reads well as text; a v1.1 update can add graphics. Do not defer launch indefinitely in pursuit of graphics-complete.
+- The landing-copy rewrite can slot in any time after the consistency pass; it's independent of the graphics pass.
+- The author's final review should not be rushed. It is the last filter before anything touches the site.
+
+### A principle worth holding
+
+The essay is a design document inviting engagement, not a consensus document. Launch is when the invitation becomes available. A good version shipped is better than a perfect version in progress. If polish passes begin to resist landing, the correct move is to ship and iterate rather than polish further.
+
+---
+
+*End of spec v0.7. Revise directly in this file as decisions are made.*
