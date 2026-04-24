@@ -4,7 +4,7 @@
 **Scope:** The long-form essay at `/proposal`, from the end of the drafting session through launch on the site.
 **Parent document:** `docs/site-spec.md` (authoritative). This working spec does not duplicate anything from the site spec; it extends it for the post-drafting phase only.
 **Locked essay source:** `docs/proposal-essay.md`. All chapter numbers below refer to that file.
-**Status:** Draft v1.0 of the essay is locked. Citation pass and consistency pass complete (see § 2.1 and § 2.2). Landing-copy pass, spec updates, and site-integration work remain.
+**Status:** Draft v1.0 of the essay is locked. Citation pass, consistency pass, landing-copy pass, and site/CC spec update pass all complete (see § 2.1, § 2.2, § 2.3, § 2.4). Author's final review (§ 2), graphics pass (§ 2.5), and site-integration work (§ 2.6) remain.
 
 ---
 
@@ -107,43 +107,71 @@ The consistency pass is complete as of the April 2026 session, immediately follo
 
 ---
 
-### 2.3 Landing-copy pass
+### 2.3 Landing-copy pass — complete
 
-After the essay is locked and citations are verified, the landing copy at `src/content/landing.ts` should be reviewed against the essay's final decisions. Most of the landing copy holds, but specific items need attention:
+The landing-copy pass is complete as of the April 2026 session. Scope: reconcile `src/content/landing.ts` against the essay's final decisions (citation pass and consistency pass) and extend the "not X, it is Y" construction reduction to the landing copy. Seven edits applied.
 
-- **"A cleaner arrangement is possible"** in the thesis. The essay closes Chapter I on *"A better arrangement is possible."* The landing thesis uses *"cleaner."* Decide which is canonical — likely *better*, matching the essay — and update the landing.
-- **"An audition for an audition"** in the thesis. This was a deliberately sonic phrase from the landing copy; the essay did not carry it forward. The essay's register shifted from New Yorker to Works in Progress, and this phrase is the one most New-Yorker-register moment in the landing copy. Decide whether to retain it (the landing page operates at compression where a sonic move is defensible) or replace with something more in the WiP register.
-- **Rivalry examples in the landing copy.** The landing uses *Ohio State and Michigan*, *Texas and Texas A&M*, *USC and Notre Dame*. The essay uses *The Game, the Iron Bowl, the Egg Bowl* as the core three. The examples don't need to match, but the landing might benefit from referencing at least one rivalry by its canonical name to match the essay's register.
-- **"What else" section pullquote.** *"Staying becomes a strategy, not a sacrifice."* This was preserved through the essay's rewrite. Verify the phrasing is still accurate to the essay's player-retention argument, which lives implicitly in Chapter IV's promotion-and-relegation logic.
-- **Figcaption on the Champions Field.** Currently names Notre Dame, BYU, Tulane, and James Madison as the CFP-exclusion case. The essay in Chapter I uses Boise State 2024 as its concrete CFP-expansion case. The two examples are complementary, not contradictory. Verify they stay distinct and do not create a conflict.
-- **Champions Field figcaption — 36-sports Stanford reference.** Chapter I adds *"Stanford, whose 36 varsity sports programs are located in northern California"* — the landing should probably match or at least not conflict.
-- **Newsletter copy.** The essay's Chapter IX ends with *"I'd love to hear what you think"* — a warm close. The landing's newsletter copy is currently *"Occasional dispatches on the proposal and its reception."* These are in different registers but both defensible. No action required unless the author wants the landing's newsletter copy to match the essay's warmer Chapter IX register.
+**Edits applied:**
+
+- **Thesis (line 33):** *"There is a cleaner arrangement"* → *"There is a better arrangement."* Matches the essay's Chapter I close and the essay's consistent use of *better* as the proposal's framing.
+- **The problem, paragraph 3 (line 52):** *"One Group of Five bid in a field of twelve is not access; it is decoration."* → *"One Group of Five bid in a field of twelve is decoration."* Dropped the *"not X; it is Y"* contrast half; the word *decoration* against the reader's implied expectation of *access* carries the contrast implicitly.
+- **The proposal, paragraph 2 (line 62):** *"Membership is earned and lost on the field, not in a boardroom."* → *"Membership is earned and lost on the field."* Dropped the *"not in a boardroom"* half; the paragraph's framing of conference champions entering the promotion playoff carries the anti-boardroom implication.
+- **Why it works, paragraph 2 (line 72):** *"A 4-6 Champions Conference program is not playing out the string; it is playing for its place in the league."* → *"A 4-6 Champions Conference program is playing for its place in the league."* Dropped the *"not playing out the string"* half; the preceding sentence (*"Relegation gives the bottom of the standings stakes the current system cannot offer"*) already implies the contrast.
+- **Why it works, paragraph 3 (line 73):** Rivalry examples changed from *"Ohio State and Michigan. Texas and Texas A&M. USC and Notre Dame."* to *"The Game. The Iron Bowl. The Egg Bowl."* Canonical names match the essay's Chapter VI register and compress cleanly for the landing's scale.
+- **What else, paragraph 1 (line 83):** *"Staying becomes a strategy, not a sacrifice."* → *"Staying is a strategy."* Matches the pullquote revision below.
+- **What else pullquote (line 87):** *"Staying becomes a strategy, not a sacrifice."* → *"Staying is a strategy."* Preserves the argument (staying as the strategic choice under the proposal) while eliminating the construction. The pullquote is the landing's most-emphasized text; the construction needed to be removed there as a priority.
+
+**Retained deliberately:**
+
+- **"An audition for an audition" (line 31).** The working spec flagged this as the landing's most New-Yorker-register moment, not carried forward into the WiP-register essay. Retained because the landing page operates at compression where a sonic move is defensible; the essay's Chapter I has the space to make the argument substantively and doesn't need the compressed sonic move.
+- **Figcaption Notre Dame/BYU/Tulane/James Madison example (line 41).** The example is complementary to Chapter I's Boise State autobid example — one illustrates autobid inclusion (Boise State 2024), the other illustrates autobid exclusion (Notre Dame/BYU 2025). Both are accurate facets of the autobid structure. No conflict.
+- **Figcaption omission of the "36 varsity sports" Stanford reference.** The landing's argument body (*"Stanford, a school most of whose sports never leave the Pacific, plays in the ACC"*) makes the Stanford point at a different level of specificity than the essay. Different levels, not conflicting levels.
+- **Newsletter copy.** The newsletter and Chapter IX serve different functions — utility vs. conversational sendoff. Different registers are appropriate.
+
+**Construction pattern extension.** The anti-*"not X, it is Y"* rule applied to the essay during the consistency sub-pass was extended to the landing. All four construction instances in the landing copy were revised. The landing no longer carries any "not X, it is Y" or "X, not Y" constructions. The 1-instance essay retention (line 123, *"This is not sentimentality; it is structural preservation"*) remains the only instance across both the essay and the landing; the landing has zero.
+
+**Decisions from this pass that should not be revisited:**
+
+- Canonical rivalry names on the landing page (The Game / Iron Bowl / Egg Bowl) match the essay's Chapter VI register. Future edits should not reintroduce the school-name-pair form (*Ohio State and Michigan*) unless a new rhetorical purpose warrants it.
+- The *"audition for an audition"* retention is deliberate; it's the one intentional register variance between landing and essay. Future edits should not "correct" it toward WiP register without reconsidering the landing's compression-tolerant context.
+- The pullquote change (*"Staying becomes a strategy, not a sacrifice"* → *"Staying is a strategy"*) is load-bearing for the landing's what-else section. Future revisions should preserve the three-word version; reverting to the longer version reintroduces the construction.
 
 ---
 
-### 2.4 Site spec and CC spec updates
+### 2.4 Site spec and CC spec updates — complete
 
-The site spec (`docs/site-spec.md`) and CC spec (`docs/champions_conference_spec.md`) both need updates reflecting decisions made during the drafting session. Cleanest to do this in a dedicated short session after the essay's final state is locked.
+Both specs were updated in the April 2026 session, bringing them into alignment with the essay's final state. Site spec bumped from v0.7 to v0.8; CC spec updated with terminology renames and a Notre Dame/UConn section rewrite. Glossary addition deferred to the `/spec` build session per prior decision.
 
-#### Site spec, bump to v0.7
+#### Site spec updates (v0.7 → v0.8)
 
-- **§ 2 Voice note.** Currently reads *"Closer to a New Yorker essay than an ESPN column."* Update to reflect the Works in Progress register the essay actually uses. Proposed phrasing: *"Closer to a Works in Progress essay than an ESPN column. Authoritative but quirky; plainspoken but careful; willing to name the joints of an argument rather than conceal them."*
-- **§ 6 The Proposal.** Update the tentative chapter list to match the nine chapters as drafted. Chapter titles as they appear in the essay file. Possibly add a note that the essay ran long (~10,700 words) and that site-design decisions should account for the length.
-- **§ 11 Open questions.** Several items can be resolved or closed:
-  - *Chapter TOC vs spec TOC — shared component or separate?* Resolved to *cousins, not shared* during drafting. Note the resolution.
-  - *Landing-page oxblood budget.* Resolved in v0.6; no change.
-- **§ 11 add new items if they emerge from the citation/consistency passes.**
+Eight edits applied to `docs/site-spec.md`:
+
+- **§ 2 Voice note.** Added the *"X is not A; it is B"* construction rule to the standing constraints list. The paragraph now names it explicitly as reserved for one or two load-bearing instances across the project, with the default move being to drop the *"not A"* half. Includes the automated grep pattern (`is not .*; it is` or `are not .*\. They are`) that future sessions can use to catch reintroductions.
+- **§ 6 Structural decisions, graphics candidates.** Chapter VII graphic candidate updated from *"Vanderbilt revenue comparison"* to *"Mississippi State revenue comparison"* with a note explaining the swap (Mississippi State is public and FOIA-accessible, closing the data dependency that threatened the chapter).
+- **§ 6 Chapter VI summary.** *"Red River Shootout"* → *"Red River Rivalry"* in the canonical rivalry list, matching the citation pass's name correction.
+- **§ 6 Chapter VII summary.** *"Vanderbilt named"* → *"Mississippi State named"* with a short note on the citation-pass swap.
+- **§ 6 Writing notes on landing page.** Updated from pending-future-work framing ("will need a targeted rewrite") to completed-work framing, referencing the landing-copy pass's specific edits.
+- **§ 11 Open questions.** The *"v0.7: Landing-copy tone drift"* item marked resolved in v0.8, with a brief summary of what the landing-copy pass accomplished.
+- **§ 13 Recommended order of operations.** Items 2 (citation pass), 3 (consistency pass), and 4 (landing-copy rewrite + CC spec updates) marked complete with brief summaries of the outcome.
+- **Version footer.** v0.7 → v0.8.
 
 #### CC spec updates
 
-The CC spec was written before the drafting session and some of its language will want to shift to match the essay's terminology. Not urgent; handle during the `/spec` build session.
+Three edit clusters applied to `docs/champions_conference_spec.md`:
 
-- **"Relegation Match" should become "Boundary Game" throughout.** This is a proper-noun rename and should propagate. The word *match* survives only in the Premier League comparison context.
-- **"Promotion Playoff" capitalization.** Already capitalized in the CC spec; verify consistency.
-- **"Champions Conference" capitalization.** Same.
-- **Possible addition: a short glossary.** The CC spec could benefit from a one-page glossary naming Boundary Games, Promotion Playoff, Champions Conference, and the key named rivalries. Good UX for a reader arriving at the spec cold from the essay.
-- **Notre Dame section.** The CC spec notes Notre Dame as an open question. The essay treats Notre Dame as *a rule with a negotiation attached* — the rule applies (full ACC membership required), but the negotiation is harder than the rule. Update the CC spec to reflect this more settled position, flagging the negotiation as the remaining open piece rather than the rule itself.
-- **UConn note.** Should be added symmetrically to the Notre Dame section — same rule applies; leverage differs.
+- **Terminology rename: Relegation Match → Boundary Game.** All 16 instances renamed, covering both singular and plural forms. Section header *"Relegation Match Details"* became *"Boundary Game Details."* The rename was mechanical (via sed) and an initial pluralization error (*Matches* → *Gamees*) was caught and fixed in a second pass. Final state: 16 Boundary Game instances, all correctly capitalized, zero Relegation Match remaining.
+- **Notre Dame section rewrite.** The section at line 452 was reframed from *"⚠️ OPEN DISCUSSION"* to *"A Rule With a Negotiation Attached"* — the framing the essay's Chapter VIII established. Structure now documents (a) the rule, (b) why the rule is clean, (c) Notre Dame's specific negotiation shape, (d) UConn's symmetric-rule-asymmetric-stakes treatment, and (e) the closing honest distinction between what's resolved (the rule) and what's open (the negotiations, which the design cannot by itself produce consent for). UConn promoted from a three-bullet "UConn Note" appendix to a full parallel subsection matching Notre Dame's structure.
+- **Capitalization verification.** *Promotion Playoff* (38 instances) and *Champions Conference* (61 instances) both uniformly capitalized across the CC spec. No slips. One lowercase *"boundary games"* that slipped in during the rename was caught and fixed.
+
+#### Deferred to the `/spec` build session
+
+- **Glossary addition.** A one-page glossary naming Boundary Games, Promotion Playoff, Champions Conference, and the key rivalries would be good UX for readers arriving at the spec cold from the essay. Deferred because glossary design interacts with `/spec` page layout decisions that belong to the build session (§ 2.6).
+
+#### Decisions from this pass that should not be revisited
+
+- The terminology is *Boundary Game* (singular) and *Boundary Games* (plural), proper-noun capitalized throughout the CC spec. Future edits should not revert toward *Relegation Match*.
+- The Notre Dame / UConn section's framing ("a rule with a negotiation attached") matches the essay's Chapter VIII and closes the prior OPEN DISCUSSION flag. Future edits should not reintroduce the flag unless the rule itself becomes genuinely contested again; negotiation-difficulty updates belong in the body prose, not in a section-level status marker.
+- The Mississippi State / Vanderbilt swap is documented in both the site spec and the CC spec (where the CC spec did not carry the example, no swap was needed). Future edits should reference Mississippi State as the Chapter VII revenue example; Vanderbilt retained only in explanatory context about the swap itself.
 
 ---
 
@@ -245,13 +273,13 @@ Things that emerged during drafting that were flagged for later consideration bu
 
 Future sessions working on the proposal should:
 
-1. Load this file into context alongside the essay source (`docs/proposal-essay.md`) and the site spec.
-2. Choose one of the outstanding tasks in § 2 and work through it. § 2.1 (citation pass) and § 2.2 (consistency pass) are complete. The natural next editorial task is § 2.3 (landing-copy pass), which should align the landing page at `src/content/landing.ts` against the essay's final decisions. § 2.4 (site-spec and CC-spec updates) can be run in parallel or as a separate short session.
+1. Load this file into context alongside the essay source (`docs/proposal-essay.md`), the landing copy (`src/content/landing.ts`), the site spec (`docs/site-spec.md`), and the CC spec (`docs/champions_conference_spec.md`).
+2. Choose one of the outstanding tasks in § 2 and work through it. § 2.1 (citation pass), § 2.2 (consistency pass), § 2.3 (landing-copy pass), and § 2.4 (site / CC spec updates) are all complete. The recommended next task is to let the essay rest for a week or two, then do the author's final full review — which catches what the sweeps missed and should not be rushed. After that, § 2.5 (graphics pass) and § 2.6 (site integration) are the remaining substantive work items before launch.
 3. Update this spec at the end of the session with what was completed, what's still outstanding, and any new decisions or open questions.
-4. When the essay is ready for site integration, move from § 2.3–2.4 work into the § 2.6 build session.
+4. When the essay, landing, and both specs are ready for site integration, move into the § 2.6 build session.
 
 This spec is a working document. Edit directly as decisions are made.
 
 ---
 
-*End of working spec v1.3. Updated during the April 2026 consistency pass session and construction sub-pass.*
+*End of working spec v1.5. Updated during the April 2026 site / CC spec update session.*

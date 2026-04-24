@@ -287,7 +287,7 @@ The calendar now runs two distinct postseason tracks simultaneously:
 | Early Dec | Standings finalized, CFP bracket set | Conference championship games |
 | Mid Dec | CFP First Round (seeds 5-12 host) | Promotion Playoff: Play-in & Quarterfinals |
 | Late Dec/Jan 1 | CFP Quarterfinals (NY6 Bowls) | Promotion Playoff: Semifinals |
-| Early Jan | CFP Semifinals | Relegation Matches |
+| Early Jan | CFP Semifinals | Boundary Games |
 | Mid Jan | CFP National Championship | |
 
 ### Detailed Calendar (Based on 2025-26 Dates)
@@ -305,7 +305,7 @@ The calendar now runs two distinct postseason tracks simultaneously:
 | **Dec 31 (Wed)** | CFP Quarterfinal (Cotton Bowl) | -- |
 | **Jan 1 (Thu)** | CFP Quarterfinals (Orange, Rose, Sugar) | -- |
 | **Jan 2 (Fri)** | -- | Final Non-CFP Bowl Games |
-| **Jan 4 (Sat)** | -- | **Relegation Matches** (neutral sites) |
+| **Jan 4 (Sat)** | -- | **Boundary Games** (neutral sites) |
 | **Jan 8-9 (Thu-Fri)** | CFP Semifinals (Fiesta, Peach) | -- |
 | **Jan 19 (Mon)** | CFP National Championship | -- |
 
@@ -316,7 +316,7 @@ The calendar now runs two distinct postseason tracks simultaneously:
 - **Quarterfinals (Dec 19-20)**: Runs parallel to CFP First Round on different campuses
 - **Semifinals (Dec 28)**: Prime standalone Saturday before NY6 bowls
 
-**Relegation Matches: January 4 (Saturday)**
+**Boundary Games: January 4 (Saturday)**
 - CC #21 vs Promotion Playoff #4
 - CC #22 vs Promotion Playoff #3
 - **Neutral site venues** (rotating host cities or fixed locations TBD)
@@ -329,7 +329,7 @@ The calendar now runs two distinct postseason tracks simultaneously:
 |-------------|-----------------|
 | #1-12 | College Football Playoff |
 | #13-20 | Bowl eligible (NY6 not used for CFP, other premium bowls) |
-| #21-22 | Relegation Match → if they lose, season ends |
+| #21-22 | Boundary Game → if they lose, season ends |
 | #23-24 | Auto-relegated; bowl eligible if 6+ wins (unlikely given CC schedule difficulty) |
 
 **Conference Championships:**
@@ -351,8 +351,8 @@ The calendar now runs two distinct postseason tracks simultaneously:
 |----------|---------|
 | #23 | Automatically relegated |
 | #24 | Automatically relegated |
-| #21 | Plays Relegation Match vs. Promotion Playoff #4 |
-| #22 | Plays Relegation Match vs. Promotion Playoff #3 |
+| #21 | Plays Boundary Game vs. Promotion Playoff #4 |
+| #22 | Plays Boundary Game vs. Promotion Playoff #3 |
 
 ### Promotion (Regular Conferences → Champions Conference)
 
@@ -360,10 +360,10 @@ The calendar now runs two distinct postseason tracks simultaneously:
 |----------|---------|
 | Promotion Playoff #1 (Semifinal Winner) | Automatically promoted |
 | Promotion Playoff #2 (Semifinal Winner) | Automatically promoted |
-| Promotion Playoff #3 (Semifinal Loser) | Plays Relegation Match vs. Champions #22 |
-| Promotion Playoff #4 (Semifinal Loser) | Plays Relegation Match vs. Champions #21 |
+| Promotion Playoff #3 (Semifinal Loser) | Plays Boundary Game vs. Champions #22 |
+| Promotion Playoff #4 (Semifinal Loser) | Plays Boundary Game vs. Champions #21 |
 
-### Relegation Match Details
+### Boundary Game Details
 - Single elimination game
 - **Neutral site venue** (rotating host cities or fixed bowl-style locations)
 - Winner earns/retains Champions Conference spot
@@ -444,54 +444,45 @@ Seed Score =
 **Key Insight**: No championship game needed. Both semifinal winners are automatically promoted, so the semifinals ARE the meaningful final round.
 
 **Determining 3rd and 4th Place:**
-- Semifinal losers' seeding for relegation matches based on original seed
+- Semifinal losers' seeding for Boundary Games based on original seed
 - Higher original seed = #3 (plays Champions #22)
 - Lower original seed = #4 (plays Champions #21)
 - No 3rd place game required (could add for revenue if desired)
 
-### Notre Dame Status ⚠️ OPEN DISCUSSION
+### Notre Dame and UConn: A Rule With a Negotiation Attached
 
-Notre Dame presents a unique challenge as the only major program with true football independence.
+The two current FBS football independents — Notre Dame and UConn — are not exceptions to the system; they are programs for which the system's rule is clear but whose implementation involves negotiation. This section documents the rule, explains why it applies identically to both programs, and names the negotiation piece honestly as the piece that remains hard.
 
-**Current State:**
-- Independent in football (no conference)
-- Partial ACC member for all other sports
-- Plays 5 football games/year vs ACC opponents
-- Historic program likely to be in initial Champions Conference 24
+**The rule.**
 
-**Recommended Approach: Full ACC Membership (Option A)**
+Access to the Champions Conference pathway requires conference membership, because the pathway runs through conferences. A program that wants the opportunity to earn its way into the Champions Conference — via its conference's annual Promotion Playoff berth — must be a full football member of a regular conference. The rule applies identically to Notre Dame and UConn. There is no special-case carve-out for independents.
 
-Notre Dame joins ACC fully for all sports including football.
+Operationally: if a program is outside the Champions Conference and wants in, it must win its conference and then win the Promotion Playoff. To win a conference, one must be in a conference.
 
-- If in Champions Conference: ACC is their home for relegation purposes
-- If not in Champions Conference: They compete for ACC championship and Promotion Playoff entry like everyone else
-- 2 rivalry games could include USC, Michigan, Stanford, Navy, or Purdue
-- No special rules needed
+**Why the rule is clean.**
 
-**Why This Makes Sense:**
-- Notre Dame's other sports are already in ACC
-- Simplifies the entire system
-- Consistent with core principle: merit-based, no special treatment
-- "You want access to the CFP? Join the system."
+The proposal's central claim is that merit is determined on the field, and the field is organized into conferences whose champions compete for promotion. Admitting independents into this structure without requiring conference membership would create two paths to the Champions Conference — one meritocratic, one negotiated — and the proposal's design explicitly refuses that bifurcation.
 
-**Why This Is Controversial:**
-- Notre Dame's independence is central to their identity (since 1887)
-- Lucrative NBC contract depends on independent scheduling flexibility
-- Would require significant negotiation/pressure to achieve
-- Notre Dame has historically resisted full conference membership at all costs
+The rule also provides internal consistency with the rest of the proposal's architecture: every program faces the same structural incentives, every program has the same path forward, no program is grandfathered or excepted based on institutional status or historical independence.
 
-**Alternative if Notre Dame Refuses:**
-- They simply cannot participate in the Promotion Playoff if outside Champions Conference
-- If relegated from Champions Conference with no home conference, they're effectively locked out
-- No path back to CFP eligibility
-- Their choice: join the system or be left behind
+**Notre Dame: the rule and its negotiation.**
 
-**UConn Note:**
-- UConn is the only other current FBS independent
-- Same rules apply: affiliate with a conference or no Promotion Playoff access
-- Less controversial given UConn's smaller profile
+- **Current state:** Independent in football since 1887; full ACC member for all non-football sports since 2013; plays five football games per season against ACC opponents since 2014; has an NBC broadcast arrangement that was extended through 2029 and that is structurally bound up with the program's continued independence.
+- **Under the proposal:** Notre Dame joins the ACC fully for football, with the same rights and obligations as every other ACC member. If in the Champions Conference: the ACC is their home for relegation purposes. If not in the Champions Conference: they compete for the ACC championship and enter the Promotion Playoff like every other ACC program.
+- **The negotiation:** Notre Dame has spent over a century building institutional identity around independence; the NBC arrangement depends on the scheduling flexibility independence provides; full conference membership has been historically refused at every prior opportunity. The rule being clean does not make the negotiation easy. Getting Notre Dame to agree requires either significant leverage (the proposal's CFP exclusivity is the leverage) or a structural compromise the design does not currently permit.
+- **If Notre Dame refuses:** The consequence is not a special carve-out; it is exclusion from the Champions Conference pathway. Notre Dame plays an independent football schedule outside the new structure, cannot enter the Promotion Playoff, and does not compete for the CFP because the CFP is Champions Conference only. This is a real consequence and the proposal does not soften it. The essay's Chapter VIII names this as an open question whose resolution is not a rule problem but an implementation problem.
+- **Candidate rivalry games (if Notre Dame accepts):** Two of USC, Michigan, Stanford, Navy, Purdue. ACC-internal rivalry selection handled through the same home-conference mechanism that governs every other program.
 
-*This remains an open discussion point. The recommendation is Option A (force full ACC membership), but implementation would require significant negotiation and may face resistance.*
+**UConn: symmetric rule, asymmetric stakes.**
+
+- **Current state:** FBS football independent since 2020. The only other FBS football independent besides Notre Dame as of 2025 (following UMass's departure for the MAC).
+- **Under the proposal:** Same rule applies. UConn must affiliate with a conference as a full football member to access the Promotion Playoff. Most natural candidates: the American, the MAC, or a reconstituted Big East football arrangement.
+- **The negotiation:** Different shape than Notre Dame's. UConn lacks the NBC contract, the century of independent identity, and the leverage that Notre Dame brings to the table. UConn's independence is recent (2020) and pragmatic rather than identity-defining. A conference affiliation is almost certainly less controversial for UConn than for Notre Dame; the asymmetry between the two programs' negotiations is large even though the rule is identical.
+- **If UConn refuses:** Same consequence as Notre Dame's refusal — exclusion from the Champions Conference pathway. UConn's smaller profile makes this consequence less publicly costly for the system but equally real for UConn.
+
+**What's resolved and what's open.**
+
+The rule is resolved: full conference membership required for both programs, no special cases. The negotiations are open — not in the sense that the design hasn't decided what to ask for, but in the sense that the design cannot by itself produce the consent that negotiated outcomes require. The essay's Chapter VIII treats this honestly: open questions are not openness about the rule but openness about whether the affected programs will accept what the rule implies.
 
 ---
 
@@ -543,7 +534,7 @@ Notre Dame joins ACC fully for all sports including football.
 **Champions Conference-Specific Revenue:**
 - CC media rights deal (10 premium games per team)
 - CFP revenue (all 12 spots are CC teams)
-- Relegation Match TV rights
+- Boundary Game TV rights
 - CC licensing/branding
 
 **Retained by Schools:**
@@ -614,7 +605,7 @@ Borrowing from NCAA Tournament basketball distribution:
 | Promotion Playoff Quarterfinal Win | 1 |
 | Promotion Playoff Semifinal Appearance | 1 |
 | Promotion to Champions Conference | 2 |
-| Winning Relegation Match | 1 |
+| Winning Boundary Game | 1 |
 
 **Key Features:**
 - Units go to the **conference**, not the individual school
@@ -624,7 +615,7 @@ Borrowing from NCAA Tournament basketball distribution:
 
 **Example:**
 - Sun Belt's James Madison makes Promotion Playoff
-- JMU wins Quarterfinal, loses Semifinal, wins Relegation Match
+- JMU wins Quarterfinal, loses Semifinal, wins Boundary Game
 - Sun Belt earns: 1 (qualifier) + 1 (QF win) + 1 (SF appearance) + 1 (relegation win) = 4 units
 - Those units generate revenue distributed to ALL Sun Belt schools
 
@@ -758,7 +749,7 @@ CC teams remain members of their traditional conferences for all other sports. C
 - Football scheduling, media rights, postseason
 - Football-specific revenue distribution
 - Promotion/relegation administration
-- Relegation Match logistics
+- Boundary Game logistics
 
 **Traditional Conferences Handle:**
 - All other sports (basketball, baseball, Olympic sports, etc.)
@@ -863,7 +854,7 @@ CC teams remain members of their traditional conferences for all other sports. C
 - No games on Sundays during NFL season
 - Promotion Playoff: Play-In Dec 13, Quarterfinals Dec 19-20, Semifinals Dec 28
 - CFP: First Round Dec 19-20, Quarterfinals Dec 31/Jan 1, Semifinals Jan 8-9, Championship Jan 19
-- **Relegation Matches: January 4 (Saturday)** - neutral site venues
+- **Boundary Games: January 4 (Saturday)** - neutral site venues
 - Bowl eligibility: CC #13-20 eligible for premium bowls; CC #23-24 eligible if 6+ wins (unlikely)
 
 #### ~~Relegated Team Logistics~~ ✓
@@ -901,7 +892,7 @@ CC teams remain members of their traditional conferences for all other sports. C
 - Promotion Playoff Play-In: Dec 13 (Sat)
 - Promotion Playoff Quarterfinals: Dec 19-20 (Fri-Sat, parallel to CFP First Round)
 - Promotion Playoff Semifinals: Dec 28 (Sat)
-- Relegation Matches: Jan 4 (Sat) at neutral sites
+- Boundary Games: Jan 4 (Sat) at neutral sites
 - Bowl eligibility resolved for all CC standings positions
 
 #### ~~Revenue Structure~~ ✓
