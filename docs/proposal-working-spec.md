@@ -4,7 +4,7 @@
 **Scope:** The long-form essay at `/proposal`, from the end of the drafting session through launch on the site.
 **Parent document:** `docs/site-spec.md` (authoritative). This working spec does not duplicate anything from the site spec; it extends it for the post-drafting phase only.
 **Locked essay source:** `docs/proposal-essay.md`. All chapter numbers below refer to that file.
-**Status:** Draft v1.0 of the essay is locked. Citation pass, consistency pass, and site-integration work remain.
+**Status:** Draft v1.0 of the essay is locked. Citation pass and consistency pass complete (see § 2.1 and § 2.2). Landing-copy pass, spec updates, and site-integration work remain.
 
 ---
 
@@ -22,120 +22,88 @@ The drafting session established the essay's voice, structure, and argument. Eve
 
 ## 2. Tasks by type
 
-### 2.1 Citation pass
+### 2.1 Citation pass — complete
 
-The citation pass verifies specific external claims in the essay and attaches inline links or references where appropriate. The rule the essay is written under: **inline links on specific claims, no footnotes, no bibliography.** This matches the Works in Progress model. The citation rate should stay low — roughly 8–15 inline links across the whole essay, not dozens. Claims that are the essay's own argument do not get citations; claims that could in principle be verified by a skeptical reader do.
+The citation pass is complete as of the April 2026 session. Model followed: **inline links on specific external claims, no footnotes, no bibliography.** Markdown link syntax (`[anchor](url)`) throughout the essay source file. The final essay carries **18 inline links** across 9 chapters — slightly above the 8–15 target the spec originally set, but the author was comfortable exceeding the cap where claims earned citations. Primary sources were preferred where available (conference announcements, school athletics sites, government pages like army.mil); mainstream industry reporting (ESPN, Sports Illustrated, CBS Sports, Sports Media Watch, Sportico) was used where primary sources weren't available or didn't carry the rhetorical framing the claim needed.
 
-Citations are worked chapter by chapter. The session proposes citations; the author checks every one and flags claims that want a citation the session missed.
+**Prose edits the citation pass surfaced and locked (19 total):** Every prose edit below was driven by a factual check the citation pass performed. These are in addition to the citations themselves.
 
-#### Chapter I — The problem
+- **Chapter I:** Media-deal language reframed to total distributions rather than per-rights-deal (both Big Ten and SEC sentences); "ten football-bearing programs" → "twelve" at Pac-12 dissolution; Oregon State / Washington State 2024 characterization expanded to reference the Mountain West scheduling alliance; Boise State 2024 CFP rewrite (top-five conference champions autobid structure, No. 3 seed by virtue of autobid, lost to Penn State in quarterfinals); "two orders of magnitude" softened to "more than an order of magnitude."
+- **Chapter II:** "Half-century" → "three decades" on the Premier League turnover precedent.
+- **Chapter IV:** "Since 2013" → "since 2014" on Notre Dame's partial ACC football schedule (2013 was the broader non-football ACC membership; the football scheduling arrangement began in 2014).
+- **Chapter V:** Autobid coverage claim softened from "the volume of coverage that the quarterfinals received" to "drew enough sustained coverage that the CFP altered the autobid structure for 2026" (verifiable consequence replaces unverifiable volume comparison).
+- **Chapter VI:** Texas–Texas A&M attribution corrected (Texas A&M left the Big 12, not Texas); Army-Navy softened from "older than every program" to "older than nearly every program" (to accommodate Michigan 1879 and Notre Dame 1887, which predate Army-Navy 1890); "Red River Shootout" → "Red River Rivalry" (current canonical name since 2005); "World's Largest Outdoor Cocktail Party" retained despite being dropped from official usage since 1988, because it remains the rivalry's recognizable popular name.
+- **Chapter VII:** Vanderbilt → Mississippi State (seven instances across the chapter). See § 3.3 for the rationale.
 
-Most citation-heavy chapter in the essay. Order of importance:
+**The one piece of future-facing citation work.** The Chapter VII revenue-loss example now uses Mississippi State, which — being a public FOIA-accessible SEC school — has financial data that is obtainable without reporter contacts or paywalled sources. The current essay cites Mississippi State's 1932 SEC membership and the general structural claim via SEC-distribution sources already linked in Chapter I. If the author later wants to sharpen the Chapter VII claim with specific Mississippi State football-media-revenue numbers (e.g., in a future revision or supporting appendix), the reporter-contact path and FOIA route remain open and would now return data on the named program rather than on a private-school proxy. Not required for publication; available as a later sharpening.
 
-- **Big Ten 2023 media deal (~$1B/year) and SEC equivalent.** The anchor numbers for the chapter's diagnosis. Primary sources or credible industry reporting (Sports Business Journal, The Athletic, Associated Press). The figures matter precisely; if they've shifted materially since the claim was written, the sentences may want retuning.
-- **Pac-12 dissolution timeline.** UCLA/USC announcement summer 2022 (verify exact date), Colorado to Big 12 summer 2023, Oregon/Washington to Big Ten same window, Utah/Arizona/Arizona State to Big 12 following, and the Pac-2 football-only-round-robin arrangement of 2024–25 (verify dates on final seasons). The "two-year span" claim rests on the sequence; the citation pass should produce one good timeline source.
-- **Pac-2 single-game conference schedule.** Verify that Oregon State and Washington State played only one conference football game per season during 2024 and 2025; confirm whether they played each other non-conference as well.
-- **Number of Pac-12 football-bearing programs at the point of dissolution.** The text says "ten football-bearing programs." The original Pac-12 at dissolution had twelve (the original ten plus Colorado, which had been a member since 2011, plus Utah). This sentence may need the number changed to twelve or rephrased to "the football-bearing programs of the Pac-12."
-- **Pacific-12's 1915 origin, SEC's 1932, Big Ten's 1896.** Verifiable from the conferences' own materials; one citation per claim, or a single combined source.
-- **Stanford's 36 varsity sports.** Verify the current figure on Stanford's athletics website.
-- **CFP expansion announcement (2022) and first running (2024).** Verify exact dates.
-- **CFP four-team era distribution of bids (2014–2023).** The claim that bids went "almost entirely from the SEC, the Big Ten, and two or three other recurring contenders" could be tightened to a specific count.
-- **Boise State 2024 CFP result.** Undefeated in the Mountain West as MW champion, included via autobid, lost in the first round. Verify all three claims.
-- **"Two orders of magnitude" on economic scale differences between football and other sports.** This is the chapter's most arithmetically-loose claim. Either cite to a specific study or soften to "an order of magnitude or more."
+**Link inventory by chapter** (for future consistency-pass reference):
 
-#### Chapter II — The proposal, in outline
+- **Ch I (5):** Big Ten revenue (Sportico); SEC distributions (SEC); Pac-12 dissolution (ESPN); Stanford 36 sports (Stanford Facts); CFP expansion (CFP).
+- **Ch II (1):** Premier League turnover rule (Premier League).
+- **Ch IV (1):** Notre Dame 1887 independence (fightingirish.com).
+- **Ch V (4):** 2023 Florida State (ESPN); 2017 UCF (SI); 2014 TCU/Baylor retrospective (ESPN); 2026 autobid rule change (SI Boise State).
+- **Ch VI (3):** Army-Navy 1890 (U.S. Army); Backyard Brawl restoration (Pitt); Texas–Texas A&M 2024 renewal (ESPN recap).
+- **Ch VII (3):** SEC Championship Game history (ESPN retrospective); SEC/Big Ten CCG valuation (Sports Media Watch); Oklahoma/Texas to SEC 2024 (ESPN).
+- **Ch VIII (1):** Notre Dame NBC arrangement and independence (ESPN Bevacqua interview).
+- **Ch III and Ch IX:** No external citations. Chapter III is the proposal's own mechanics; Chapter IX is the closing invitation.
 
-- **Premier League turnover rate.** Three of twenty (15%) annually. Verifiable through the Premier League's own rules or any football governance source. The "half-century" figure is wrong; Premier League founded 1992 so it's about 33 seasons as of 2025–26. The essay says *"the evidence from its half-century under that system"* — this should be changed to *"the evidence from its thirty-some years under that system"* or *"three decades"* in both Chapter II and Chapter IV.
+**Decisions made during the citation pass that should not be revisited.**
 
-No other external claims in Chapter II needing citation. The rest is the proposal's own structure.
-
-#### Chapter III — How the Champions Conference works
-
-Almost entirely internal to the proposal. No external citations needed beyond possibly one link back to the CC spec for readers who want the exact rotation mechanics. Internal `/spec` link at the end of the chapter, if it earns its place.
-
-#### Chapter IV — How promotion and relegation work
-
-- **Premier League turnover at 15% / three decades.** Same fix as Chapter II. These should match between the two chapters after the citation pass.
-- **Notre Dame's football independence since 1887.** Verify the specific year. Notre Dame's ACC partial-membership date (2013) also verify.
-- **The specific Conference list (six power conferences, four G5 conferences) totaling ten Promotion Playoff entries.** Verify the math works under the 2012 reset. The six: SEC, Big Ten, Big 12, ACC, Pac-12, American. The four G5: Mountain West, Sun Belt, Conference USA, MAC. The key question for the citation pass is whether this math holds across the 2012 conference map the proposal assumes — it should, but verify there are no edge cases (independents, transitional programs) that break the count.
-
-#### Chapter V — The CFP, re-imagined
-
-- **2023 Florida State, undefeated ACC, left out of four-team playoff.** Verify season record (did lose starting QB Jordan Travis to injury before playoff decision; the essay doesn't name this but the citation might).
-- **2017 UCF undefeated American season, not seriously considered for four-team playoff.** Verify.
-- **2014 TCU and Baylor Big 12 co-champions excluded in favor of Ohio State.** Verify.
-- **2024 CFP first-year autobid debate volume claim.** The sentence *"an argument that in the 2024 CFP's first year was the subject of roughly the volume of coverage that the quarterfinals received"* is subjective and should either be backed with one or two specific pieces of coverage or softened.
-
-#### Chapter VI — What's preserved
-
-- **USC-UCLA rivalry as a conference game ending with Pac-12 dissolution.** Verify 2024 was the final Pac-12 meeting; both have played as Big Ten members since.
-- **Backyard Brawl (West Virginia-Pittsburgh) interruption.** Verify dates — was interrupted when West Virginia left the Big East in 2012; restored 2022 as non-conference. Current essay says "over a decade" — tighten if possible.
-- **Texas-Texas A&M unplayed 2011 to 2024.** Verify the exact gap.
-- **Army-Navy as "a game older than every program in the Champions Conference and most of the Group of Five."** Army-Navy first played 1890. Verify the claim is structurally correct against program ages.
-- **Rivalry names — all confirmed as correct per the drafting session, but a copy-pass should verify canonical spelling.** "The Game" (Ohio State-Michigan), "Iron Bowl" (Alabama-Auburn), "Egg Bowl" (Ole Miss-Mississippi State), "Red River Shootout" (Oklahoma-Texas — note: also called the Red River Rivalry; pick one), "The World's Largest Outdoor Cocktail Party" (Florida-Georgia — this is the historical name; Florida and Georgia schools have both tried to distance from it over the years, but it's still the rivalry's popular name). The citation pass should land on each canonical name, ideally citing the rivalry's own history.
-- **Big Ten volleyball travel claim** — the specific list of Big Ten volleyball opponents. Verifiable through the conference's own schedule.
-
-#### Chapter VII — What's lost, and why that's acceptable
-
-Highest-stakes citation pass. Three specific claims need external sourcing:
-
-- **Vanderbilt's SEC media distribution under the current deal.** This is the chapter's most consequential factual claim. Needs the actual recent-year figure for Vanderbilt's football media revenue share from the SEC, and ideally a comparable figure for what their distribution would look like under the proposal's regional-form SEC arrangement. **The author has a reporter contact with relevant data (may be paywalled; workable). FOIA requests to public schools in the SEC would produce comparable figures for peer programs.** Not Vanderbilt directly (private school, not subject to FOIA), but a public SEC school in the bottom tier (Mississippi State, for example) would produce the data for a comparable program.
-- **SEC Championship Game as "one of the three or four most valuable individual properties in the sport."** Needs a credible source — SBJ, ESPN's own disclosed property rankings, or similar. Possibly citable to the broadcast rights values of the SEC Championship window.
-- **Vanderbilt's SEC membership since 1932.** Verify the exact year.
-- **Oklahoma and Texas to SEC in 2024.** Verify — announced 2021, effective 2024 season.
-- **USC and UCLA to Big Ten.** Announced 2022, effective 2024 season. Verify.
-- **SEC Championship Game thirty-three-year run.** First SEC Championship Game 1992. Verify the "thirty-three years" at time of writing is correct.
-- **Big Ten Championship Game first played 2011.** Verify.
-
-#### Chapter VIII — Open questions
-
-- **Notre Dame's 1887 football independence date.** Verify (same claim as Chapter IV; should match).
-- **Notre Dame's 2013 partial ACC scheduling arrangement.** Verify.
-- **NBC broadcast arrangement with Notre Dame.** Verify current status of the contract.
-- **UConn becoming FBS football independent in 2020.** Verify date and circumstances.
-- **CC spec's two candidate inaugural-selection methods.** Cross-reference to the CC spec file; the essay paraphrases and the citation pass should confirm the paraphrase is accurate.
-- **CC spec's Promotion Playoff seeding formula inputs.** Same — cross-reference to the CC spec.
-
-#### Chapter IX — An invitation
-
-No external citations. The chapter is entirely about the proposal's own posture.
+- The 18-link total is above the original 8–15 guideline but the author explicitly accepted the overage. Future consistency passes should not reflexively cut links to return to the original cap.
+- Rivalry-name treatment in Chapter VI (keeping "Cocktail Party" despite official discontinuation, swapping "Shootout" for "Rivalry") is locked.
+- The Mississippi State substitution in Chapter VII supersedes the earlier Vanderbilt decision recorded in § 3.3; the rationale is preserved there for completeness.
+- Retrospective sources (e.g., the ESPN 2014 TCU/Baylor piece) were accepted where they tell the story more cleanly than contemporaneous fragmentary coverage would.
 
 ---
 
-### 2.2 Consistency pass
+### 2.2 Consistency pass — complete
 
-Scope: single sweep of the full essay against the decisions accumulated during drafting. Many of these are small but collectively shape the essay's voice. Worked after the citation pass, because citation-pass edits may shift phrasings that change what consistency applies to.
+The consistency pass is complete as of the April 2026 session, immediately following the citation pass. Worked as a single sweep against the cited version of the essay. Twelve discrete edits landed.
 
-#### Voice and register
+**Voice and register (5 edits):**
+- Line 43 (Ch II): Removed *"The argument for the 2012 map is made later in the essay."* The following sentence already handles the "reader is entitled to know that up front" work; the forward-pointer was redundant.
+- Line 141 (Ch VII opening): Removed the *"preceding chapter made the case for what the proposal preserves; this chapter owes an accounting of what it doesn't"* construction. Replaced with a direct opening — *"What follows is that accounting"* — that does the same framing work without pointing at another chapter or meta-describing the current one.
+- Line 143 (Ch VII UCF paragraph): Removed *"The preceding chapter named this in the context of the CFP's replacement mechanism. It belongs in the accounting."* The UCF example carries the point directly; the chapter pointer and the "belongs in the accounting" connective were both redundant given the chapter's overall accounting conceit.
+- Line 183 (Ch VIII): *"open questions that this chapter does not name"* → *"open questions the proposal has not yet named."* The scope shift from chapter to proposal is more accurate to the claim (future contributors will find problems beyond what the proposal as a whole names, not just what Chapter VIII names).
+- Line 149 (Ch VII): Removed *"This is, structurally, the argument the essay has been making throughout — merit-based mobility is a better arrangement than conference-shopping — but it is also a real constraint..."* meta-reference. Let the *"merit-based mobility is a better arrangement than conference-shopping"* claim carry directly.
 
-- **Forward and backward chapter references.** The rule landed during drafting is that the essay does not point at other chapters in prose. Two instances remain in the locked text that should be caught:
-  - Chapter VII opening: *"The preceding chapter made the case for what the proposal preserves."* Tighten or remove.
-  - Chapter VII's UCF paragraph: *"The preceding chapter named this in the context of the CFP's replacement mechanism."* Tighten to something like *"Chapter V named this; it belongs here too"* — no, that still references. Probably: *"The selection committee's capacity to honor an exceptional single-season case was introduced in the CFP discussion. It belongs in the accounting."*
-  - General sweep: search the essay for "chapter" and eliminate any remaining pointer phrasings.
-- **First-person versus third-person voice.** First person (*I*, *I believe*) appears only where the author is taking personal responsibility for a contested claim. The third-person institutional voice (*the essay argues*, *the proposal's position is*) is the default. Scan for places where third-person was used reflexively and first person would serve, or vice versa. Chapter VII uses *I believe* once (on the realignment-as-mobility argument); Chapter IX uses first-person throughout.
-- **Meta-commentary about the essay's own structure.** Phrases like *"this is the beat where..."*, *"worth making carefully"*, *"chapter N is about"* should be cut anywhere they appear. The drafting process caught most instances but a final scan is worth doing.
-- **Flourish-after-claim.** Pattern: a paragraph lands its claim and then adds a rhetorical tail that extends the claim sonically rather than argumentatively. Several of these were cut in the edit rounds (the "teeth working" line in Chapter VII, the "essay's final chapter" sentence in Chapter VIII, the *"what that refinement looks like"* close). The final pass should scan for remaining instances.
-- **"Load-bearing" as a phrase.** The author flagged this as an idiosyncrasy of the essay's drafter that appeared too often. Chapter IV's close uses "Each of these is a loss the current arrangement is producing" — verify no "load-bearing" remains as a drafter's tic.
+**Meta-commentary and tics (5 edits):**
+- Line 57 (Ch III): *"a side benefit worth naming:"* → *"a side benefit:"*
+- Line 61 (Ch III): *"An edge case worth noting:"* → *"An edge case:"*
+- Line 85 (Ch IV): *"The asymmetry of the mechanism is worth naming."* → *"The mechanism is asymmetric."*
+- Line 133 (Ch VI): *"it is also worth naming as its own thing, because"* → *"it is also its own thing, because"*
+- Line 157 (Ch VII): *"The argument for why the cost is acceptable is the same argument that runs through the rest of the essay: the current arrangement's revenue concentration is itself the force driving the realignment the essay has diagnosed."* → *"The argument for why the cost is acceptable is structural: the current arrangement's revenue concentration is itself the force driving the realignment."* Eliminated two meta-references in a single sentence.
+- Line 171 (Ch VIII): *"the essay does not soften it"* → *"the proposal does not soften it."* The honest accounting belongs to the proposal, not the essay describing itself.
+- Line 119 (Ch VI opening): Removed *"This chapter is about what stays."* Folded *"what stays"* into the next sentence (*"It is worth walking through what stays in some detail, because..."*) to preserve the transition.
+- Line 63 (Ch III): *"historically load-bearing"* → *"a preserved rivalry."* Eliminated the only *load-bearing* instance in the essay, matching the essay's earlier rivalry-preservation language.
 
-#### Terminology and proper nouns
+**Terminology and proper nouns (3 edits):**
+- Line 175: *"semi-finals"* → *"semifinals"* (American usage; matched the form already used in lines 81 and 83).
+- Line 33 (Ch II): *"promotion playoff"* → *"Promotion Playoff"* (capitalization consistency; all 17 instances now capitalized).
+- Line 41 (Ch II): *"promotion playoff"* → *"Promotion Playoff"* (same).
 
-- **Boundary Games.** Capitalized as a proper noun. Referenced throughout Chapters IV and VIII; verify every instance is capitalized and the plural/singular is used correctly (Boundary Games as the default plural; singular Boundary Game when referring to a specific one).
-- **Promotion Playoff.** Capitalized. Verify throughout.
-- **Champions Conference.** Capitalized throughout. Should not see "the conference" alone as a reference to the Champions Conference; it should be "the Champions Conference" or "the league."
-- **The Game, the Iron Bowl, the Egg Bowl, the Red River Shootout (or Rivalry), The World's Largest Outdoor Cocktail Party, the Backyard Brawl.** Rivalry names use the canonical capitalization. Some (*The Game*) are capitalized as a proper noun with *The*; others (*the Iron Bowl*) are lowercase-*the* with capitalized proper noun. Follow the rivalry's own convention.
-- **"Matches" versus "games."** The essay uses *games* throughout for CC play, relegation structure, and Boundary Games. *Matches* appears only when describing the Premier League on its own terms. Verify no slips.
-- **"Catalog" versus "catalogue."** Use *catalog* throughout (American spelling). One instance in Chapter VIII was standardized during drafting; verify no others remain.
-- **"The author" versus "the proposal's authors."** Singular *the author* when referring to the person who wrote the essay and proposal. Plural *the proposal's authors* only when referring to the broader collective effort including contributors who will refine it. Scan for accidental plurals.
-- **"Semifinals" versus "semi-finals."** American usage: *semifinals*, one word, no hyphen. One instance in Chapter VIII uses *semi-finals*; standardize.
-- **"FBS" versus "FBC."** One instance of *FBC* in Chapter VI was noted during drafting. Verify and correct.
-- **Hawai'i with the 'okina.** Correct in Chapter VI; verify no other Hawai'i references drop the 'okina.
-- **Specific numbers.** The Premier League figure (*"three decades"* or *"thirty-some years"*) should match between Chapters II and IV. The SEC Championship Game figure (*"thirty-three years"*) in Chapter VII should match whatever the citation pass confirms.
+**Checks that ran clean with no edits required:**
+- Boundary Games capitalization (all 5 instances correct).
+- Champions Conference capitalization — no bare *the conference* used as a reference to it.
+- Hawai'i with 'okina (correct in the one instance).
+- Catalog vs. catalogue (one instance, correct American spelling).
+- FBS vs. FBC (no FBC instances found; the concern flagged in drafting did not survive into the final text).
+- Games vs. matches (all *matches* instances are either volleyball, which uses the term correctly, or describing the Premier League on its own terms).
+- First-person voice audit — every first-person use lands where the spec said it should (Chapter VII's one *I believe* on realignment-as-mobility; Chapter IX throughout).
 
-#### Sentence-level precision
+**Retained deliberately:**
+- One *"worth naming"* instance at line 45 (Ch II on the inaugural-selection caveat). Does specific rhetorical work — signals that the problem exists and deserves acknowledgment, but shouldn't derail the chapter. The spec's concern was about the drafter's overuse of the phrase; one well-placed instance doing specific work doesn't match the pattern the spec flagged.
+- *"The World's Largest Outdoor Cocktail Party"* retained in Chapter VI despite official discontinuation, per decision locked during citation pass (§ 2.1).
 
-- **"Accrues to a different audience"** in Chapter VII — the edit round kept this phrasing; it's correct as-is and worth preserving through the consistency pass.
-- **"Cleaner" versus "better."** The landing page uses *cleaner arrangement* in the thesis. The essay shifted to *better arrangement* as the author's preferred framing (Chapter I close). The landing page should match; see Section 3 below.
-- **Oregon as the opening example in Chapter III.** Confirmed correct. Do not change unless the citation pass surfaces a reason Oregon is no longer an appropriate typical-program example.
+**Decisions from this pass that should not be revisited:**
+- The four *"worth naming/noting"* instances that were removed (lines 57, 61, 85, 133) are all tightenings that replace filler with direct framing. Reintroducing the phrasing would re-add the tic.
+- The shift from *"essay"* to *"proposal"* in line 171 reflects the editorial principle that Chapter VIII's Notre Dame accounting is the proposal's posture, not the essay's self-description. Keep any future edits consistent with this principle.
+- The line 119 removal of *"This chapter is about what stays"* applies the "Chapter N is about Y" rule consistently. No chapter in the essay now points at its own scope meta-descriptively.
+
+**"Not X; it is Y" construction sub-pass (April 2026).** After the initial consistency pass, a sub-pass surfaced the *"X is not A; it is B"* rhetorical construction as a recurring tic — ten-plus instances across the essay, clustered audibly in Chapter IX. The author chose to reduce to a maximum of one instance, retained where the construction does load-bearing structural work rather than rhythmic work. Eleven instances were revised; two retained. Edits landed at lines 37, 53, 57, 61, 131, 145, 157, 163, 183, 195 (twice — one original "not X; it is Y" instance and one "not only X; it is also Y" variant), 197 (twice — same pattern), 199. The one "not X; it is Y" retained is line 123 (*"This is not sentimentality; it is structural preservation, and the distinction matters"*), chosen because the distinction being drawn is the chapter's own premise and the construction is self-aware (explicitly naming that the distinction matters). The one "gradation" instance retained is line 47 (*"The proposal is not complete. It is complete enough to debate, iterate, and refine"*), which does calibrating-degree rhetorical work rather than binary contrast. Future edits should avoid reintroducing the construction; an automated grep for `is not .*; it is` or `are not .*\. They are` catches the pattern.
+
+**Link count preserved:** 18 inline links unchanged across the full consistency pass (main pass plus construction sub-pass).
 
 ---
 
@@ -256,7 +224,7 @@ The drafting session made a series of decisions that future sessions should not 
 
 - **Chapter III opens with Oregon as the typical-program example.** Not Indiana (unusual as 2025 #1), not Ohio State or Alabama (pilot-light programs).
 - **Chapter V enumerates what disappears through repeated "disappears" sentence structure.** The pattern is the argument.
-- **Chapter VII uses Vanderbilt as the concrete revenue-loss example.** Chosen because (a) their SEC membership is long-established, (b) they are academically insulated from football criticism in a way that keeps the chapter from reading as a takedown, (c) they represent the structural category cleanly.
+- **Chapter VII uses Mississippi State as the concrete revenue-loss example.** This supersedes an earlier locked decision to use Vanderbilt. The swap was made during the citation pass when the author surfaced that Vanderbilt is a private school — not FOIA-accessible, no public financial disclosures required — which made Vanderbilt the least verifiable claim in the essay and inverted the chapter's honest-accounting posture. Mississippi State replaces Vanderbilt because: (a) it is public and FOIA-accessible, so the underlying financial figures are obtainable; (b) its SEC membership is equivalently long-established (1932 founding member, same as Vanderbilt); (c) it consistently sits in the bottom tier of SEC football revenue, fitting the structural category cleanly; (d) it was already named in the essay (Chapter II's Egg Bowl reference), which creates a small narrative through-line across the essay. The trade-off: Mississippi State lacks Vanderbilt's academic-insulation framing, but the chapter's honest-accounting register carries the weight without needing the academic-prestige angle as a buffer.
 - **Chapter IX has three asks.** Write, engage, share. In ascending scope: individual act, stance, network effect.
 
 ---
@@ -278,12 +246,12 @@ Things that emerged during drafting that were flagged for later consideration bu
 Future sessions working on the proposal should:
 
 1. Load this file into context alongside the essay source (`docs/proposal-essay.md`) and the site spec.
-2. Choose one of the tasks in § 2 and work through it. Citation pass and consistency pass can be done partially — a chapter or two at a time is fine.
+2. Choose one of the outstanding tasks in § 2 and work through it. § 2.1 (citation pass) and § 2.2 (consistency pass) are complete. The natural next editorial task is § 2.3 (landing-copy pass), which should align the landing page at `src/content/landing.ts` against the essay's final decisions. § 2.4 (site-spec and CC-spec updates) can be run in parallel or as a separate short session.
 3. Update this spec at the end of the session with what was completed, what's still outstanding, and any new decisions or open questions.
-4. When the essay is ready for site integration, move from § 2.1–2.4 work into the § 2.6 build session.
+4. When the essay is ready for site integration, move from § 2.3–2.4 work into the § 2.6 build session.
 
 This spec is a working document. Edit directly as decisions are made.
 
 ---
 
-*End of working spec v1.0.*
+*End of working spec v1.3. Updated during the April 2026 consistency pass session and construction sub-pass.*
