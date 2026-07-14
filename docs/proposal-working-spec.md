@@ -4,7 +4,7 @@
 **Scope:** The long-form essay at `/proposal`, from the end of the drafting session through launch on the site.
 **Parent document:** `docs/site-spec.md` (authoritative). This working spec does not duplicate anything from the site spec; it extends it for the post-drafting phase only.
 **Locked essay source:** `docs/proposal-essay.md`. All chapter numbers below refer to that file.
-**Status:** Draft v1.0 of the essay is locked. Citation pass, consistency pass, landing-copy pass, and site/CC spec update pass all complete (see § 2.1, § 2.2, § 2.3, § 2.4). Author's final review (§ 2), graphics pass (§ 2.5), and site-integration work (§ 2.6) remain.
+**Status:** Draft v1.0 of the essay is locked. Citation pass, consistency pass, landing-copy pass, and site/CC spec update pass all complete (see § 2.1, § 2.2, § 2.3, § 2.4). Author's final review (§ 2) and site-integration work (§ 2.6) remain; the graphics pass (§ 2.5) is now specced and build-ready (build pending).
 
 ---
 
@@ -175,22 +175,91 @@ Three edit clusters applied to `docs/champions_conference_spec.md`:
 
 ---
 
-### 2.5 Visual pass (deferred)
+### 2.5 Graphics pass — specced (build pending)
 
-The drafting session agreed to defer all visual decisions to a later session. Candidates named during drafting, to be revisited with an editorial/design eye:
+The graphics pass was held as a dedicated planning session (a follow-on to the citation, consistency, landing-copy, and spec-update passes). It was **spec-only by design**: no assets were built. The session walked all five candidates one at a time, locking each before moving on, and tested every candidate against a single bar — *does it illustrate something the prose cannot?* Five assets survived that test. One essay inconsistency was surfaced and corrected (see Cross-document outcomes). Two system-level motifs were recorded for build continuity.
 
-- **Chapter IV — Promotion Playoff and Boundary Games bracket.** The mechanism is complex and has an asymmetric bracket structure (two auto-promotions, two Boundary Games, two auto-relegations) that a diagram would clarify. Best candidate visual in the essay for a reader to want a picture.
-- **Chapter I — Conference revenue over time or conference revenue by conference.** A line chart or bar chart illustrating the football-revenue concentration the chapter diagnoses. Works best as a chart that shows the widening gap between Power Four and Group of Five revenue, or between football and non-football sports revenue.
-- **Chapter III — Schedule composition visual.** The ten-plus-two schedule structure (division round-robin + cross-division + rivalry games) is conceptually simple but visually illustrative. May or may not earn its place; consider during visual session.
-- **Chapter VII — Revenue distribution comparison, current vs proposal.** For the Vanderbilt revenue argument, a two-bar comparison could make the loss concrete. Depends on getting the data, which is the citation-pass FOIA/reporter path.
-- **Chapter VI — Map of the 2012 conference alignment versus current.** Could illustrate *what's preserved* vs *what's changed* geographically. Possibly too complex for the essay's register.
+This section supersedes the drafting-era candidate list that previously lived here; see **Superseded** at the end for what changed and why.
 
-**Visual-pass logistics.**
+Each asset below is specced in the format a designer can execute against: **purpose · data source · visual form · register · build approach**, plus any open item carried into the build.
 
-- Wait until citation pass is complete, because some visuals depend on data the citation pass will surface.
-- Visuals on `/proposal` should share design language with the Champions Field on the landing page: editorial infographic, typography-driven, oxblood accent used sparingly.
-- Not every chapter needs a visual. The essay reads well as text; visuals should only appear where they do meaningful work.
-- Total essay length (~10,700 words) makes *some* visual break valuable for reader pacing, but the site design will contribute to that via generous margins, chapter boundaries, and typographic register.
+#### Chapter I — The Broken Map
+
+- **Purpose.** Open the essay with the geographic *symptom* of the revenue distortion — make the sprawl land as an image before the analysis begins (Big Ten New Jersey→California, Stanford in the ACC, the Pac-12 scatter, cross-country travel for non-revenue sports). Problem-only: the 2012 reset is left to its Chapter II reveal and to Chapter VI's prose, not front-run in the diagnosis. Reframed from the placeholder's "logistical comedy" to *the geography of the distortion* — analytical, not editorial-cartoon.
+- **Data source.** Fully public and known — conference memberships and school locations. No sourcing dependency.
+- **Visual form.** Schematic, not accurate cartography. A very soft, low-contrast national silhouette as ground (no state borders, no labels); the horizontal axis honestly scaled to real longitude so East–West extent is truthful. Conference footprints as lightly tinted regions / grouped points, so a league reads as a *spread* across time zones.
+- **Register.** Monochromatic. Oxblood reserved for the single longest, most absurd span (the Pacific-to-Atlantic case). Serif for any labels, sans for the eyebrow, mono only if distances/coordinates appear.
+- **Build.** Hand-built SVG, zero-JS, cousin of `ChampionsField.tsx`. Dual responsive; the narrow variant is the hard part (East–West span is worst-case on a phone — expect reflow/rotate, not just scale).
+- **Open item (build-time A/B).** Foundation is locked (schematic ground, honest longitude, tinted footprints, oxblood on the longest span). The one unresolved fork is whether thin cross-country **arcs** sit on top (reads as *athletes traveling*) or the tinted **footprints alone** carry it (more restrained, further from the flight-path-arrow instinct being avoided). This is a see-it decision: the build renders both variants and the author picks on sight. Author lean: keep a few arcs, lightly. This is the only asset carrying an open decision into the build; III, IV, V are fully closed.
+
+#### Chapter III — Mirrored-Rotation Alignment Diagram
+
+*(Reframed from the placeholder's "10+2 Schedule Matrix.")*
+
+- **Purpose.** Show the one genuinely spatial idea in the chapter: **mirrored rotation** — a team's slot within its division determines that it plays the same slot in the other two divisions (top plays top, bottom plays bottom, at every rung). The 7+3+2 composition is already carried by prose and by the table at essay lines 100–104; a composition card would only re-skin that table. The graphic's subject is the cross-division alignment the prose cannot hold in the reader's head.
+- **Data source.** Internal — Oregon's slot and opponents from the 2025 Champions Field snake-draft dataset (the same data Ch V uses). Illustrative for a representative season, framed as such (consistent with Ch V). Oregon is inherited from locked prose (the typical-program choice — not Indiana, not the pilot-light programs). The build may substitute a cleaner representative slot if Oregon's actual 2025 slot hides the mirror logic, labeled illustrative.
+- **Visual form.** Three division columns (I / II / III), rendered mostly as light *empty* slot markers. Oregon lit at its slot; its ~10 opponents revealed as connections — 7 division ties within its own column (the round-robin, subordinate), 2 mirrored cross-division ties to the *same slot* in the other two columns (the hero move), 1 rotating cross-division game marked distinctly, 2 rivalry games as off-grid annotations hanging off Oregon (they come from outside the league structure). A small 10+2 tally rides along, subordinate.
+- **Register.** Monochromatic. Game types distinguished by **line/shape treatment and tonal value** (solid / dashed / off-grid; graphite / tint), *not* color — a multi-hue dashboard would blow the palette. Oxblood reserved for rivalry games only, tying the asset to the proposal's preservation argument rather than dashboard-labeling a schedule slot.
+- **Build.** Hand-built SVG. Kept distinct from the Champions Field via the one-team-connection reading (mostly empty slots, ~10 lit; a *connection* diagram, not a *membership* snapshot). Dual responsive.
+
+#### Chapter IV — Promotion & Relegation (boundary-crossing exchange)
+
+- **Purpose.** Show the annual exchange (four out, four in, ~17%), the **asymmetry** the chapter turns on (relegation is a season-long verdict; promotion is a sprint), and the Boundary Games as the hinge where the two systems meet.
+- **Data source / mechanics.** No external data. Mechanics are canonical from the CC spec's Promotion Playoff Structure (lines 430–449): the **six-bye** structure. The essay's prose at lines 158–159 was corrected this session to match (see Cross-document outcomes) — the prior "two top seeds bye, other eight play-in" summary did not close arithmetically; ten teams admit exactly one clean single-elimination shape (four in the play-in, six byed).
+- **Visual form.** A **vertical boundary-crossing exchange diagram — not a bracket.** A horizontal membership line is the spine (deliberately rhyming with the Champions Field cut-line). Above it, the Conference bottom (positions 21–24); below it, the Promotion Playoff field. 23 and 24 drop straight down (out); the two semifinal winners rise straight up (in); 21, 22 and the two semifinal losers converge *onto the line*, where the two Boundary Games sit. The relegation side is a **calm static standings column** (the verdict); the promotion side is an **abstracted collapsing feeder** (the sprint) — seeds 1–10 labeled, internal matchups left to the spec. The two visual temperatures encode the asymmetry.
+- **Register.** Monochromatic. Oxblood reserved for the hinge — the boundary line and the Boundary Games. Canonical labels PP #3 / PP #4 (not the ASCII's "Loser C/D"). No dates — timing belongs to the two-track calendar visual (site spec § 10, item 3b); do not double-encode it here.
+- **Build.** Hand-built SVG, cousin of `ChampionsField.tsx`. The vertical orientation is mobile-friendly, so a dual wide/narrow treatment comes nearly for free.
+
+#### Chapter V — The Playoff Standings Bracket
+
+- **Purpose.** Show the **derivation** — the 12-team CFP field emerging as a mechanical consequence of the standings, seed equal to standings position, with no committee node in between. The mapping is the argument, not the bracket. Resist any committee imagery or lettered "no drama, just math" captions on the canvas; the directness of the mapping carries the point (same register discipline the consistency pass earned).
+- **Data source.** **Compressed-hypothetical records on the real 2025 team identities** — top team ~11-1 descending to ~7-5 / 6-6 at #12, faithful to the essay's balance claim (lines 80–84) — carrying a small "illustrative Champions Conference standings" label so it cannot read as a real result. Real 2025 records were rejected: they are full of undefeateds and would visually contradict the chapter's own claim that balanced scheduling makes such records rare.
+- **Visual form.** Side-by-side standings → bracket (horizontal, left→right, the way brackets conventionally read). The derivation is carried by two devices used lightly together: thin connective threads from each standings row to its bracket entry point (the "nothing comes from outside" argument) and a shared mono seed-number echo (the redundancy that makes it legible at a glance). Standard 2024 CFP shape: 12 teams, seeds 1–4 bye, 5–12 first round on the higher seed's campus, through the NY6 bowls to a mid-January final.
+- **Register.** Monochromatic. Oxblood on the **#12/#13 cut-line only** (the in/out line); the champion slot stays graphite so oxblood appears once. Mono for seeds/positions/records, serif for names/labels, sans for the eyebrow.
+- **Build.** Hand-built SVG, cousin of `ChampionsField.tsx`. Redraw a simple top-12 column echoing the Field's row treatment (type, chip style) — *not* a re-render of all 24, which would duplicate the landing hero. Dual responsive; 12-team brackets are wide, so the narrow variant (likely reorienting the bracket to run top-to-bottom) is the hard part — flagged for the build session, not solved in spec.
+
+#### Chapter VII — Mississippi State revenue exposure
+
+- **Purpose.** Make concrete the chapter's hardest loss: how much of the program's football revenue is the single guaranteed SEC-distribution check that the proposal turns performance-contingent.
+- **The finding that shapes the form.** "Current vs. proposal" is *not* two comparable numbers. The current side (a full SEC pooled share) is real and reported. The proposal side (revenue in a regional-form SEC, plus a partial Conference Development Pool offset) is an output of a revenue model the proposal deliberately leaves unspecified — it is **unsourceable by nature**, not obtainable from Extra Points, FOIA, or the SEC, because it is not a fact about the world. A straight two-bar chart would have to fabricate its second bar, betraying the chapter's honest-accounting register. The form was chosen accordingly.
+- **Data source (two real inputs).** (a) **SEC per-school distribution, FY2023–24** — SEC official reporting (already cited in Ch I; match the vintage so the essay's revenue figures stay internally consistent). (b) **Mississippi State generated football revenue by source** — from the NCAA MFRS filing and/or federal EADA report, obtainable by Mississippi public-records request or, more efficiently, via **Extra Points** (extrapointsmb.com, Matt Brown), which specializes in these filings. **MFRS care rule (build constraint):** use *generated* revenue and isolate the conference-distribution line; exclude or visually segregate allocated/institutional support (student fees, direct institutional and state subsidy), which MFRS "total revenue" folds in — including it would misattribute subsidy as football revenue or dilute the proportional severity of the loss. Extra Points' value here is the Mississippi-State-side composition, *not* a proposal-side figure; no source can provide the latter.
+- **Visual form.** **Exposure / composition** — a single segmented bar (or proportion figure) of Mississippi State's generated football revenue by source, with the SEC-distribution slice highlighted as the large, guaranteed portion the proposal turns contingent. The loss is shown as *this slice becomes performance-contingent*, never as a fabricated smaller bar. Fallback if the composition data won't isolate cleanly: a **directional two-state** (one real anchored bar plus a downward arrow / shaded uncertainty band of deliberately unspecified magnitude). The modeled two-bar was rejected (it would require committing the proposal to revenue-model assumptions it declines to make).
+- **Register.** Monochromatic; graphite segments, oxblood on the at-risk SEC-distribution slice. Mono for figures/percentages, serif for labels, sans for the eyebrow. A **visible source-and-vintage note is mandatory** here (optional elsewhere) — the citation is part of the graphic's honesty and this is the asset most exposed to "where did that come from."
+- **Build.** Hand-built SVG with values hard-coded from the sourced filing (not a live chart library). This is the one genuinely **data-carrying** asset: its build is blocked on an upstream data pull (see Cross-document outcomes). Upside: a single composition bar is the most mobile-friendly of the five — near-zero responsive risk.
+
+#### Working order and rationale
+
+Specced in the order **IV → V → III → I → VII** (essay order is I → III → IV → V → VII; the deviation was deliberate). The two bracket-twins (IV, V) were worked consecutively so they could be differentiated on purpose — IV a vertical *exchange* with an abstracted feeder, V a horizontal *bracket* fully explicit; different orientation, different spine, opposite abstraction. Ch III followed as a quick, fully-internal asset. Ch I was held later as the contested one (register tension plus the displaced-chart and map-vs-map riders). Ch VII closed the session as the data-dependency hand-off.
+
+#### System-level motifs (record for build continuity)
+
+Two ideas now recur across multiple assets and should be treated as intentional systems, not coincidental repetition:
+
+1. **The oxblood in/out line.** Recurs as the Champions Field top-12 cut-line, the Ch IV membership boundary, and the Ch V #12/#13 cut-line. All three express the same idea — the line between in and out — and should read as one visual vocabulary.
+2. **The three-division scaffold (I / II / III).** Recurs across the Champions Field and Ch III. This one requires the deliberate differentiation built into Ch III (empty scaffold, one-team connections, not a membership snapshot) so the reuse reads as intentional rather than as the Field drawn twice.
+
+#### Cross-document outcomes
+
+- **Essay edit (applied this session).** Chapter IV bullets at essay lines 158–159 were corrected to the six-bye Promotion Playoff structure to match the CC spec; the prior summary did not close arithmetically. *Open sub-item:* confirm the doubled-"the" typo in the applied edit ("join the the top six seeds") has been fixed. Once confirmed, this session's essay dependency is fully closed.
+- **Ch VII upstream data task (before build).** Pull (a) SEC FY2023–24 per-school distribution and (b) Mississippi State generated-football-revenue-by-source from EADA/MFRS or Extra Points, excluding allocated support per the MFRS care rule. The Ch VII build starts only after these land.
+- **Ch I build-time A/B.** The build renders both the arcs and footprints-only variants of the Broken Map; the author picks on sight.
+
+#### Superseded
+
+This section replaces the drafting-era candidate list. What changed, and why:
+
+- The **map moved from Chapter VI to Chapter I** and changed jobs — from a "what's preserved vs. what's changed" *solution* map to a *problem* map of the current geography (matching the placeholder the author added during the iA Writer pass).
+- The **Chapter I revenue-concentration chart was retired.** The *cause* (revenue concentration) is sufficiently carried by the cited prose figures ($1B Big Ten, $1B SEC, "more than an order of magnitude"); the *consequence* is carried by Chapter VII. Charting it in Ch I would add a third data-viz and either crowd the chapter or duplicate Ch VII's register.
+- A **Chapter V bracket asset was added** (not in the drafting-era list; anticipated by the site spec as the CFP bracket that emerges from the Champions Field).
+- The **Chapter VI "what's preserved" solution-map was retired** — better carried by the rivalry list already in Chapter VI (essay lines 223–231) than by a second, more complex two-state map.
+
+Net: **five assets** (Chapters I, III, IV, V, VII), each earning its place.
+
+#### Retained logistics (still hold)
+
+- Visuals on `/proposal` share design language with the Champions Field: editorial infographic, typography-driven, oxblood sparse.
+- Not every chapter needs a visual; the essay reads well as text. Five across nine chapters is at the top of the earlier "3–5" range and is where the pass deliberately landed.
+- All five are **hand-built SVG, zero-JS, cousins of `ChampionsField.tsx`.** None are chart-library output; Ch VII is data-carrying but hard-coded from a sourced filing.
 
 ---
 
@@ -282,4 +351,4 @@ This spec is a working document. Edit directly as decisions are made.
 
 ---
 
-*End of working spec v1.5. Updated during the April 2026 site / CC spec update session.*
+*End of working spec v1.6. Updated during the graphics-pass spec session (§ 2.5 rewritten from the deferred candidate list to five locked, build-ready asset specs).*
