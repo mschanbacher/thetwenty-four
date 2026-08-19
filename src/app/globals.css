@@ -319,6 +319,99 @@ h4 {
   .champions-field-narrow { display: block; }
 }
 
+/* Promotion & Relegation (Ch IV) — dual-SVG responsive toggle.
+   Same pattern and breakpoint as Champions Field: both variants ship
+   in markup, one hidden via `display: none`, no client JS. Wide is a
+   1600×900 landscape; narrow a 720×1040 portrait that stacks the same
+   topology. */
+.promotion-relegation-wide,
+.promotion-relegation-narrow {
+  line-height: 0;
+}
+
+.promotion-relegation-wide svg,
+.promotion-relegation-narrow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.promotion-relegation-narrow { display: none; }
+
+@media (max-width: 639px) {
+  .promotion-relegation-wide { display: none; }
+  .promotion-relegation-narrow { display: block; }
+}
+
+/* Champions Bracket (Ch V) — dual-SVG responsive toggle.
+   Same pattern and breakpoint as the other visuals. Narrow variant
+   keeps the standings column and a compressed bracket side by side
+   (option B) — preserves the derivation AND the tournament structure,
+   rather than stacking rounds (which lost the seed-echo). */
+.champions-bracket-wide,
+.champions-bracket-narrow {
+  line-height: 0;
+}
+
+.champions-bracket-wide svg,
+.champions-bracket-narrow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.champions-bracket-narrow { display: none; }
+
+@media (max-width: 639px) {
+  .champions-bracket-wide { display: none; }
+  .champions-bracket-narrow { display: block; }
+}
+
+/* Promotion Playoff Bracket (site-spec 3c) — dual-SVG responsive toggle.
+   Same pattern/breakpoint as the other visuals. Narrow variant pending
+   (same hard reflow class as Ch V — a tall bracket into a phone column);
+   until it ships, the narrow slot renders the wide SVG scaled. */
+.promotion-playoff-bracket-wide,
+.promotion-playoff-bracket-narrow {
+  line-height: 0;
+}
+
+.promotion-playoff-bracket-wide svg,
+.promotion-playoff-bracket-narrow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.promotion-playoff-bracket-narrow { display: none; }
+
+@media (max-width: 639px) {
+  .promotion-playoff-bracket-wide { display: none; }
+  .promotion-playoff-bracket-narrow { display: block; }
+}
+
+/* Two-Track Calendar (site-spec 3b) — dual-SVG responsive toggle.
+   Vertical time axis reflows to a phone column for free (same as 3c).
+   Wide 1000×820, narrow 720×730. */
+.two-track-calendar-wide,
+.two-track-calendar-narrow {
+  line-height: 0;
+}
+
+.two-track-calendar-wide svg,
+.two-track-calendar-narrow svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.two-track-calendar-narrow { display: none; }
+
+@media (max-width: 639px) {
+  .two-track-calendar-wide { display: none; }
+  .two-track-calendar-narrow { display: block; }
+}
+
 /* CTA row — two buttons, comfortable gap. */
 .landing-cta-row {
   display: flex;
@@ -384,3 +477,183 @@ h4 {
 
 @tailwind components;
 @tailwind utilities;
+
+/* ============================================================
+   Proposal page — long-form reading typography.
+
+   The nine-chapter essay. Prose is generated at build time from
+   docs/proposal-essay.md (see src/content/proposal/essay.ts) and
+   injected as semantic HTML; these rules style it. Measure is capped
+   at --measure (65ch) for readability; figures break wider inside
+   their frame. Type roles follow the site: serif for prose and
+   headings, sans for eyebrows and captions, mono is unused here.
+   ============================================================ */
+
+.proposal-page {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-24);
+}
+
+.proposal-masthead {
+  max-width: var(--measure);
+  margin: 0 auto var(--space-16);
+}
+
+.proposal-masthead-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--color-ink);
+  margin: var(--space-2) 0 0;
+}
+
+.proposal-chapter {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.proposal-chapter + .proposal-chapter {
+  margin-top: var(--space-24);
+}
+
+/* Chapter heading: numeral as a quiet oxblood mark, title in serif. */
+.proposal-chapter-heading {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-8);
+  scroll-margin-top: var(--space-8);
+}
+
+.proposal-chapter-numeral {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--color-oxblood);
+  margin-bottom: var(--space-2);
+}
+
+/* Prose runs. */
+.proposal-prose {
+  font-family: var(--font-serif);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--color-ink);
+}
+
+.proposal-prose p {
+  margin: 0 0 var(--space-6);
+}
+
+.proposal-prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Strong lead-ins (the bolded first phrases) carry weight without
+   becoming headings. */
+.proposal-prose strong {
+  font-weight: 600;
+}
+
+.proposal-prose em {
+  font-style: italic;
+}
+
+/* Bold+italic terms (e.g. ***The Boundary Games***) — the essay's
+   term-of-art convention. */
+.proposal-prose strong em,
+.proposal-prose em strong {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.proposal-prose a {
+  color: var(--color-oxblood);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.proposal-prose a:hover {
+  color: var(--color-oxblood-deep);
+}
+
+.proposal-prose ul,
+.proposal-prose ol {
+  margin: 0 0 var(--space-6);
+  padding-left: var(--space-6);
+}
+
+.proposal-prose li {
+  margin-bottom: var(--space-2);
+}
+
+.proposal-prose li::marker {
+  color: var(--color-ink-faint);
+}
+
+/* Blockquote → the essay's aside device (e.g. "The Independent
+   Problem"). Set apart with an oxblood rule and a tighter measure. */
+.proposal-prose blockquote {
+  margin: var(--space-8) 0;
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  border-left: var(--border-accent);
+  color: var(--color-ink-muted);
+}
+
+.proposal-prose blockquote h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin: 0 0 var(--space-2);
+}
+
+.proposal-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rules between chapters in the source become quiet
+   spacers; the chapter margin already separates, so hide the line. */
+.proposal-prose hr {
+  border: 0;
+  height: 0;
+  margin: var(--space-8) 0;
+}
+
+/* In-essay figure — same editorial frame as the landing Key Visual,
+   but allowed to break wider than the prose measure so the visual
+   gets room. */
+.proposal-figure {
+  margin: var(--space-16) 0;
+  /* Break out of the 65ch measure up to the container's wider bound. */
+  width: 100%;
+}
+
+.proposal-figure-frame {
+  background: var(--color-paper-deep);
+  border: var(--border-hairline);
+  line-height: 0;
+}
+
+.proposal-figure-caption {
+  max-width: var(--measure-narrow);
+  margin-top: var(--space-3);
+}
+
+/* ---- Figure responsive toggles (Ch IV + Ch V visuals) ----
+   Each visual ships wide+narrow SVGs; show one per breakpoint. The
+   per-component blocks live above; these ensure the frame's inline
+   SVG fills the frame width at any size. */
+.proposal-figure-frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

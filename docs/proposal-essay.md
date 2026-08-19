@@ -23,7 +23,8 @@ They now conflict. The scale of the football rights market has grown to the poin
 > ### The Absurdity of the Modern Map
 > The Big Ten stretches from New Jersey to California. The Southeastern Conference covers four time zones. Stanford, whose [36 varsity sports programs](https://facts.stanford.edu/campus-life/cardinal-athletics) are located in Northern California, plays in the Atlantic Coast Conference. The athletic departments running these programs are not ignorant of the cost; they understand that a volleyball team flying to Chapel Hill for a match is absurd. They are making the trade because the football revenue pays for the trip, and the football revenue is contingent on the conference structure that produces the trip.
 
-**[Visual Asset Placeholder: The Broken Map]** *A stylized, graphic map highlighting the logistical comedy of modern realignment, featuring massive flight-path arrows stretching from Northern California to the Atlantic Coast for non-revenue sports.*
+<!-- figure: broken-map -->
+<!-- brief: A stylized map of modern realignment's logistical absurdity — massive flight-path arrows stretching from Northern California to the Atlantic Coast for non-revenue sports. -->
 
 The clearest demonstration of this trade-off is the Pac-12, a conference that had existed in one configuration or another since 1915 and was [effectively dissolved in a two-year span](https://www.espn.com/college-sports/story/_/id/38134021/oregon-washington-officially-leave-pac-12-big-ten). 
 
@@ -48,22 +49,8 @@ The diagnosis is structural. The conference system is being asked to organize co
 
 **The proposal is a league of twenty-four.** Membership is earned by finishing in the top twenty of the previous year's standings, or by winning it on the field in a Promotion Playoff. The league plays its own schedule, decides its own champion through the College Football Playoff, and turns over four teams a year. Everything else in college football—the regional conferences, their championships, their other sports—returns to its prior shape.
 
-```
-                +---------------------------------------+
-                |    THE CHAMPIONS CONFERENCE           |
-                |          (24 TEAMS)                   |
-                +---------------------------------------+
-                                    |
-       +----------------------------+----------------------------+
-       |                                                         |
-[Top 12 Teams]                                          [Bottom 4 Teams]
-       |                                                         |
-       v                                                         v
-+------------------+                                    +------------------+
-| 12-Team Standings|                                    | 2 Relegated      |
-| Playoff Bracket  |                                    | 2 Boundary Games |
-+------------------+                                    +------------------+
-```
+<!-- figure: system-overview -->
+<!-- brief: The whole structure in one view — 24 teams splitting to the top-12 standings playoff on one side and the bottom-4 (2 relegated, 2 to Boundary Games) on the other. Replaces the ASCII overview. -->
 
 **The schedule is twelve games**, matching the length of the traditional regular season. Ten games are played against other members of the Champions Conference. The remaining two are traditional rivalry games, which each team's home conference selects and which are allowed to be played against opponents both inside and outside the Champions Conference. 
 
@@ -111,7 +98,8 @@ Divisions are a scheduling device. They exist because the league needs to carve 
 
 This mirroring produces a deliberate consequence: the best teams in each division play each other every year, and the weakest teams in each division do the same, with the rule holding true at every slot in between. A top-seeded program cannot avoid the top of the other two divisions. A bottom-seeded program cannot escape the bottom. At every position in the standings, the games that matter most for that tier are built directly into the schedule.
 
-**[Visual Asset Placeholder: The 10+2 Schedule Matrix]** *A sleek, dashboard-style graphic color-coding a hypothetical schedule for a team like Oregon, visually showing the 7 Division Games, the 3 Cross-Division Mirrored Games, and the 2 Home-Conference Rivalry Slots.*
+<!-- figure: schedule-matrix -->
+<!-- brief: A team's 10+2 schedule (e.g. Oregon) color-coded by the three game types: 7 division games, 3 cross-division mirrored games, 2 home-conference rivalry slots. -->
 
 **The two rivalry games** are the portion of the schedule determined by each team's home conference. A Champions Conference team remains a member of its home conference for every non-football purpose, and for football, it retains two dates on which its conference assigns a rivalry opponent. These games are coordinated by the home conferences, which best understand which matchups matter to their members. The Iron Bowl is scheduled because it is the Iron Bowl. The Egg Bowl is scheduled because it is the Egg Bowl. A conference whose membership includes one Champions Conference team and one non-Champions Conference team schedules the rivalry as a cross-membership game, and the game happens regardless of which side of the league boundary the rival sits on.
 
@@ -130,22 +118,7 @@ That is the core structural point. The standings at the end of a Champions Confe
 
 **Four teams change places annually.** Two are promoted outright, two are relegated outright, and two additional places are decided by head-to-head matches between the bottom of the Champions Conference and the top of the Promotion Playoff. The net effect is four teams out, four teams in—roughly 17% of the league—every single year.
 
-```
-[ Champions Conference Leaderboard ]
-------------------------------------
-Pos 21: To The Boundary Games <---+
-Pos 22: To The Boundary Games <--+|-- (Head-to-head neutral site matches)
-------------------------------------|
-Pos 23: Relegated Outright          |
-Pos 24: Relegated Outright          |
-                                    |
-[ 10-Team Promotion Tournament ]    |
-------------------------------------|
-Semifinal Winner A: Promoted Outright
-Semifinal Winner B: Promoted Outright
-Semifinal Loser C: To Boundary Games -+
-Semifinal Loser D: To Boundary Games -+
-```
+<!-- figure: promotion-relegation -->
 
 **Relegation is the simpler half of the mechanism.** The twenty-third and twenty-fourth teams in the final Champions Conference standings are relegated automatically. There is no final game to save themselves, no appeal, and no tiebreaker involving strength of schedule or signature wins. The league is a closed set of games, the standings are the definitive result of those games, and the bottom two positions carry the exact consequences the structure assigns them. Those programs return to their home conferences for the following football season, rejoining their conference-mates for a schedule that now includes football alongside every other sport.
 
@@ -160,11 +133,13 @@ The ten teams are seeded by a transparent formula based on regular-season perfor
 * The two semifinal winners are promoted directly to the Champions Conference for the following season. 
 * The two semifinal losers survive to play in The Boundary Games.
 
+<!-- figure: promotion-playoff-bracket -->
+
 **The Boundary Games serve as the joint** where the two systems meet. On the first Saturday in January, at neutral sites, two games are played: the Champions Conference 22nd-place team versus the Promotion Playoff 3rd-place team, and the Champions Conference 21st-place team versus the Promotion Playoff 4th-place team. The winner earns—or retains—a Champions Conference spot; the loser goes down, or stays down. The games fall on the Saturday between the CFP quarterfinals and semifinals, which is deliberate. The weekend already commands national attention for college football, and the Boundary Games give that attention something structurally meaningful to latch onto. By Saturday night, the following year's Champions Conference field is set.
 
 **The mechanism is intentionally asymmetric.** An automatic promotion is won by a team that advanced twice against peers of similar standing in a tournament format designed around its own conferences. Conversely, an automatic relegation is earned by a team that finished last or second-to-last across an entire Champions Conference regular season. The playoff route up is a sprint; the route down is a season-long verdict. Between them, The Boundary Games offer a single game—one afternoon, one result—that decides the marginal cases. The mechanism is neither a pure tournament nor a pure meritocracy; it is a hybrid that treats each side of the boundary on its own terms.
 
-**[Visual Asset Placeholder: The Promotion & Relegation Flowchart]** *A clean, vertical flowchart showing the "Up and Down" movement between the bottom of the Champions Conference and the 10-champion winter survival tournament.*
+<!-- figure: two-track-calendar -->
 
 > ### The Independent Problem
 > One program needs to be addressed specifically here because its historic arrangement does not fit the structure cleanly: Notre Dame. Notre Dame has been [independent in football since 1887](https://fightingirish.com/1913-the-program-changer/), and since 2014 it has played a partial ACC schedule while remaining outside any conference for football purposes. Under this proposal, Notre Dame joins the ACC fully for football and every other sport. If Notre Dame is in the Champions Conference, the ACC is its home conference for relegation purposes, and its rivalry-game assignments come through the ACC like every other member. Remember that those rivalry games do not have to be ACC opponents. If Notre Dame is outside the Champions Conference in a given year, it competes for the ACC championship and, if it wins, enters the Promotion Playoff like any other conference champion. The rule is unyielding: access to the Champions Conference pathway requires conference membership, because the pathway runs through conferences. Notre Dame's independence has been a hard-won exception for over a century, but this proposal treats it as an exception the new structure cannot preserve. Whether Notre Dame accepts that trade is a separate question.
@@ -191,7 +166,7 @@ The bracket's shape is identical to the CFP format that first ran in 2024. The d
 
 The selection committee disbands. The weekly committee rankings disappear, and with them the entire cottage industry dedicated to explaining and contesting them—the mid-November column debating why a two-loss SEC team is ranked ahead of a one-loss Big Ten team, the Tuesday-night television segment dissecting the previous evening's release, and the running debate about which set of résumé criteria the committee is prioritizing this week. The automatic-bid argument disappears—whether the twelfth spot should go to the highest-ranked Group of Five champion or be reallocated to an at-large, an argument that in the 2024 CFP's first year drew enough sustained coverage that [the CFP altered the autobid structure for 2026](https://www.si.com/college/boise-state/football/college-football-playoff-changes-format-for-group-of-six-representation). The conference-championship-as-tiebreaker argument disappears, because conference championships no longer exist for Champions Conference teams. The strength-of-schedule argument disappears, because every Champions Conference team plays a balanced Champions Conference schedule. The eye test disappears. The signature-win argument disappears. The "what have you done lately" argument disappears. The entire vocabulary the sport has developed over the past decade to litigate its own postseason evaporates, because there is nothing left to litigate.
 
-**[Visual Asset Placeholder: The Playoff Standings Bracket]** *A side-by-side graphic showing a simulated Champions Conference leaderboard automatically populating a 12-team bracket. No committee room, no whiteboard debates, no drama—just math.*
+<!-- figure: champions-bracket -->
 
 **What remains is the standings.** The top twelve, by record, compose the CFP field. Tiebreakers exist—overall record, followed by division record, head-to-head, and point differential—and they resolve edge cases within the league's mechanical framework without appeal to external judgment. A team in the playoff is a team that has earned a better Champions Conference record, or has held a better record under a clearer set of criteria, than the teams that missed out. No one argues about it because there is nothing to argue about.
 

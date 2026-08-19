@@ -1,26 +1,43 @@
 import type { Metadata } from 'next';
-import { StubPage } from '@/components/site/StubPage';
+import { Container } from '@/components/primitives/Container';
+import { Eyebrow } from '@/components/primitives/Eyebrow';
+import { ProposalChapter } from '@/components/proposal/ProposalChapter';
+import { getEssay } from '@/content/proposal/essay';
 
 export const metadata: Metadata = {
   title: 'The Proposal',
-  description: 'The full long-form proposal — under construction.',
-  robots: { index: false, follow: true },
+  description:
+    'The full long-form case for the twenty-four-team Champions Conference — a merit-based restructuring of college football with promotion, relegation, and a standings-derived playoff.',
 };
 
+/**
+ * /proposal — the full nine-chapter essay.
+ *
+ * Prose is read at build time from docs/proposal-essay.md (the
+ * canonical source the author edits) and rendered as typeset chapters
+ * with inline figures placed by markers in the markdown. See
+ * src/content/proposal/essay.ts for the pipeline and
+ * src/content/proposal/figures.tsx for the figure registry.
+ *
+ * Server component: the markdown is parsed at build time and never
+ * shipped to the client. Figures emit static SVG with a CSS-only
+ * responsive toggle, so the page ships with no client JS.
+ */
 export default function ProposalPage() {
+  const essay = getEssay();
+
   return (
-    <StubPage
-      eyebrow="The proposal · forthcoming"
-      heading="The full essay lives here."
-      description={
-        <>
-          A 3,000–5,000 word long-form case for the twenty-four-team
-          Champions Conference is in draft. This page will host the
-          reading version, carefully typeset, with inline visuals.
-          Until it lands, the landing page is the best summary of
-          the argument.
-        </>
-      }
-    />
+    <Container as="main" className="proposal-page">
+      <header className="proposal-masthead">
+        <Eyebrow as="p" muted>
+          The proposal
+        </Eyebrow>
+        <h1 className="proposal-masthead-title">{essay.title}</h1>
+      </header>
+
+      {essay.chapters.map((chapter) => (
+        <ProposalChapter key={chapter.id} chapter={chapter} />
+      ))}
+    </Container>
   );
 }

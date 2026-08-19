@@ -305,7 +305,7 @@ function FieldSVG({ data, layout, variant, titleId, descId }: FieldSVGProps) {
         y1={layout.cutLineY}
         y2={layout.cutLineY}
         stroke="var(--color-oxblood)"
-        strokeWidth={2}
+        strokeWidth={4}
       />
       {/* Breathing background under the eyebrow label so the rule
           doesn't pass through the letterforms. */}
