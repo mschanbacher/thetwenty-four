@@ -551,6 +551,20 @@ h4 {
   color: var(--color-ink);
 }
 
+/* Lead opening — the essay's very first paragraph (Chapter I) gets a
+   larger size and the wider measure, echoing the landing page's thesis
+   lead so the two pages open with the same voice. Not italic: the
+   essay's opening keeps its bold lead-in phrase, so only size and
+   measure change, easing the reader into the long-form body that
+   follows at the standard measure. */
+.proposal-page > .proposal-chapter:first-of-type
+  .proposal-prose:first-of-type
+  > p:first-child {
+  font-size: var(--text-lead);
+  line-height: var(--lh-lead);
+  max-width: var(--measure-wide);
+}
+
 .proposal-prose p {
   margin: 0 0 var(--space-6);
 }
