@@ -496,7 +496,7 @@ h4 {
 
 .proposal-masthead {
   max-width: var(--measure);
-  margin: 0 auto var(--space-16);
+  margin: 0 0 var(--space-16);
 }
 
 .proposal-masthead-title {
@@ -509,8 +509,11 @@ h4 {
 }
 
 .proposal-chapter {
-  max-width: var(--measure);
-  margin: 0 auto;
+  /* Full container width — prose inside is capped to the measure and
+     left-aligned (matching the landing page), while figures break wide
+     to fill the container. Capping the chapter itself would trap the
+     figures at the 65ch measure and shrink them. */
+  margin: 0;
 }
 
 .proposal-chapter + .proposal-chapter {
@@ -525,6 +528,7 @@ h4 {
   line-height: 1.1;
   color: var(--color-ink);
   margin: 0 0 var(--space-8);
+  max-width: var(--measure);
   scroll-margin-top: var(--space-8);
 }
 
@@ -540,6 +544,7 @@ h4 {
 
 /* Prose runs. */
 .proposal-prose {
+  max-width: var(--measure);
   font-family: var(--font-serif);
   font-size: var(--text-body);
   line-height: 1.65;
@@ -629,11 +634,11 @@ h4 {
 }
 
 /* In-essay figure — same editorial frame as the landing Key Visual,
-   but allowed to break wider than the prose measure so the visual
-   gets room. */
+   and, like it, fills the full container width rather than the prose
+   measure. The chapter is full-width and prose is capped to the
+   measure, so the figure simply spans its parent. */
 .proposal-figure {
   margin: var(--space-16) 0;
-  /* Break out of the 65ch measure up to the container's wider bound. */
   width: 100%;
 }
 
