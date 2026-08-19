@@ -86,34 +86,34 @@ function WideSVG({ titleId, descId }: { titleId: string; descId: string }): JSX.
       <line x1={990.14} y1={615} x2={1198.13} y2={615.01} stroke="var(--color-ink-muted)" strokeWidth={1} />
       <line x1={1198.13} y1={295} x2={1198.13} y2={615} stroke="var(--color-ink-muted)" strokeWidth={1} />
       <line x1={1198.13} y1={455} x2={1302.02} y2={455} stroke="var(--color-ink-muted)" strokeWidth={1} />
-      <rect x={0} y={0} width={1600} height={900} fill="var(--color-paper)" />
-      <rect x={1302.02} y={437} width={120} height={36} fill="var(--color-paper-deep)" />
-      <text x={70} y={80} fontFamily="'Arial-BoldMT, Arial'" fontSize={24} fill="var(--color-ink)" fontWeight={700}>Champions Conference</text>
+      <rect x={0} y={0} width={1600} height={900} fill="none" />
+      <rect x={1302.02} y={437} width={120} height={36} fill="none" stroke="var(--color-rule)" strokeWidth={1} />
+      <text x={70} y={80} fontFamily="var(--font-serif)" fontSize={24} fill="var(--color-ink)" fontWeight={700}>Champions Conference</text>
       <text x={70} y={104} fontFamily="'IBMPlexSans-Medium, 'IBM Plex Sans'" fontSize={12} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".14em">FINAL STANDINGS &#8212; TOP TWELVE</text>
       <text x={85.2} y={156} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>1</text>
-      <text x={122} y={156} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Indiana</text>
+      <text x={122} y={156} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Indiana</text>
       <text x={85.2} y={204} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>2</text>
-      <text x={122} y={204} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Ohio State</text>
+      <text x={122} y={204} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Ohio State</text>
       <text x={85.2} y={252} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>3</text>
-      <text x={122} y={252} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Georgia</text>
+      <text x={122} y={252} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Georgia</text>
       <text x={85.2} y={300} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>4</text>
-      <text x={122} y={300} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Texas Tech</text>
+      <text x={122} y={300} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Texas Tech</text>
       <text x={85.2} y={348} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>5</text>
-      <text x={122} y={348} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Oregon</text>
+      <text x={122} y={348} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Oregon</text>
       <text x={85.2} y={396} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>6</text>
-      <text x={122} y={396} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Ole Miss</text>
+      <text x={122} y={396} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Ole Miss</text>
       <text x={85.2} y={444} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>7</text>
-      <text x={122} y={444} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Texas A&amp;amp;M</text>
+      <text x={122} y={444} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Texas A&amp;M</text>
       <text x={85.2} y={492} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>8</text>
-      <text x={122} y={492} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Oklahoma</text>
+      <text x={122} y={492} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Oklahoma</text>
       <text x={85.2} y={540} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>9</text>
-      <text x={122} y={540} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Alabama</text>
+      <text x={122} y={540} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Alabama</text>
       <text x={74.4} y={588} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>10</text>
-      <text x={122} y={588} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Miami</text>
+      <text x={122} y={588} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Miami</text>
       <text x={74.4} y={636} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>11</text>
-      <text x={122} y={636} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">Notre Dame</text>
+      <text x={122} y={636} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">Notre Dame</text>
       <text x={74.4} y={684} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={18} fill="var(--color-ink)" fontWeight={500}>12</text>
-      <text x={122} y={684} fontFamily="'ArialMT, Arial'" fontSize={19} fill="var(--color-ink)">BYU</text>
+      <text x={122} y={684} fontFamily="var(--font-serif)" fontSize={19} fill="var(--color-ink)">BYU</text>
       <text x={66} y={732} fontFamily="'IBMPlexSans-Medium, 'IBM Plex Sans'" fontSize={12} fill="var(--color-oxblood)" fontWeight={500} letterSpacing=".14em">CFP CUT-LINE &#8212; TOP 12 IN</text>
       <text x={427.64} y={118} fontFamily="'IBMPlexSans-Medium, 'IBM Plex Sans'" fontSize={11} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".12em">FIRST ROUND</text>
       <text x={626.19} y={118} fontFamily="'IBMPlexSans-Medium, 'IBM Plex Sans'" fontSize={11} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".12em">QUARTERFINALS</text>
@@ -131,7 +131,7 @@ function WideSVG({ titleId, descId }: { titleId: string; descId: string }): JSX.
       <text x={673.44} y={341} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={17} fill="var(--color-ink-muted)" fontWeight={500}>4</text>
       <text x={673.44} y={501} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={17} fill="var(--color-ink-muted)" fontWeight={500}>3</text>
       <text x={673.44} y={661} fontFamily="'IBMPlexMono-Medium, 'IBM Plex Mono'" fontSize={17} fill="var(--color-ink-muted)" fontWeight={500}>2</text>
-      <text x={1325.3592} y={460} fontFamily="'Arial-BoldMT, Arial'" fontSize={15} fill="var(--color-ink-muted)" fontWeight={700}>Champion</text>
+      <text x={1325.3592} y={460} fontFamily="var(--font-serif)" fontSize={15} fill="var(--color-ink-muted)" fontWeight={700}>Champion</text>
       <text x={70} y={828} fontFamily="'IBMPlexSans-Italic, 'IBM Plex Sans'" fontSize={11} fill="var(--color-ink-faint)" fontStyle="italic" letterSpacing=".04em">Illustrative Champions Conference standings &#8212; 2025 CFP top 12 shown for structure, not a live result.</text>
     </svg>
   );
@@ -148,7 +148,7 @@ function NarrowSVG({ titleId, descId }: { titleId: string; descId: string }): JS
         seed numbers. The seed equals the standing, with no committee in between. Seeds one through four bye into the
         quarterfinals; five through twelve meet in the first round. An oxblood cut-line marks the boundary below rank twelve.
       </desc>
-      <rect x={0} y={0} width={720} height={700} fill="var(--color-paper)" />
+      <rect x={0} y={0} width={720} height={700} fill="none" />
       <text x={30} y={42} fontFamily="var(--font-serif)" fontSize={20} fill="var(--color-ink)" fontWeight={700}>Champions Conference</text>
       <text x={30} y={62} fontFamily="var(--font-sans)" fontSize={10} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".14em">STANDINGS → PLAYOFF, SEED FOR SEED</text>
       <text x={49} y={114} fontFamily="var(--font-mono)" fontSize={15} fill="var(--color-ink)" fontWeight={500}>1</text>
@@ -164,7 +164,7 @@ function NarrowSVG({ titleId, descId }: { titleId: string; descId: string }): JS
       <text x={49} y={314} fontFamily="var(--font-mono)" fontSize={15} fill="var(--color-ink)" fontWeight={500}>6</text>
       <text x={74} y={314} fontFamily="var(--font-serif)" fontSize={16} fill="var(--color-ink)">Ole Miss</text>
       <text x={49} y={354} fontFamily="var(--font-mono)" fontSize={15} fill="var(--color-ink)" fontWeight={500}>7</text>
-      <text x={74} y={354} fontFamily="var(--font-serif)" fontSize={16} fill="var(--color-ink)">Texas A&amp;amp;M</text>
+      <text x={74} y={354} fontFamily="var(--font-serif)" fontSize={16} fill="var(--color-ink)">Texas A&amp;M</text>
       <text x={49} y={394} fontFamily="var(--font-mono)" fontSize={15} fill="var(--color-ink)" fontWeight={500}>8</text>
       <text x={74} y={394} fontFamily="var(--font-serif)" fontSize={16} fill="var(--color-ink)">Oklahoma</text>
       <text x={49} y={434} fontFamily="var(--font-mono)" fontSize={15} fill="var(--color-ink)" fontWeight={500}>9</text>
@@ -219,7 +219,7 @@ function NarrowSVG({ titleId, descId }: { titleId: string; descId: string }): JS
       <path d="M548.22,470.13h71.78" fill="none" stroke="var(--color-ink-muted)" strokeWidth={1} />
       <path d="M620,190.13v280" fill="none" stroke="var(--color-ink-muted)" strokeWidth={1} />
       <path d="M620,330.13h28" fill="none" stroke="var(--color-ink-muted)" strokeWidth={1} />
-      <rect x={648} y={313.13} width={64} height={34} fill="var(--color-paper-deep)" />
+      <rect x={648} y={313.13} width={64} height={34} fill="none" stroke="var(--color-rule)" strokeWidth={1} />
       <text x={656.18} y={334.13} fontFamily="var(--font-serif)" fontSize={13} fill="var(--color-ink-muted)" fontWeight={700}>Champ</text>
       <text x={30} y={640} fontFamily="var(--font-sans)" fontSize={10} fill="var(--color-ink-faint)" fontStyle="italic" letterSpacing=".04em">Illustrative &#8212; 2025 CFP top 12, shown for structure, not a live result.</text>
     </svg>

@@ -49,7 +49,7 @@ function WideSVG({ titleId, descId }: { titleId: string; descId: string }): JSX.
         on the membership line. The bracket does not narrow to one champion; it opens at the end into promotion and the
         boundary. This is the internal detail of the promotion side of Chapter Four's exchange.
       </desc>
-      <rect x={0} y={0} width={1000} height={1040} fill="var(--color-paper)" />
+      <rect x={0} y={0} width={1000} height={1040} fill="none" />
       <text x={60} y={56} fontFamily="var(--font-serif)" fontSize={24} fill="var(--color-ink)" fontWeight={700}>Promotion Playoff</text>
       <text x={60} y={80} fontFamily="var(--font-sans)" fontSize={12} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".14em">TEN CONFERENCE CHAMPIONS &#8212; NO CHAMPIONSHIP GAME</text>
       <text x={60} y={180} fontFamily="var(--font-sans)" fontSize={11} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".12em">PLAY-IN</text>
@@ -103,7 +103,7 @@ function WideSVG({ titleId, descId }: { titleId: string; descId: string }): JSX.
       <path d="M528.33,810v110" fill="none" stroke="var(--color-ink-muted)" strokeWidth={1.08} />
       <line x1={60} y1={940} x2={410} y2={940} stroke="var(--color-oxblood)" strokeWidth={4} />
       <line x1={590} y1={940} x2={940} y2={940} stroke="var(--color-oxblood)" strokeWidth={4} />
-      <rect x={410} y={924} width={180} height={32} fill="var(--color-paper)" />
+      <rect x={410} y={924} width={180} height={32} fill="var(--color-paper-deep)" />
       <text x={436.97} y={945} fontFamily="var(--font-serif)" fontSize={16} fill="var(--color-oxblood)" fontWeight={700}>Boundary Games</text>
       <text x={60} y={978} fontFamily="var(--font-sans)" fontSize={12} fill="var(--color-oxblood)" fontWeight={500} letterSpacing=".14em">MEMBERSHIP LINE &#8212; SEE CHAPTER IV</text>
     </svg>
@@ -122,7 +122,7 @@ function NarrowSVG({ titleId, descId }: { titleId: string; descId: string }): JS
         and the two semifinal losers are re-seeded by original standing into a single set of Boundary Games on the
         membership line. The bracket opens at the end into promotion and the boundary.
       </desc>
-      <rect x={0} y={0} width={720} height={1200} fill="var(--color-paper)" />
+      <rect x={0} y={0} width={720} height={1200} fill="none" />
       <text x={40} y={50} fontFamily="var(--font-serif)" fontSize={22} fill="var(--color-ink)" fontWeight={700}>Promotion Playoff</text>
       <text x={40} y={72} fontFamily="var(--font-sans)" fontSize={11} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".14em">TEN CHAMPIONS &#8212; NO CHAMPIONSHIP GAME</text>
       <text x={40} y={150} fontFamily="var(--font-sans)" fontSize={11} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".12em">PLAY-IN</text>
@@ -177,7 +177,7 @@ function NarrowSVG({ titleId, descId }: { titleId: string; descId: string }): JS
       <path d="M392.64,886v114" fill="none" stroke="var(--color-ink-muted)" strokeWidth={1} />
       <line x1={40} y1={1020} x2={270} y2={1020} stroke="var(--color-oxblood)" strokeWidth={4} />
       <line x1={450} y1={1020} x2={680} y2={1020} stroke="var(--color-oxblood)" strokeWidth={4} />
-      <rect x={270} y={1004} width={180} height={32} fill="var(--color-paper)" />
+      <rect x={270} y={1004} width={180} height={32} fill="var(--color-paper-deep)" />
       <text x={293.5693} y={1020} fontFamily="var(--font-serif)" fontSize={15} fill="var(--color-oxblood)" fontWeight={700}>Boundary Games</text>
       <text x={40} y={1058} fontFamily="var(--font-sans)" fontSize={11} fill="var(--color-oxblood)" fontWeight={500} letterSpacing=".14em">MEMBERSHIP LINE &#8212; SEE CH. IV</text>
     </svg>

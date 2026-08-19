@@ -216,7 +216,7 @@ Each asset below is specced in the format a designer can execute against: **purp
   - **Bracket removed from Ch IV.** The author trialed an internal Promotion Playoff bracket (seeded 1–10 with a re-seed crossover) inside this figure across two passes, then removed it. A static bracket cannot express the re-seed rule (which loser is PP #3 depends on *original* seeds, not on which semifinal was lost), so it was forcing non-canonical "Winner/Loser" labels. The abstracted feeder is the resolution. **The internal bracket is wanted as its own asset** — this is site-spec § 10 item **3c** (see Cross-document outcomes); the author's trial work is the starting point, not discarded.
   - **Type roles restored per spec.** Author's uploaded file carried Illustrator font *fallbacks* (serif slots → Plex Sans Bold; one → Arial), not deliberate choices. Component restores Source Serif 4 for named/structural labels, Plex Mono for positions/tally, Plex Sans for eyebrows, per § 2.5 type roles. *Confirm against author's corrected local file.*
   - **Off-token hex from export snapped back** (`#897f6e`→`#8A7F6E`, `#5c5346`→`#5C5245`).
-  - **Open — figure ground.** Component grounds transparent (inherits page). If Ch IV lands in a paper-deep figure frame like the Field, the `MEMBERSHIP` and Boundary Game breathing rects need to become paper-deep. Deferred to site integration (§ 2.6).
+  - **RESOLVED — figure ground (see § 2.5 "Figure-ground rule" below).** All figures render transparent on a `paper-deep` frame; the `MEMBERSHIP` and Boundary Game breathing rects became `paper-deep` to knock out the oxblood line against that ground. Applied across the whole set during page-integration review.
   - **Narrow variant CLOSED.** Author cleaned up the portrait geometry (drop depth, box clearance, riser and footer placement) and it is folded into the component; both variants now byte-identical to author-approved SVGs. The two shortened labels ("Winners promoted to CC"; slot head "Winners") are retained as accepted.
 
 #### Chapter V — The Playoff Standings Bracket
@@ -243,6 +243,12 @@ Each asset below is specced in the format a designer can execute against: **purp
 Specced in the order **IV → V → III → I → VII** (essay order is I → III → IV → V → VII; the deviation was deliberate). The two bracket-twins (IV, V) were worked consecutively so they could be differentiated on purpose — IV a vertical *exchange* with an abstracted feeder, V a horizontal *bracket* fully explicit; different orientation, different spine, opposite abstraction. Ch III followed as a quick, fully-internal asset. Ch I was held later as the contested one (register tension plus the displaced-chart and map-vs-map riders). Ch VII closed the session as the data-dependency hand-off.
 
 #### System-level motifs (record for build continuity)
+
+- **Figure-ground rule (LOCKED — applies to EVERY figure, built and future).** Figures render on a **transparent ground**: no full-canvas background rect. They sit inside a `paper-deep` figure frame (hairline border + `paper-deep` interior, matching the landing Key Visual), and that `paper-deep` *is* the figure's ground — the SVG must not paint its own `paper` background over it. Consequences the three remaining figures (broken-map, system-overview, schedule-matrix) MUST follow:
+  - **No `fill="var(--color-paper)"` full-canvas rect.** The ground is the frame.
+  - **Knockout rects** (the small rects that interrupt the oxblood line so a label is legible, e.g. `MEMBERSHIP`, `Boundary Games`) are filled **`paper-deep`**, not `paper`, so they match the ground and disappear.
+  - **Accent regions** that need to read as a subtle zone or box (e.g. the calendar's bowl-season band, a bracket's champion slot) are drawn as **hairline outlines** — `fill="none"` + `stroke="var(--color-rule)"` at 1px — NOT as a `paper-deep` fill (which would be invisible on the `paper-deep` ground). Verified legible on `paper-deep`.
+  - Reference implementations: `ChampionsField` and `PromotionRelegation` (transparent from the start); `TwoTrackCalendar` (bowl band → rule outline) and `ChampionsBracket` (champion slot → rule outline) reworked to match during page integration.
 
 Two ideas now recur across multiple assets and should be treated as intentional systems, not coincidental repetition:
 

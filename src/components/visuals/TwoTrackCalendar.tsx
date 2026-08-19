@@ -50,12 +50,12 @@ function WideSVG({ titleId, descId }: { titleId: string; descId: string }): JSX.
         Playoff seeds 3 and 4. A faint band marks bowl season. The Promotion track finishes at the boundary; the
         Champions Conference plays on alone to the championship.
       </desc>
-      <rect x={0} y={0} width={1000} height={820} fill="var(--color-paper)" />
+      <rect x={0} y={0} width={1000} height={820} fill="none" />
       <text x={60} y={60} fontFamily="var(--font-serif)" fontSize={24} fill="var(--color-ink)" fontWeight={700}>Two postseasons, one calendar</text>
       <text x={60} y={84} fontFamily="var(--font-sans)" fontSize={12} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".14em">THE PLAYOFF AND THE PROMOTION PATHWAY RUN IN PARALLEL</text>
       <text x={199.37} y={128} fontFamily="var(--font-sans)" fontSize={12} fill="var(--color-ink-muted)" fontWeight={600} letterSpacing=".12em">CHAMPIONS CONFERENCE</text>
       <text x={620} y={128} fontFamily="var(--font-sans)" fontSize={12} fill="var(--color-ink-muted)" fontWeight={600} letterSpacing=".12em">PROMOTION PATHWAY</text>
-      <rect x={60} y={379.99} width={880} height={182} fill="var(--color-paper-deep)" />
+      <rect x={60} y={379.99} width={880} height={182} fill="none" stroke="var(--color-rule)" strokeWidth={1} />
       <text x={80} y={400.99} fontFamily="var(--font-sans)" fontSize={12} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing=".12em">BOWL SEASON</text>
       <line x1={500} y1={150} x2={500} y2={748} stroke="var(--color-rule)" strokeWidth={1.5} />
       <circle cx={500} cy={170} r={3} fill="var(--color-ink-muted)" />
@@ -126,7 +126,7 @@ function NarrowSVG({ titleId, descId }: { titleId: string; descId: string }): JS
       <text x={36} y={64} fontFamily="var(--font-sans)" fontSize={10} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing="0.14em">PLAYOFF AND PROMOTION, IN PARALLEL</text>
       <text x={330} y={104} fontFamily="var(--font-sans)" fontSize={10} fill="var(--color-ink-muted)" fontWeight={600} letterSpacing="0.1em">CHAMPIONS CONF.</text>
       <text x={390} y={104} fontFamily="var(--font-sans)" fontSize={10} fill="var(--color-ink-muted)" fontWeight={600} letterSpacing="0.1em">PROMOTION</text>
-      <rect x={36} y={350} width={648} height={176} fill="var(--color-paper-deep)" />
+      <rect x={36} y={350} width={648} height={176} fill="none" stroke="var(--color-rule)" strokeWidth={1} />
       <text x={48} y={368} fontFamily="var(--font-sans)" fontSize={10} fill="var(--color-ink-faint)" fontWeight={500} letterSpacing="0.1em">BOWL SEASON</text>
       <line x1={360} y1={128} x2={360} y2={700} stroke="var(--color-rule)" strokeWidth={1.5} />
       <circle cx={360} cy={148} r={2.6} fill="var(--color-ink-muted)" />

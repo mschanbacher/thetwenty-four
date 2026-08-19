@@ -144,16 +144,16 @@ function WideSVG({ titleId, descId }: { titleId: string; descId: string }): JSX.
       <line x1={725} y1={407.56} x2={835} y2={407.56} stroke="var(--color-oxblood)" strokeWidth={4} />
       <line x1={1005} y1={407.56} x2={1520} y2={407.56} stroke="var(--color-oxblood)" strokeWidth={4} />
 
-      <rect x={84} y={394.56} width={132} height={26} fill="var(--color-paper)" />
+      <rect x={84} y={394.56} width={132} height={26} fill="var(--color-paper-deep)" />
       <text x={99} y={413} fontFamily="var(--font-sans)" fontSize={13} fontWeight={500} letterSpacing="0.14em" fill="var(--color-oxblood)">
         MEMBERSHIP
       </text>
 
-      <rect x={555} y={390.56} width={170} height={34} fill="var(--color-paper)" />
+      <rect x={555} y={390.56} width={170} height={34} fill="var(--color-paper-deep)" />
       <text x={640} y={413} textAnchor="middle" fontFamily="var(--font-serif)" fontSize={18} fontWeight={600} fill="var(--color-oxblood)" style={{ fontVariationSettings: "'opsz' 18" }}>
         Boundary Game
       </text>
-      <rect x={835} y={390.56} width={170} height={34} fill="var(--color-paper)" />
+      <rect x={835} y={390.56} width={170} height={34} fill="var(--color-paper-deep)" />
       <text x={920} y={413} textAnchor="middle" fontFamily="var(--font-serif)" fontSize={18} fontWeight={600} fill="var(--color-oxblood)" style={{ fontVariationSettings: "'opsz' 18" }}>
         Boundary Game
       </text>
@@ -230,16 +230,16 @@ function NarrowSVG({ titleId, descId }: { titleId: string; descId: string }): JS
       <line x1={405} y1={490} x2={445} y2={490} stroke="var(--color-oxblood)" strokeWidth={4} />
       <line x1={595} y1={490} x2={680} y2={490} stroke="var(--color-oxblood)" strokeWidth={4} />
 
-      <rect x={40} y={478} width={118} height={24} fill="var(--color-paper)" />
+      <rect x={40} y={478} width={118} height={24} fill="var(--color-paper-deep)" />
       <text x={52} y={494} fontFamily="var(--font-sans)" fontSize={12} fontWeight={500} letterSpacing="0.14em" fill="var(--color-oxblood)">
         MEMBERSHIP
       </text>
 
-      <rect x={255} y={474} width={150} height={32} fill="var(--color-paper)" />
+      <rect x={255} y={474} width={150} height={32} fill="var(--color-paper-deep)" />
       <text x={268} y={495} fontFamily="var(--font-serif)" fontSize={16} fontWeight={600} fill="var(--color-oxblood)" style={{ fontVariationSettings: "'opsz' 16" }}>
         Boundary Game
       </text>
-      <rect x={445} y={474} width={150} height={32} fill="var(--color-paper)" />
+      <rect x={445} y={474} width={150} height={32} fill="var(--color-paper-deep)" />
       <text x={458} y={495} fontFamily="var(--font-serif)" fontSize={16} fontWeight={600} fill="var(--color-oxblood)" style={{ fontVariationSettings: "'opsz' 16" }}>
         Boundary Game
       </text>
